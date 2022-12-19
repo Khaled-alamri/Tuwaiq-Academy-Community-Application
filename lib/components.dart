@@ -43,7 +43,7 @@ Widget logoWithTitle() {
     child: Column(
       children: [
         Image.asset(
-          "assets/images/logo.png",
+          "images/logo.png",
           width: 150,
           height: 150,
         ),

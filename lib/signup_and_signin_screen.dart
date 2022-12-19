@@ -1,10 +1,10 @@
+import 'package:final_project/components.dart';
+import 'package:final_project/signin_screen.dart';
+import 'package:final_project/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:login_and_signup_ui/components.dart';
-import 'package:login_and_signup_ui/signin_screen.dart';
-import 'package:login_and_signup_ui/signup_screen.dart';
 
 class SignUpAndSignIn extends StatelessWidget {
   const SignUpAndSignIn({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class SignUpAndSignIn extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                "assets/images/image.jpeg",
+                "images/image.jpeg",
               ),
               fit: BoxFit.cover),
         ),
