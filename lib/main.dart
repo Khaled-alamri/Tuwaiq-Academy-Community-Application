@@ -14,10 +14,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-     initialRoute: "/PageView",
+     initialRoute: RouterNames.pageView,
      getPages: getPages,
     translations: Languages(),
     locale: const Locale('ar'), // The Languages it shulde be Arabic when tha App Start
+    
     );
   }
 }
