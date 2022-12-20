@@ -1,3 +1,4 @@
+import 'package:final_project/Component/test.dart';
 import 'package:final_project/components.dart';
 import 'package:final_project/signup_screen.dart';
 import 'package:final_project/widgets/default_form_field.dart';
@@ -40,43 +41,42 @@ class SignInScreen extends StatelessWidget {
                     padding: EdgeInsetsDirectional.all(20),
                     child: Column(
                       children: [
-                        DefaultFormField(
-                          controller: emailController,
-                          type: TextInputType.emailAddress,
-                          hintText: "example@example.com",
-                          label: "البريد الإلكتروني",
-                          borderColor: Colors.white,
-                          prefix: Icons.email,
-                          fillColor: Color.fromARGB(153, 255, 255, 255),
-                          prefixColorIcon: HexColor("#7660A9"),
-                          labelColor: HexColor("#7660A9"),
-                          validate: (String? value) {
-                            if (value!.isEmpty) {
-                              return 'من فضلك ادخل الايميل';
-                            }
-                          },
+                        // DefaultFormField(
+                        //   controller: emailController,
+                        //   type: TextInputType.emailAddress,
+                        //   hintText: "example@example.com",
+                        //   label: "البريد الإلكتروني",
+                        //   borderColor: Colors.white,
+                        //   prefix: Icons.email,
+                        //   fillColor: Color.fromARGB(153, 255, 255, 255),
+                        //   prefixColorIcon: HexColor("#7660A9"),
+                        //   labelColor: HexColor("#7660A9"),
+                        //   validate: (String? value) {
+                        //     if (value!.isEmpty) {
+                        //       return 'من فضلك ادخل الايميل';
+                        //     }
+                        //   },
+                        // ),
+
+                        //00000000000000000000000///
+                        
+                        //here is the component
+                        CustomTextField(
+                          hintTextShow: "example@example.com",
+                          labelTextShow: "البريد الإلكتروني",
+                          validaterMasseg: 'من فضلك ادخل الايميل',
+                          keyboardType: TextInputType.emailAddress,
+                          IconForText: Icons.email,
                         ),
                         const SizedBox(
                           height: 20.0,
                         ),
-                        DefaultFormField(
-                          controller: passwordController,
-                          isPassword: true,
-                          type: TextInputType.visiblePassword,
-                          hintText: "*******",
-                          label: "كلمة المرور",
-                          borderColor: Colors.white,
-                          prefix: Icons.lock_outline,
-                          fillColor: Color.fromARGB(153, 255, 255, 255),
-                          prefixColorIcon: HexColor("#7660A9"),
-                          labelColor: HexColor("#7660A9"),
-                          maxLines: 1,
-                          isSuffix: true,
-                          validate: (String? value) {
-                            if (value!.isEmpty) {
-                              return 'من فضلك ادخل الباسورد';
-                            }
-                          },
+                        CustomTextField(
+                          hintTextShow: "*******",
+                          labelTextShow: "كلمة المرور",
+                          validaterMasseg: 'من فضلك ادخل الباسورد',
+                          keyboardType: TextInputType.visiblePassword,
+                          IconForText: Icons.lock_outline,
                         ),
                         const SizedBox(
                           height: 30.0,
