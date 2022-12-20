@@ -2,6 +2,8 @@ import 'package:final_project/View/OnBoarding/smooth_page_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+
+//First Intro
 class OnBoarding_1 extends StatelessWidget {
   OnBoarding_1({super.key});
 

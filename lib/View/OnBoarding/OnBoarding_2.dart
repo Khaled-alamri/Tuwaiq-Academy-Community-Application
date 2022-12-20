@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+//Second Intro
 class OnBoarding_2 extends StatelessWidget {
   OnBoarding_2({super.key});
 
