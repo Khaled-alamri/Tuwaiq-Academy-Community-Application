@@ -1,7 +1,8 @@
+import 'package:final_project/components.dart';
+import 'package:final_project/widgets/default_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:login_and_signup_ui/components.dart';
-import 'package:login_and_signup_ui/widgets/default_form_field.dart';
+
 
 class SignUpScreen extends StatelessWidget {
   var firstNameController = TextEditingController();
@@ -22,7 +23,7 @@ class SignUpScreen extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                "assets/images/image.jpeg",
+                "images/image.jpeg",
               ),
               fit: BoxFit.cover),
         ),

@@ -1,8 +1,5 @@
+import 'package:final_project/signup_and_signin_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:login_and_signup_ui/signin_screen.dart';
-import 'package:login_and_signup_ui/signup_and_signin_screen.dart';
-import 'package:login_and_signup_ui/signup_screen.dart';
-
 void main() {
   runApp(const MyApp());
 }
