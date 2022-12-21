@@ -31,7 +31,7 @@ class CustomButton extends StatelessWidget {
               onPressed: onPressed,
               child:
                   Text(
-                    NameOfButton.toString(),
+                    NameOfButton,
                     style: TextStyle(fontSize: 20, color: Color(0xffFFFFFF)),
                   ),
                   
@@ -87,6 +87,56 @@ class CustomButtonIcon extends StatelessWidget {
                   ),
                 ],
               )),
+        ),
+      ],
+    );
+  }
+}
+class CustomButtonOfCamp extends StatelessWidget {
+  const CustomButtonOfCamp(
+      {super.key,
+      required this.heigthOfButton,
+      required this.widthOfButton,
+      required this.NameOfButton,
+      this.onPressed,
+       required this.Colors});
+  final double heigthOfButton;
+  final double widthOfButton;
+  final String NameOfButton;
+  final Function()? onPressed;
+  final Color Colors;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 20,right: 10),
+          child: SizedBox(
+            height: heigthOfButton,
+            width: widthOfButton,
+            child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor:Colors,
+                  shape: RoundedRectangleBorder(
+                        side:  BorderSide(
+                                width: 0, // thickness
+                                color: Color(0xffFFFFFF) // color
+                        ),
+                        borderRadius: BorderRadius.circular(90) 
+                ) 
+                  
+                ),
+                onPressed: onPressed,
+                child:
+                    Text(
+                      NameOfButton,
+                      style: TextStyle(fontSize: 20, color: Color(0xff4A3A75)),
+                    ),
+                    
+                 
+                ),
+          ),
         ),
       ],
     );
