@@ -32,7 +32,7 @@ class CustomTextField extends StatelessWidget {
           IconForText,
           color: HexColor("#7660A9"),
         ),
-        hintText: hintTextShow.toString(),
+        hintText: hintTextShow,
         border: OutlineInputBorder(
           borderSide: BorderSide(
             color: Colors.white,

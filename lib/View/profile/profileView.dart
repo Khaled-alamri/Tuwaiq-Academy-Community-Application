@@ -1,5 +1,7 @@
+import 'package:final_project/Component/Profile/Avater.dart';
 import 'package:final_project/Component/Profile/ItemOfProfile.dart';
 import 'package:final_project/View/Camp/CampPresnt.dart';
+import 'package:final_project/View/profile/My_Info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -24,7 +26,7 @@ class profile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "خالد",
+                    "رهف محمد",
                     style: TextStyle(fontSize: 26, color: Color(0xffFFFFFF)),
                   ),
                   ImageIcon(AssetImage("images/mdi_location-exit.png"),
@@ -44,17 +46,7 @@ class profile extends StatelessWidget {
               children: [
                 SizedBox(
                   height: 170,
-                  child: CircleAvatar(
-                    backgroundColor: Color(0xff4A3A75),
-                    radius: 70,
-                    child: ClipOval(
-                      child: Image.asset(
-                        "images/images 1.png",
-                        width: 130,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
+                  child: Avter(Img: "images/images 1.png",size: 70,)
                 ),
                 Container(
                   width: 366,
@@ -66,7 +58,7 @@ class profile extends StatelessWidget {
                       name: "بيانات شخصيه",
                       ontap: () {
                         
-                        //Get.to();
+                        Get.to(My_Info());
                       },
                     ),
                     ItemProfile(name: "منشوراتي"),
