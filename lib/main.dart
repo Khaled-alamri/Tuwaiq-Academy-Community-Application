@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-     initialRoute: RouterNames.profile,
+     initialRoute: RouterNames.SignUpAndSignIn,
      getPages: getPages,
     translations: Languages(),
     locale: const Locale('ar'), // The Languages it shulde be Arabic when tha App Start

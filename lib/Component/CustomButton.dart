@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton(
@@ -141,4 +142,25 @@ class CustomButtonOfCamp extends StatelessWidget {
       ],
     );
   }
+}
+Widget filledButton({title, onPressed, radius}) {
+  return Center(
+    child: Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(radius ?? 50.0),
+        color: HexColor("#7660A9"),
+      ),
+      child: MaterialButton(
+        onPressed: onPressed,
+        child: Text(
+          title,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20.0,
+          ),
+        ),
+      ),
+    ),
+  );
 }
