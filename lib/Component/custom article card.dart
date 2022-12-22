@@ -5,8 +5,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-class CustomQutionCard extends StatelessWidget {
-  const CustomQutionCard(
+class CustomArticleCard extends StatelessWidget {
+  const CustomArticleCard(
       {super.key,
       required this.cardDate,
       required this.commentCont,
@@ -25,7 +25,7 @@ class CustomQutionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height:  250,
       margin: EdgeInsetsDirectional.all(10),
       padding: EdgeInsetsDirectional.all(20),
       decoration: BoxDecoration(

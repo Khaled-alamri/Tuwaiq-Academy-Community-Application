@@ -1,6 +1,6 @@
 import 'package:final_project/Component/custom%20IconwithName.dart';
 import 'package:final_project/Component/custom%20contentText.dart';
-import 'package:final_project/Component/custom%20qution%20card.dart';
+import 'package:final_project/Component/custom%20article%20card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -106,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
               //     ],
               //   ),
               // ),
-              CustomQutionCard(
+              CustomArticleCard(
                   postTitle: "Test Zhar",
                   likeCont: 15,
                   PostBody: "Hi this is the ",
@@ -182,36 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              CustomQutionCard(
-                  postTitle: "Test Zhar",
-                  likeCont: 15,
-                  PostBody: "Hi this is the ",
-                  PostOwnrName: "Zhara",
-                  cardDate: "12-17-2022",
-                  commentCont: 4),
-              const SizedBox(
-                height: 50,
-              ),
-              CustomQutionCard(
-                  postTitle: "Test Zhar",
-                  likeCont: 15,
-                  PostBody: "Hi this is the ",
-                  PostOwnrName: "Zhara",
-                  cardDate: "12-17-2022",
-                  commentCont: 4),
-              const SizedBox(
-                height: 50,
-              ),
-              CustomQutionCard(
-                  postTitle: "Test Zhar",
-                  likeCont: 15,
-                  PostBody: "Hi this is the ",
-                  PostOwnrName: "Zhara",
-                  cardDate: "12-17-2022",
-                  commentCont: 4),
-              const SizedBox(
-                height: 50,
-              ),
+              
             ],
           ),
         ),
