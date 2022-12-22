@@ -41,26 +41,6 @@ class SignInScreen extends StatelessWidget {
                     padding: EdgeInsetsDirectional.all(20),
                     child: Column(
                       children: [
-                        // DefaultFormField(
-                        //   controller: emailController,
-                        //   type: TextInputType.emailAddress,
-                        //   hintText: "example@example.com",
-                        //   label: "البريد الإلكتروني",
-                        //   borderColor: Colors.white,
-                        //   prefix: Icons.email,
-                        //   fillColor: Color.fromARGB(153, 255, 255, 255),
-                        //   prefixColorIcon: HexColor("#7660A9"),
-                        //   labelColor: HexColor("#7660A9"),
-                        //   validate: (String? value) {
-                        //     if (value!.isEmpty) {
-                        //       return 'من فضلك ادخل الايميل';
-                        //     }
-                        //   },
-                        // ),
-
-                        //00000000000000000000000///
-                        
-                        //here is the component
                         CustomTextField(
                           hintTextShow: "example@example.com",
                           labelTextShow: "البريد الإلكتروني",

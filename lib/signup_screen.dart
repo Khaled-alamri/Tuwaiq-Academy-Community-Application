@@ -1,3 +1,4 @@
+import 'package:final_project/Component/test.dart';
 import 'package:final_project/components.dart';
 import 'package:final_project/widgets/default_form_field.dart';
 import 'package:flutter/material.dart';
@@ -46,102 +47,58 @@ class SignUpScreen extends StatelessWidget {
                         Row(
                           children: [
                             Expanded(
-                              child: DefaultFormField(
-                                controller: firstNameController,
-                                type: TextInputType.text,
-                                label: "الاسم الأول",
-                                borderColor: Colors.white,
-                                prefix: Icons.edit,
-                                fillColor: Color.fromARGB(153, 255, 255, 255),
-                                prefixColorIcon: HexColor("#7660A9"),
-                                labelColor: HexColor("#7660A9"),
-                                validate: (String? value) {
-                                  if (value!.isEmpty) {
-                                    return 'من فضلك ادخل الاسم الاول';
-                                  }
-                                },
-                              ),
+                              child: CustomTextField(
+                          controller: firstNameController,
+                          labelTextShow: "الاسم الأول",
+                          hintTextShow: "",
+                          IconForText:Icons.edit ,
+                        ),
+                              
                             ),
+                             
                             const SizedBox(
                               width: 30.0,
                             ),
                             Expanded(
-                              child: DefaultFormField(
-                                controller: lastNameController,
-                                type: TextInputType.text,
-                                label: "الاسم الأخير",
-                                borderColor: Colors.white,
-                                prefix: Icons.edit,
-                                fillColor: Color.fromARGB(153, 255, 255, 255),
-                                prefixColorIcon: HexColor("#7660A9"),
-                                labelColor: HexColor("#7660A9"),
-                                validate: (String? value) {
-                                  if (value!.isEmpty) {
-                                    return 'من فضلك ادخل الاسم الأخير';
-                                  }
-                                },
-                              ),
+                              child: CustomTextField(
+                          controller: lastNameController,
+                          labelTextShow:  "الاسم الأخير",
+                          hintTextShow: "",
+                          IconForText:Icons.edit ,
+                        ),
                             ),
+                            
                           ],
                         ),
                         const SizedBox(
                           height: 15.0,
                         ),
-                        DefaultFormField(
+                        CustomTextField(
                           controller: identitfyController,
-                          type: TextInputType.text,
-                          label: "بطاقة التعريف",
-                          borderColor: Colors.white,
-                          prefix: Icons.numbers,
-                          fillColor: Color.fromARGB(153, 255, 255, 255),
-                          prefixColorIcon: HexColor("#7660A9"),
-                          labelColor: HexColor("#7660A9"),
-                          validate: (String? value) {
-                            if (value!.isEmpty) {
-                              return 'من فضلك ادخل بطاقة التعريف';
-                            }
-                          },
+                          labelTextShow: "بطاقة التعريف",
+                          hintTextShow: "",
+                          IconForText:Icons.numbers ,
                         ),
                         const SizedBox(
                           height: 20.0,
                         ),
-                        DefaultFormField(
-                          controller: emailController,
-                          type: TextInputType.emailAddress,
-                          hintText: "example@example.com",
-                          label: "البريد الإلكتروني",
-                          borderColor: Colors.white,
-                          prefix: Icons.email,
-                          fillColor: Color.fromARGB(153, 255, 255, 255),
-                          prefixColorIcon: HexColor("#7660A9"),
-                          labelColor: HexColor("#7660A9"),
-                          validate: (String? value) {
-                            if (value!.isEmpty) {
-                              return 'من فضلك ادخل الايميل';
-                            }
-                          },
+                        
+                         CustomTextField(
+                          hintTextShow: "example@example.com",
+                          labelTextShow: "البريد الإلكتروني",
+                          validaterMasseg: 'من فضلك ادخل الايميل',
+                          keyboardType: TextInputType.emailAddress,
+                          IconForText: Icons.email,
                         ),
                         const SizedBox(
                           height: 20.0,
                         ),
-                        DefaultFormField(
-                          controller: passwordController,
-                          isPassword: true,
-                          type: TextInputType.visiblePassword,
-                          hintText: "*******",
-                          label: "كلمة المرور",
-                          borderColor: Colors.white,
-                          prefix: Icons.lock_outline,
-                          fillColor: Color.fromARGB(153, 255, 255, 255),
-                          prefixColorIcon: HexColor("#7660A9"),
-                          labelColor: HexColor("#7660A9"),
-                          maxLines: 1,
-                          isSuffix: true,
-                          validate: (String? value) {
-                            if (value!.isEmpty) {
-                              return 'من فضلك ادخل الباسورد';
-                            }
-                          },
+                         CustomTextField(
+                          hintTextShow: "*******",
+                          labelTextShow: "كلمة المرور",
+                          validaterMasseg: 'من فضلك ادخل الباسورد',
+                          keyboardType: TextInputType.visiblePassword,
+                          IconForText: Icons.lock_outline,
                         ),
                         const SizedBox(
                           height: 30.0,

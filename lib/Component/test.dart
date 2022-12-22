@@ -4,15 +4,17 @@ import 'package:hexcolor/hexcolor.dart';
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
       {super.key,
-      required this.validaterMasseg,
-      required this.hintTextShow,
-      required this.labelTextShow,
-      required this.keyboardType, this.IconForText});
-  final String validaterMasseg;
-  final String hintTextShow;
-  final String labelTextShow;
-  final TextInputType keyboardType;
+      this.validaterMasseg,
+      this.hintTextShow,
+      this.labelTextShow,
+       this.keyboardType,
+      this.IconForText, this.controller});
+  final String? validaterMasseg;
+  final String? hintTextShow;
+  final String? labelTextShow;
+  final TextInputType? keyboardType;
   final IconData? IconForText;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class CustomTextField extends StatelessWidget {
           ),
         ),
         label: Text(
-          labelTextShow,
+          labelTextShow!,
           style: TextStyle(color: HexColor("#7660A9")),
         ),
         filled: true,
