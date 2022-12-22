@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "205139614258",
+    "project_id": "tuwaiq-community",
+    "storage_bucket": "tuwaiq-community.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205139614258:android:6cdfb8b01a47047216ba2b",
+        "android_client_info": {
+          "package_name": "com.example.final_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205139614258-svnmiur9si00vcidp750irl7fjqo7485.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHLGwJIfMh_QYcVs00mrlU184kfJr4a9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205139614258-svnmiur9si00vcidp750irl7fjqo7485.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
