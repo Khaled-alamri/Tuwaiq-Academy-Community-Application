@@ -4,14 +4,14 @@ import 'package:hexcolor/hexcolor.dart';
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
-    required this.validaterMasseg,
-    required this.hintTextShow,
+   this.validaterMasseg,
+   this.hintTextShow,
     this.labelTextShow,
     this.keyboardType,
     this.IconForText, this.controller,
   });
-  final String validaterMasseg;
-  final String hintTextShow;
+  final String? validaterMasseg;
+  final String? hintTextShow;
   final String? labelTextShow;
   final TextInputType? keyboardType;
   final IconData? IconForText;
