@@ -1,5 +1,5 @@
-import 'package:assignment_ui1/app_layout.dart';
-import 'package:assignment_ui1/home_screen.dart';
+
+import 'package:final_project/Homepage/app_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
