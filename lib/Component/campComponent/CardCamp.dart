@@ -5,11 +5,17 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class CardCamp extends StatelessWidget {
-  const CardCamp({super.key, required this.NameOfCamp, required this.DateOfCamp, required this.detailsOfCamp, required this.NamberOfStudent});
+  const CardCamp(
+      {super.key,
+      required this.NameOfCamp,
+      required this.DateOfCamp,
+      required this.detailsOfCamp,
+      required this.NamberOfStudent, required this.Img});
   final String NameOfCamp;
   final String DateOfCamp;
   final String? detailsOfCamp;
   final String NamberOfStudent;
+  final String Img;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +36,8 @@ class CardCamp extends StatelessWidget {
                 children: [
                   CircleAvatar(
                       backgroundColor: Colors.white,
-                      child: Image.asset("images/Flutter Logo 1.png")),
+                     radius: 30,
+                      child:ClipOval(child: Image.asset(Img,width: 90, fit: BoxFit.cover,),),),
                   const SizedBox(
                     width: 10,
                   ),
