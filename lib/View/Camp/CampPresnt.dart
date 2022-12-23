@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:final_project/Component/CustomButton.dart';
 import 'package:final_project/Component/CustomTextField.dart';
 import 'package:final_project/Component/campComponent/CardCamp.dart';
-import 'package:final_project/Component/campComponent/TitelCamp.dart';
+import 'package:final_project/Component/TitelCamp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -19,7 +19,7 @@ class CampPresnt extends StatelessWidget {
           preferredSize: Size.fromHeight(180), // Set this height
           child: Column(
             children: [
-               CustomTitle(),
+               CustomTitle(Title:  "المعسكرات",height1: 120),
               Container(
                 height: 60,
                 color: HexColor("#f2eff6"),
@@ -70,7 +70,7 @@ class CampPresnt_2 extends StatelessWidget {
           preferredSize: Size.fromHeight(180), // Set this height
           child: Column(
             children: [
-              CustomTitle(),
+              CustomTitle(Title:"المعسكرات",height1: 120),
               Container(
                 height: 60,
                 color: HexColor("#f2eff6"),
