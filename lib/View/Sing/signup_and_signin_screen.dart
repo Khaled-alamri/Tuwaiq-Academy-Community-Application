@@ -1,5 +1,6 @@
 import 'package:final_project/Component/CustomButton.dart';
 import 'package:final_project/Component/SingComponenr/logoWithTitle.dart';
+import 'package:final_project/Router/Routers.dart';
 import 'package:final_project/View/Sing/signin_screen.dart';
 import 'package:final_project/View/Sing/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +45,8 @@ class SignUpAndSignIn extends StatelessWidget {
                       title: "انشاء حساب جديد",
                       radius: 5.0,
                       onPressed: () {
-                        Get.to(SignUpScreen());
+                        //Get.to(SignUpScreen());
+                        RouterNames.SignUpAndSignIn;
                       }),
                   const SizedBox(
                     height: 50,
