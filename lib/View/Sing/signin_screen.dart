@@ -2,7 +2,6 @@ import 'package:final_project/Component/CustomButton.dart';
 import 'package:final_project/Component/CustomTextField.dart';
 import 'package:final_project/Component/SingComponenr/logoWithTitle.dart';
 import 'package:final_project/View/Sing/Forge_Password_or_Chang.dart';
-import 'package:final_project/Services/firebase/Auth/EmailAndPassword.dart';
 import 'package:final_project/View/Sing/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
