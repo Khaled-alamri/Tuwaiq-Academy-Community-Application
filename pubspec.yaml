@@ -41,6 +41,8 @@ dependencies:
   auto_size_text: ^3.0.0
   firebase_storage: ^11.0.9
   firebase_core: ^2.4.0
+  firebase_auth: ^4.2.2
+  cloud_firestore: ^4.3.0
 
 dev_dependencies:
   flutter_test:

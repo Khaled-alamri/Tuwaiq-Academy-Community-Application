@@ -1,10 +1,11 @@
-
 import 'package:final_project/Component/CustomButton.dart';
 import 'package:final_project/Component/CustomTextField.dart';
 import 'package:final_project/Component/SingComponenr/logoWithTitle.dart';
+import 'package:final_project/Services/firebase/Auth/EmailAndPassword.dart';
+import 'package:final_project/View/Sing/signin_screen.dart';
 import 'package:flutter/material.dart';
+// import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
-
 
 class SignUpScreen extends StatelessWidget {
   var firstNameController = TextEditingController();
@@ -49,26 +50,23 @@ class SignUpScreen extends StatelessWidget {
                           children: [
                             Expanded(
                               child: CustomTextField(
-                          controller: firstNameController,
-                          labelTextShow: "الاسم الأول",
-                          hintTextShow: "",
-                          IconForText:Icons.edit ,
-                        ),
-                              
+                                controller: firstNameController,
+                                labelTextShow: "الاسم الأول",
+                                hintTextShow: "",
+                                IconForText: Icons.edit,
+                              ),
                             ),
-                             
                             const SizedBox(
                               width: 30.0,
                             ),
                             Expanded(
                               child: CustomTextField(
-                          controller: lastNameController,
-                          labelTextShow:  "الاسم الأخير",
-                          hintTextShow: "",
-                          IconForText:Icons.edit ,
-                        ),
+                                controller: lastNameController,
+                                labelTextShow: "الاسم الأخير",
+                                hintTextShow: "",
+                                IconForText: Icons.edit,
+                              ),
                             ),
-                            
                           ],
                         ),
                         const SizedBox(
@@ -78,13 +76,13 @@ class SignUpScreen extends StatelessWidget {
                           controller: identitfyController,
                           labelTextShow: "بطاقة التعريف",
                           hintTextShow: "",
-                          IconForText:Icons.numbers ,
+                          IconForText: Icons.numbers,
                         ),
                         const SizedBox(
                           height: 20.0,
                         ),
-                        
-                         CustomTextField(
+                        CustomTextField(
+                          controller: emailController,
                           hintTextShow: "example@example.com",
                           labelTextShow: "البريد الإلكتروني",
                           validaterMasseg: 'من فضلك ادخل الايميل',
@@ -94,7 +92,8 @@ class SignUpScreen extends StatelessWidget {
                         const SizedBox(
                           height: 20.0,
                         ),
-                         CustomTextField(
+                        CustomTextField(
+                          controller: passwordController,
                           hintTextShow: "*******",
                           labelTextShow: "كلمة المرور",
                           validaterMasseg: 'من فضلك ادخل الباسورد',
@@ -104,7 +103,19 @@ class SignUpScreen extends StatelessWidget {
                         const SizedBox(
                           height: 30.0,
                         ),
-                        filledButton(title: "تسجيل الدخول", radius: 5.0),
+                        filledButton(
+                            title: "تسجيل الدخول",
+                            radius: 5.0,
+                            onPressed: () {
+                              createAccount(
+                                  email: emailController.text,
+                                  password: passwordController.text,
+                                  firstName: firstNameController.text,
+                                  id: identitfyController.text,
+                                  lastName: lastNameController.text);
+                              //Get.to(SignInScreen());
+                              print("i am here ++++++++++++++++");
+                            }),
                         const SizedBox(
                           height: 15.0,
                         ),

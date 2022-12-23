@@ -1,6 +1,7 @@
 import 'package:final_project/Component/CustomButton.dart';
 import 'package:final_project/Component/CustomTextField.dart';
 import 'package:final_project/Component/SingComponenr/logoWithTitle.dart';
+import 'package:final_project/Services/firebase/Auth/EmailAndPassword.dart';
 import 'package:final_project/View/Sing/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -43,6 +44,7 @@ class SignInScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         CustomTextField(
+                          controller: emailController,
                           hintTextShow: "example@example.com",
                           labelTextShow: "البريد الإلكتروني",
                           validaterMasseg: 'من فضلك ادخل الايميل',
@@ -53,6 +55,7 @@ class SignInScreen extends StatelessWidget {
                           height: 20.0,
                         ),
                         CustomTextField(
+                          controller: passwordController,
                           hintTextShow: "*******",
                           labelTextShow: "كلمة المرور",
                           validaterMasseg: 'من فضلك ادخل الباسورد',
@@ -62,7 +65,14 @@ class SignInScreen extends StatelessWidget {
                         const SizedBox(
                           height: 30.0,
                         ),
-                        filledButton(title: "تسجيل الدخول", radius: 5.0),
+                        filledButton(
+                            title: "تسجيل الدخول",
+                            radius: 5.0,
+                            onPressed: () {
+                              signInWithEmail(
+                                  email: emailController.text,
+                                  password: passwordController.text);
+                            }),
                         const SizedBox(
                           height: 15.0,
                         ),
