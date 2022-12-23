@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-     initialRoute: RouterNames.SignUpAndSignIn,
+     initialRoute: RouterNames.appLayout,
      getPages: getPages,
     translations: Languages(),
     locale: const Locale('ar'),

@@ -15,39 +15,6 @@ class CampPresnt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(180), // Set this height
-          child: Column(
-            children: [
-               CustomTitle(Title:  "المعسكرات",height1: 120),
-              Container(
-                height: 60,
-                color: HexColor("#f2eff6"),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    CustomButtonOfCamp(
-                      NameOfButton: "الحاليه",
-                      Colors: Color(0xff3FB7F8),
-                      heigthOfButton: 38,
-                      widthOfButton: 125,
-                      onPressed: () {},
-                    ),
-                    CustomButtonOfCamp(
-                      NameOfButton: "القادمه",
-                      Colors: Color(0xffFFFFFF),
-                      heigthOfButton: 38,
-                      widthOfButton: 125,
-                      onPressed: () {
-                        Get.to(CampPresnt_2());
-                      },
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
         backgroundColor: HexColor("#f2eff6"),
         body: ListView(children: [
           CardCamp(
@@ -66,41 +33,6 @@ class CampPresnt_2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(180), // Set this height
-          child: Column(
-            children: [
-              CustomTitle(Title:"المعسكرات",height1: 120),
-              Container(
-                height: 60,
-                color: HexColor("#f2eff6"),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    CustomButtonOfCamp(
-                      NameOfButton: "الحاليه",
-                      Colors: Color(0xffFFFFFF),
-                      heigthOfButton: 38,
-                      widthOfButton: 125,
-                      onPressed: () {
-                        Get.to(CampPresnt());
-                      },
-                    ),
-                    CustomButtonOfCamp(
-                      NameOfButton: "القادمه",
-                      Colors: Color(0xff3FB7F8),
-                      heigthOfButton: 38,
-                      widthOfButton: 125,
-                      onPressed: () {
-                        Get.to(CampPresnt_2());
-                      },
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
         backgroundColor: HexColor("#f2eff6"),
         body: ListView(children: [
           CardCamp(
@@ -117,5 +49,60 @@ class CampPresnt_2 extends StatelessWidget {
               NameOfCamp: "Flutter",
               detailsOfCamp: "معسكر flutter"),
         ]));
+  }
+}
+
+class Test extends StatelessWidget {
+  const Test({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: HexColor("#d4c7de"),
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(110),
+            child: Column(
+              children: [
+                 CustomTitle(Title:"المعسكرات",height1: 110),
+              ],
+            ),
+          ),
+        ),
+        body: Column(
+          children: [
+            TabBar(
+              labelColor:  Color.fromARGB(255, 255, 255, 255),
+              indicator: UnderlineTabIndicator(),
+              tabs: [
+                Tab(
+                  
+                  child: Text("الحاليه",style: TextStyle(fontSize: 28,color: Color.fromARGB(255, 184, 36, 36)),)
+                ),
+                Tab(
+                 
+                  child: Text("القادمه",style: TextStyle(fontSize: 28,color:Color.fromARGB(255, 4, 81, 123)),)
+                )
+              ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Expanded(
+              child: TabBarView(
+                children: [
+                  CampPresnt(),
+                  CampPresnt_2()
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );;
   }
 }
