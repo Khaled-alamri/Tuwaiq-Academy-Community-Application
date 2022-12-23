@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
      initialRoute: RouterNames.SignUpAndSignIn,
      getPages: getPages,
     translations: Languages(),
-    locale: const Locale('ar'), // The Languages it shulde be Arabic when tha App Start
+    locale: const Locale('ar'),
+    // The Languages it shulde be Arabic when tha App Start
     
     );
   }
