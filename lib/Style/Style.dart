@@ -8,6 +8,11 @@ const postColor = Color(0xFF2D79A3);
 const questionsColor = Color(0xFFC69D0C);
 const slidAndfloatColor = Color(0xFF078378);
 
+//The Primary Color Shadow Behind the Screen
+
+const liftShadow = Color(0xFFD9FFF3);
+const rightShadow = Color(0xFFFFE1F9);
+
 
 //Default Padding
 
