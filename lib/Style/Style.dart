@@ -10,5 +10,4 @@ const slidAndfloatColor = Color(0xFF078378);
 
 
 //Default Padding
-
 const defaultPadding = 15.0;
