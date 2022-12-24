@@ -28,24 +28,24 @@ class My_Post extends StatelessWidget {
       body: ListView(
         children: [
                 MyCustomArticleCard(
-                  postTitle: "Test Zhar",
+                  postTitle: "flutter",
                   likeCont: 15,
                   PostBody: "Hi this is the ",
-                  PostOwnrName: "Zhara",
+                  PostOwnrName: "رهف",
                   cardDate: "12-17-2022",
                   commentCont: 4),
                   MyCustomArticleCard(
-                  postTitle: "Test Zhar",
+                  postTitle: "test",
                   likeCont: 2,
                   PostBody: "Hi  ",
-                  PostOwnrName: "Zhara",
+                  PostOwnrName: "test",
                   cardDate: "12-17-2022",
                   commentCont: 1),
                   MyCustomArticleCard(
-                  postTitle: "Test Zhar",
+                  postTitle: "رهف محمد",
                   likeCont: 2,
                   PostBody: "Hi  ",
-                  PostOwnrName: "Zhara",
+                  PostOwnrName: "رهف",
                   cardDate: "12-17-2022",
                   commentCont: 1),
         ],

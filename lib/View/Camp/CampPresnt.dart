@@ -52,8 +52,8 @@ class CampPresnt_2 extends StatelessWidget {
   }
 }
 
-class Test extends StatelessWidget {
-  const Test({super.key});
+class TitelPage extends StatelessWidget {
+  const TitelPage({super.key});
 
   @override
   Widget build(BuildContext context) {

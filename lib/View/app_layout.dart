@@ -15,7 +15,7 @@ class _AppLayoutState extends State<AppLayout> {
   List<Widget> bottomScreens = [
     HomeScreen(),
     Text("Page"),
-    Test(),
+    TitelPage(),
     profile(),
   ];
 
