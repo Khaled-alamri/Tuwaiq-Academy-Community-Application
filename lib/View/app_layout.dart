@@ -1,4 +1,6 @@
+import 'package:final_project/View/Camp/CampPresnt.dart';
 import 'package:final_project/View/home_screen.dart';
+import 'package:final_project/View/profile/profileView.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -13,8 +15,8 @@ class _AppLayoutState extends State<AppLayout> {
   List<Widget> bottomScreens = [
     HomeScreen(),
     Text("Page"),
-    Text("Page"),
-    Text("Page"),
+    TitelPage(),
+    profile(),
   ];
 
   void changeBottomNav(int index) {
