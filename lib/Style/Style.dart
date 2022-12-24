@@ -15,5 +15,4 @@ const rightShadow = Color(0xFFFFE1F9);
 
 
 //Default Padding
-
 const defaultPadding = 15.0;
