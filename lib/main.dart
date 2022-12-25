@@ -1,3 +1,4 @@
+
 import 'package:final_project/Localization/Languages.dart';
 import 'package:final_project/Router/Routers.dart';
 import 'package:final_project/View/OnBoarding/PageView.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+
      initialRoute: RouterNames.appLayout,
      getPages: getPages,
     translations: Languages(),
