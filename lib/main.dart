@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
 
-     initialRoute: RouterNames.appLayout,
+     initialRoute: RouterNames.pageView,
      getPages: getPages,
     translations: Languages(),
     locale: const Locale('ar'),

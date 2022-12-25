@@ -5,6 +5,7 @@ import 'package:final_project/View/OnBoarding/OnBoarding_1.dart';
 import 'package:final_project/View/OnBoarding/OnBoarding_2.dart';
 import 'package:final_project/View/OnBoarding/OnBoarding_3.dart';
 import 'package:final_project/View/OnBoarding/smooth_page_indicator.dart';
+import 'package:final_project/View/Sing/signup_and_signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -60,6 +61,7 @@ class PageViewScreen extends StatelessWidget {
                               backgroundColor: primaryColor.withOpacity(0.5)),
                           onPressed: () {
                             //Get.off(appLayout());
+                            Get.to(() =>SignUpAndSignIn());
                           },
                           child: Text(
                             "WelcomeButton".tr,

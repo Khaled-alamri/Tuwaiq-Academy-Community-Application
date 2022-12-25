@@ -45,8 +45,8 @@ class SignUpAndSignIn extends StatelessWidget {
                       title: "انشاء حساب جديد",
                       radius: 5.0,
                       onPressed: () {
-                        //Get.to(SignUpScreen());
-                        RouterNames.SignUpAndSignIn;
+                        Get.to(() => SignUpScreen());
+                        
                       }),
                   const SizedBox(
                     height: 50,
