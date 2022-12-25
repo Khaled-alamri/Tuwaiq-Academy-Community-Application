@@ -1,4 +1,5 @@
 
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:final_project/Localization/Languages.dart';
 import 'package:final_project/Router/Routers.dart';
 import 'package:final_project/View/OnBoarding/PageView.dart';

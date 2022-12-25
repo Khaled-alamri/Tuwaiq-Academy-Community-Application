@@ -20,6 +20,3 @@ const flutterRightShadow = Color(0xFFACCBEE);
 
 //Default Padding
 const defaultPadding = 15.0;
-
-//Default Padding
-const defaultPadding = 15.0;
