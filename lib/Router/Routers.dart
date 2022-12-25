@@ -1,5 +1,6 @@
 import 'package:final_project/View/Camp/CampPresnt.dart';
 import 'package:final_project/View/OnBoarding/PageView.dart';
+import 'package:final_project/View/Splash_Screen/SplashScreen.dart';
 import 'package:final_project/View/app_layout.dart';
 import 'package:final_project/View/Sing/signup_and_signin_screen.dart';
 import 'package:final_project/View/Sing/signup_screen.dart';
@@ -25,6 +26,8 @@ List<GetPage<dynamic>>? getPages = [
   ),
   GetPage(name: RouterNames.SignUpScreen, page: () => SignUpScreen()),
     GetPage(name: RouterNames.pageView , page: () => PageViewScreen(),),
+    GetPage(name: RouterNames.splash , page: () => SplashScreen(),),
+
     GetPage(name: RouterNames.appLayout , page: () => AppLayout(),),
     GetPage(name: RouterNames.CampPresnt , page: () => const CampPresnt(),),
     GetPage(name: RouterNames.profile , page: () => const profile(),),
@@ -33,6 +36,8 @@ List<GetPage<dynamic>>? getPages = [
 
 class RouterNames {
   static String pageView = "/PageView";
+  static String splash = "/SplashScreen";
+
   static String appLayout = "/appLayout";
   static String CampPresnt = "/CampPresnt";
   static String profile = "/profile";

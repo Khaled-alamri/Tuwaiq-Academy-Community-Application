@@ -2,6 +2,7 @@
 import 'package:final_project/Localization/Languages.dart';
 import 'package:final_project/Router/Routers.dart';
 import 'package:final_project/View/OnBoarding/PageView.dart';
+import 'package:final_project/View/Splash_Screen/SplashScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
