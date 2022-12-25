@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:final_project/Component/CustomTextField.dart';
 import 'package:final_project/Component/Image/Image.dart';
 import 'package:final_project/Component/QuestionPage/Radio.dart';
@@ -20,7 +19,8 @@ class QuestionPage extends StatefulWidget {
 }
 
 class _QuestionPageState extends State<QuestionPage> {
-  File? image;
+  File? _image;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,24 +90,35 @@ class _QuestionPageState extends State<QuestionPage> {
           ),
           IconButton(
             onPressed: () async {
-              try {
-                final image =
-                    await ImagePicker().pickImage(source: ImageSource.gallery);
-                if (image == null) return;
-                final imageTemp = File(image.path);
-                setState(() => this.image = imageTemp);
-              } on PlatformException catch (e) {
-                print('Failed to pick image: $e');
-              }
+              addImage();
             },
             icon: Icon(Icons.image),
           ),
-          //Image.file(image!,width: 150,height: 100)
+          _image!=null? Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
+            child: Image.file(_image!,width: 200,height: 250,fit: BoxFit.cover,),
+          ):Center(child: Text("اضف صوره"))
         ],
       ),
     );
   }
+
+  addImage() async {
+    try {
+      var image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      setState(() {
+        if (image == null) return;
+
+        final imageTemporary = File(image.path);
+        this._image = imageTemporary;
+      });
+    } on PlatformException catch (e) {
+      print('Failed to pick image: $e');
+    }
+  }
 }
+
+
 // class AddImage extends StatefulWidget {
 //  AddImage({super.key,required this.fileImage,  this.memoryImage});
  
