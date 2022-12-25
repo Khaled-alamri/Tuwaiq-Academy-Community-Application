@@ -19,7 +19,6 @@ class My_Post extends StatelessWidget {
             child: ListView(
               children: [
               CustomTitleWithRadius(Title:  "منشوراتي",height1: 150,),
-              
                     ],
                   ),
           ),
