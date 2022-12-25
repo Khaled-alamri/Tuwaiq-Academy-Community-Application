@@ -1,9 +1,11 @@
 import 'package:final_project/Component/custom%20IconwithName.dart';
 import 'package:final_project/Component/custom%20contentText.dart';
 import 'package:final_project/Component/custom%20article%20card.dart';
+import 'package:final_project/View/Home/QuestionPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -182,14 +184,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              
             ],
           ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: HexColor("#117c78"),
-        onPressed: () {},
+        onPressed: () {
+          Get.to(QuestionPage());
+        },
         child: Icon(
           Icons.add,
           color: Colors.white,
