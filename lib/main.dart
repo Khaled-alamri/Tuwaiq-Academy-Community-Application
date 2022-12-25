@@ -1,9 +1,17 @@
-import 'package:final_project/Camp_View/Future_Camp.dart';
-import 'package:final_project/Camp_View/Present_Camp.dart';
+
+import 'package:final_project/Localization/Languages.dart';
+import 'package:final_project/Router/Routers.dart';
+import 'package:final_project/View/OnBoarding/PageView.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
   runApp(const MyApp());
 }
 
@@ -13,12 +21,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: "/PresentCamp",
-     getPages: [
-      GetPage(name: "/FutureCamp", page: () => FutureCamp()),
-      GetPage(name: "/PresentCamp", page: () => PresentCamp()),
-     ],
-     locale: const Locale('ar'),
+
+     initialRoute: RouterNames.appLayout,
+     getPages: getPages,
+    translations: Languages(),
+    locale: const Locale('ar'),
+    // The Languages it shulde be Arabic when tha App Start
+    
     );
   }
 }
