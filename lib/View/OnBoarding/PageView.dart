@@ -1,5 +1,6 @@
 import 'package:final_project/Controller/PageViewController.dart';
 import 'package:final_project/Router/Routers.dart';
+import 'package:final_project/Style/Style.dart';
 import 'package:final_project/View/OnBoarding/OnBoarding_1.dart';
 import 'package:final_project/View/OnBoarding/OnBoarding_2.dart';
 import 'package:final_project/View/OnBoarding/OnBoarding_3.dart';
@@ -56,12 +57,9 @@ class PageViewScreen extends StatelessWidget {
                       height: 40,
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor:
-                                  Colors.purple[900]!.withOpacity(0.5)),
+                              backgroundColor: primaryColor.withOpacity(0.5)),
                           onPressed: () {
-                            pageViewController.controller.nextPage(
-                                duration: Duration(microseconds: 500),
-                                curve: Curves.easeIn);
+                            //Get.off(appLayout());
                           },
                           child: Text(
                             "WelcomeButton".tr,
