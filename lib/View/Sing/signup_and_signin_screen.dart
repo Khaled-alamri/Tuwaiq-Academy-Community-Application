@@ -36,7 +36,8 @@ class SignUpAndSignIn extends StatelessWidget {
                       title: "تسجيل الدخول",
                       radius: 5.0,
                       onPressed: () {
-                        Get.to(SignInScreen());
+                        //RouterNames.SignInScreen;
+                        Get.off(SignInScreen());
                       }),
                   const SizedBox(
                     height: 30,
@@ -45,8 +46,8 @@ class SignUpAndSignIn extends StatelessWidget {
                       title: "انشاء حساب جديد",
                       radius: 5.0,
                       onPressed: () {
-                        //Get.to(SignUpScreen());
-                        RouterNames.SignUpAndSignIn;
+                        Get.to(SignUpScreen());
+                        //RouterNames.SignUpAndSignIn;
                       }),
                   const SizedBox(
                     height: 50,

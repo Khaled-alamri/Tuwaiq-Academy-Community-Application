@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({
+   CustomTextField({this.onChanged,
     super.key,
    this.validaterMasseg,
    this.hintTextShow,
@@ -16,10 +16,11 @@ class CustomTextField extends StatelessWidget {
   final TextInputType? keyboardType;
   final IconData? IconForText;
   final TextEditingController? controller;
+   Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
+    return TextFormField( onChanged:onChanged ,
       keyboardType: keyboardType,
       validator: (String? value) {
         if (value!.isEmpty) {

@@ -69,9 +69,9 @@ class SignInScreen extends StatelessWidget {
                             title: "تسجيل الدخول",
                             radius: 5.0,
                             onPressed: () {
-                              signInWithEmail(
-                                  email: emailController.text,
-                                  password: passwordController.text);
+                              // signInWithEmail(
+                              //     email: emailController.text,
+                              //     password: passwordController.text);
                             }),
                         const SizedBox(
                           height: 15.0,
