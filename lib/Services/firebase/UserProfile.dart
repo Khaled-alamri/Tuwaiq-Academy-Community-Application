@@ -19,24 +19,5 @@ class FireStore {
     });
   }
 
-  // createUserProfile(
-  //     {required String id,
-  //     required String firstName,
-  //     required String lastName,
-  //     required String email,
-  //     required String userUID}) async {
-  //   bool verify = false;
-
-  //   String phone = "";
-
-  //   await instance.collection("student").doc(userUID).set({
-  //     "id": id,
-  //     "first name": firstName,
-  //     "last name": lastName,
-  //     "email": email,
-  //     "userUID": userUID,
-  //     "verify": verify,
-  //     "phone": phone,
-  //   });
-  // }
+  
 }

@@ -1,11 +1,9 @@
 import 'package:final_project/Router/Routers.dart';
-import 'package:final_project/Services/firebase/UserProfile.dart';
-import 'package:final_project/Services/firebase/articleSystem.dart';
-import 'package:final_project/View/Sing/signin_screen.dart';
 import 'package:final_project/View/app_layout.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class AuthFirebase {
   var instance = FirebaseAuth.instance;
@@ -35,23 +33,24 @@ class AuthFirebase {
     }
   }
 
-  signInWithEmail({required String email, required String password}) async {
+  signInWithEmail(
+      {required String email,
+      required String password,
+      Function(bool)? isDone}) async {
     try {
-      var user = await instance.signInWithEmailAndPassword(
-          email: email, password: password);
-
-      if (user.user?.uid != null) {
-        //RouterNames.appLayout;
-        Get.off(AppLayout());
-        print("i am loging in");
+      var user = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      if (user.user!.uid != null) {
+       // GetStorage().write("userID", user.user!.uid);
+       // print(GetStorage().toString());
+        isDone!(true);
+        Get.to(() => AppLayout());
       }
-    } on FirebaseAuthException catch (error) {
-      Get.snackbar("wrong", "${error.code}");
-      //print(error.code);
-      if (error.code == "wrong-password") {
-        Get.snackbar("wrong", "Email or password is wrong");
-      } else if (error.code == "network-request-failed") {
-        Get.snackbar("wrong", "check your connections");
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
       }
     }
   }
