@@ -107,12 +107,14 @@ class SignUpScreen extends StatelessWidget {
                             title: "تسجيل الدخول",
                             radius: 5.0,
                             onPressed: () {
-                              createAccount(
-                                  email: emailController.text,
-                                  password: passwordController.text,
-                                  firstName: firstNameController.text,
-                                  id: identitfyController.text,
-                                  lastName: lastNameController.text);
+                              //!-------------------
+                              //will be updated soon
+                            //   AuthFirebase().createAccount(
+                                  // email: emailController.text,
+                                  // password: passwordController.text,
+                                  // firstName: firstNameController.text,
+                                  // id: identitfyController.text,
+                                  // lastName: lastNameController.text);
                               //Get.to(SignInScreen());
                               print("i am here ++++++++++++++++");
                             }),
