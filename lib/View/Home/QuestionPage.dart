@@ -1,8 +1,10 @@
 import 'dart:io';
+import 'package:final_project/Component/CustomButton.dart';
 import 'package:final_project/Component/CustomTextField.dart';
 import 'package:final_project/Component/Image/Image.dart';
 import 'package:final_project/Component/QuestionPage/Radio.dart';
 import 'package:final_project/Component/TitelCamp.dart';
+import 'package:final_project/Services/Storage/File.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -94,10 +96,27 @@ class _QuestionPageState extends State<QuestionPage> {
             },
             icon: Icon(Icons.image),
           ),
-          _image!=null? Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
-            child: Image.file(_image!,width: 200,height: 250,fit: BoxFit.cover,),
-          ):Center(child: Text("اضف صوره"))
+          _image != null
+              ? Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                  child: Image.file(
+                    _image!,
+                    width: 200,
+                    height: 250,
+                    fit: BoxFit.cover,
+                  ),
+                )
+              : Center(child: Text("اضف صوره")),
+          filledButton(
+              onPressed: () {
+                try {
+                   AddImages(Image: _image!);
+                } catch (e) {
+                  print(e);
+                }
+              },
+              title: "اضف المنشور")
         ],
       ),
     );

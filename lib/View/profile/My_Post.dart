@@ -25,6 +25,7 @@ class My_Post extends StatelessWidget {
               ),
 
       body: ListView(
+        scrollDirection:Axis.vertical ,
         children: [
                 MyCustomArticleCard(
                   postTitle: "flutter",
@@ -38,6 +39,13 @@ class My_Post extends StatelessWidget {
                   likeCont: 2,
                   PostBody: "Hi  ",
                   PostOwnrName: "test",
+                  cardDate: "12-17-2022",
+                  commentCont: 1),
+                  MyCustomArticleCard(
+                  postTitle: "رهف محمد",
+                  likeCont: 2,
+                  PostBody: "Hi  ",
+                  PostOwnrName: "رهف",
                   cardDate: "12-17-2022",
                   commentCont: 1),
                   MyCustomArticleCard(
