@@ -114,7 +114,7 @@ class MyCustomArticleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height:  257,
+      height:  280,
       margin: EdgeInsetsDirectional.all(10),
       padding: EdgeInsetsDirectional.all(20),
       decoration: BoxDecoration(
