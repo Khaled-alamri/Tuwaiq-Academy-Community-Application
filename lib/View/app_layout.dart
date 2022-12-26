@@ -12,9 +12,9 @@ class _AppLayoutState extends State<AppLayout> {
 
   List<Widget> bottomScreens = [
     HomeScreen(),
-    Text("Page"),
-    Text("Page"),
-    Text("Page"),
+    Text("Search"),//SearchPAge()
+    Text("Camps"),
+    Text("profile"),
   ];
 
   void changeBottomNav(int index) {
