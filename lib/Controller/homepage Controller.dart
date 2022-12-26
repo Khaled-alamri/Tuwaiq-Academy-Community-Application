@@ -19,6 +19,7 @@ class HomePageController extends GetxController {
     // TODO: implement onInit
     super.onInit();
     articleList = await article.viewAllArticle();
+    print(articleList);
     update();
   }
 
