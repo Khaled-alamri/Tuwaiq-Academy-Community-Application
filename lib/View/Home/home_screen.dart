@@ -6,6 +6,7 @@ import 'package:final_project/Custom/CustomAppBar.dart';
 import 'package:final_project/Packages/package.dart';
 import 'package:final_project/Services/Storage/File.dart';
 import 'package:final_project/View/Home/QuestionPage.dart';
+import 'package:final_project/View/article/atricle%20view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -64,18 +65,23 @@ class HomeScreen extends StatelessWidget {
                     itemCount: C_HomePage.articleList.length,
                     shrinkWrap: true,
                     itemBuilder: (BuildContext context, int index) {
-                      return CustomArticleCard(
-                          cardDate: C_HomePage.articleList[index]["date"],
-                          commentCont: C_HomePage.articleList[index]
-                              ["commentCount"],
-                          likeCont: C_HomePage.articleList[index]["likeCount"],
-                          PostOwnrName: C_HomePage.articleList[index]
-                              ["auth Name"],
-                          postTitle: C_HomePage.articleList[index]["title"],
-                          PostBody: C_HomePage.articleList[index]["body"]);
+                      return InkWell(
+                        onTap: () {
+                        Get.to(ArticleView());
+                        },
+                        child: CustomArticleCard(
+                            cardDate: C_HomePage.articleList[index]["date"],
+                            commentCont: C_HomePage.articleList[index]
+                                ["commentCount"],
+                            likeCont: C_HomePage.articleList[index]
+                                ["likeCount"],
+                            PostOwnrName: C_HomePage.articleList[index]
+                                ["auth Name"],
+                            postTitle: C_HomePage.articleList[index]["title"],
+                            PostBody: C_HomePage.articleList[index]["body"]),
+                      );
                     });
               }),
-          
         ]),
         // CustomArticleCard(
         //     postTitle: "Test Zhar",
