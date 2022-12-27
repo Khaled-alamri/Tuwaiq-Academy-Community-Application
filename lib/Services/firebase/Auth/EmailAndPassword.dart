@@ -41,10 +41,12 @@ class AuthFirebase {
       var user = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
       if (user.user!.uid != null) {
-       // GetStorage().write("userID", user.user!.uid);
-       // print(GetStorage().toString());
+        // GetStorage().write("userID", user.user!.uid);
+        // print(GetStorage().toString());
         isDone!(true);
-        Get.to(() => AppLayout());
+
+        //print(user.user!.uid);
+        //Get.to(() => AppLayout());
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
@@ -52,6 +54,23 @@ class AuthFirebase {
       } else if (e.code == 'wrong-password') {
         print('Wrong password provided for that user.');
       }
+    }
+  }
+
+  checkUser() async {
+    try {
+      var user = instance.currentUser?.uid;
+      return user.toString();
+    } on FirebaseAuthException catch (e) {
+      switch (e.code) {
+        case "operation-not-allowed":
+          print("Anonymous auth hasn't been enabled for this project.");
+          break;
+        default:
+          print("Unknown error.");
+      }
+    } catch (e) {
+      Get.snackbar("Error", "Somethin happend");
     }
   }
 }

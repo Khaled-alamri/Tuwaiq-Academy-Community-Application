@@ -4,12 +4,14 @@ import 'package:final_project/Component/CustomTextField.dart';
 import 'package:final_project/Component/Image/Image.dart';
 import 'package:final_project/Component/QuestionPage/Radio.dart';
 import 'package:final_project/Component/TitelCamp.dart';
+import 'package:final_project/Controller/Article%20Controller.dart';
 import 'package:final_project/Services/Storage/File.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -21,6 +23,7 @@ class QuestionPage extends StatefulWidget {
 }
 
 class _QuestionPageState extends State<QuestionPage> {
+  ArticleController C_Article = Get.put(ArticleController());
   File? _image;
 
   @override
@@ -52,7 +55,9 @@ class _QuestionPageState extends State<QuestionPage> {
                       "عنوان المنشور",
                       style: TextStyle(fontSize: 20),
                     )),
-                CustomTextField2(hintTextShow: "عنوان المشور"),
+                CustomTextField2(
+                  onChanged: (Value) =>C_Article.title=Value ,
+                  hintTextShow: "عنوان المشور"),
               ],
             ),
           ),
@@ -67,6 +72,7 @@ class _QuestionPageState extends State<QuestionPage> {
                       style: TextStyle(fontSize: 20),
                     )),
                 CustomTextFieldPost(
+                  onChanged: (Value) =>C_Article.body=Value,
                   labelTextShow: "وصف للموضوع المطروح",
                 )
               ],
@@ -83,6 +89,7 @@ class _QuestionPageState extends State<QuestionPage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               RodioB(
+                
                 name: "سؤال",
               ),
               RodioB(
@@ -111,7 +118,7 @@ class _QuestionPageState extends State<QuestionPage> {
           filledButton(
               onPressed: () {
                 try {
-                   AddImages(Image: _image!);
+                  AddImages(Image: _image!);
                 } catch (e) {
                   print(e);
                 }

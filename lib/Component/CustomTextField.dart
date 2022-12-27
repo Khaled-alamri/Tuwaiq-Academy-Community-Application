@@ -57,16 +57,18 @@ class CustomTextFieldPost extends StatelessWidget {
       required this.labelTextShow,
       this.IconForText,
       this.maxLength,
-      this.Controller});
+      this.Controller, this.onChanged});
   //final String validaterMasseg;
   final String labelTextShow;
   final IconData? IconForText;
   final int? maxLength;
   final TextEditingController? Controller;
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       // validator: (String? value) {
       //   if (value!.isEmpty) {
       //     return validaterMasseg.toString();
@@ -103,7 +105,7 @@ class CustomTextField2 extends StatelessWidget {
     required this.hintTextShow,
     this.labelTextShow,
     this.keyboardType,
-    this.IconForText, this.controller,
+    this.IconForText, this.controller, this.onChanged,
   });
   
   final String hintTextShow;
@@ -111,11 +113,12 @@ class CustomTextField2 extends StatelessWidget {
   final TextInputType? keyboardType;
   final IconData? IconForText;
   final TextEditingController? controller;
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: TextField(
+      child: TextField(onChanged:onChanged ,
         keyboardType: keyboardType,
         controller: controller,
         decoration: InputDecoration(

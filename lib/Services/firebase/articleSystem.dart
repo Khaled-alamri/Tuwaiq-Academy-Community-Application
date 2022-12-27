@@ -7,23 +7,21 @@ class articleSystem {
   // HomePageController c_homePage = Get.put(HomePageController());
 
   var instance = FirebaseFirestore.instance;
-  createArticle(
-      {required String title,
-      required String body,
-      required String date}) async {
+  createPost(
+      {required Map <String,dynamic> articlData,Function(String)? isDone}) async {
     //String title;
     ;
     int commentCount = 0;
     int likeCount = 0;
     //String date;
 
-    await instance.collection("article").doc().set({
-      "auth name"
-          "title": title,
-      "body": body,
-      "commentCount": commentCount,
-      "date": date,
-      "likeCount": likeCount
+    var newArtile=await instance.collection("article").doc().set({
+      // "authName"
+      //     "title": title,
+      // "body": body,
+      // "commentCount": commentCount,
+      // "date": date,
+      // "likeCount": likeCount
     });
   }
 
