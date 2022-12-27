@@ -20,6 +20,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      
       toolbarHeight: height, 
       leading: IconButton(
           onPressed: onPressed,
@@ -38,7 +39,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(25), bottomLeft: Radius.circular(25)),
       ),
-      backgroundColor: Colors.white.withOpacity(0.9),
+      backgroundColor: Colors.white.withOpacity(0.3),
       elevation: 0,
     );
   }
