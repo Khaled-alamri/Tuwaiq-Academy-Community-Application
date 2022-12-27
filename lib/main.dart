@@ -2,6 +2,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:final_project/Localization/Languages.dart';
 import 'package:final_project/Router/Routers.dart';
 import 'package:final_project/View/OnBoarding/PageView.dart';
+import 'package:final_project/View/Sing/signin_screen.dart';
 import 'package:final_project/View/Sing/signup_and_signin_screen.dart';
 import 'package:final_project/View/Splash_Screen/SplashScreen.dart';
 import 'package:final_project/View/app_layout.dart';
@@ -17,7 +18,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
- // await GetStorage.init();
+  // await GetStorage.init();
   runApp(const MyApp());
 }
 
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       //home: GetStorage().read("userID") == null ? const SignUpAndSignIn() : AppLayout(),
+
       // initialRoute: RouterNames.appLayout,
       home: SplashScreen(),
       getPages: getPages,
