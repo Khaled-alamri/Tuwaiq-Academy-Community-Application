@@ -4,6 +4,7 @@ import 'package:final_project/Component/custom%20article%20card.dart';
 import 'package:final_project/Controller/homepage%20Controller.dart';
 import 'package:final_project/Custom/CustomAppBar.dart';
 import 'package:final_project/Packages/package.dart';
+import 'package:final_project/Services/Storage/File.dart';
 import 'package:final_project/View/Home/QuestionPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -18,21 +19,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-       alignment: Alignment.center,
+      alignment: Alignment.center,
       height: Get.height,
       width: Get.width,
       decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
- Color(0xFFD9FFF3),
-Color(0xFFFFE1F9)
-        ]),
-  ),
+        gradient:
+            LinearGradient(colors: [Color(0xFFD9FFF3), Color(0xFFFFE1F9)]),
+      ),
       child: Scaffold(
-        appBar: CustomAppBar( 
-          title: "الصفحة الرئيسية", 
+        appBar: CustomAppBar1(
+          title: "الصفحة الرئيسية",
           height: 70,
-          iconImage: "images/AppBarIcon/Back.png",
           titleColor: primaryColor,
         ),
         backgroundColor: Colors.transparent,
@@ -59,8 +56,7 @@ Color(0xFFFFE1F9)
             //             ),
             //           ),
             //         ),
-            ListView(
-              children: [
+            ListView(children: [
           GetBuilder<HomePageController>(
               init: HomePageController(),
               builder: (_) {
@@ -78,7 +74,8 @@ Color(0xFFFFE1F9)
                           postTitle: C_HomePage.articleList[index]["title"],
                           PostBody: C_HomePage.articleList[index]["body"]);
                     });
-              })
+              }),
+          
         ]),
         // CustomArticleCard(
         //     postTitle: "Test Zhar",
@@ -158,7 +155,7 @@ Color(0xFFFFE1F9)
         // ),
         //  ],
         //   ),
-    //),
+        //),
         //),
         floatingActionButton: FloatingActionButton(
           backgroundColor: HexColor("#117c78"),

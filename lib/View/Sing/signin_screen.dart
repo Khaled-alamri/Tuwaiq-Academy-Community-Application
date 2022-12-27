@@ -71,9 +71,9 @@ class SignInScreen extends StatelessWidget {
                             title: "تسجيل الدخول",
                             radius: 5.0,
                             onPressed: () {
-                           AuthFirebase().signInWithEmail(
-                                  email: emailController.text,
-                                  password: passwordController.text);
+                          //  AuthFirebase().signInWithEmail(
+                          //         email: emailController.text,
+                          //         password: passwordController.text);
                               Get.to(AppLayout());
                             }),
                         const SizedBox(
