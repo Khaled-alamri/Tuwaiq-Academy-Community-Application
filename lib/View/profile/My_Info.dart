@@ -1,13 +1,15 @@
 import 'package:final_project/Component/CustomButton.dart';
 import 'package:final_project/Component/CustomTextField.dart';
 import 'package:final_project/Component/Profile/Avater.dart';
+import 'package:final_project/Controller/Profile%20controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class My_Info extends StatelessWidget {
-  const My_Info({super.key});
+  My_Info({super.key});
 
+  profileController C_Profile = Get.put(profileController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,29 +39,43 @@ class My_Info extends StatelessWidget {
               children: [
                 Align(
                     alignment: Alignment.centerRight,
-                    child: Text("الاسم الاول",style: TextStyle(fontSize: 18))),
-                CustomTextField(labelTextShow: "",),
+                    child: Text("الاسم الاول", style: TextStyle(fontSize: 18))),
+                CustomTextField(
+                  onChanged: (Value) => C_Profile.firstName = Value,
+                  labelTextShow: "",
+                ),
                 SizedBox(
                   height: 30,
                 ),
                 Align(
                     alignment: Alignment.centerRight,
-                    child: Text("الاسم الاخير",style: TextStyle(fontSize: 18))),
-                CustomTextField(labelTextShow: ""),
+                    child:
+                        Text("الاسم الاخير", style: TextStyle(fontSize: 18))),
+                CustomTextField(
+                    onChanged: (Value) => C_Profile.lastName = Value,
+                    labelTextShow: ""),
                 SizedBox(
                   height: 30,
                 ),
                 Align(
                     alignment: Alignment.centerRight,
-                    child: Text(" البريد الالكتروني",style: TextStyle(fontSize: 18))),
-                CustomTextField(labelTextShow: ""),
+                    child: Text(" البريد الالكتروني",
+                        style: TextStyle(fontSize: 18))),
+                CustomTextField(
+                    onChanged: (Value) => C_Profile.email = Value,
+                    labelTextShow: ""),
                 SizedBox(
                   height: 30,
                 ),
                 Align(
                     alignment: Alignment.centerRight,
-                    child: Text("رقم التواصل",style: TextStyle(fontSize: 18),)),
-                CustomTextField(labelTextShow: ""),
+                    child: Text(
+                      "رقم التواصل",
+                      style: TextStyle(fontSize: 18),
+                    )),
+                CustomTextField(
+                    onChanged: (Value) => C_Profile.phone = Value,
+                    labelTextShow: ""),
                 SizedBox(
                   height: 30,
                 ),
@@ -68,7 +84,9 @@ class My_Info extends StatelessWidget {
                   NameOfButton: "حفظ",
                   heigthOfButton: 50,
                   widthOfButton: 324,
-                  onPressed: () {},
+                  onPressed: () {
+                    C_Profile.futchMyInfo();
+                  },
                 )
               ],
             ),
