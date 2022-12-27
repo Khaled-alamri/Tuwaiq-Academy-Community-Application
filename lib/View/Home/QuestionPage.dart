@@ -17,11 +17,11 @@ import 'package:image_picker/image_picker.dart';
 
 class QuestionPage extends StatefulWidget {
   const QuestionPage({super.key});
+  
 
   @override
   State<QuestionPage> createState() => _QuestionPageState();
 }
-
 class _QuestionPageState extends State<QuestionPage> {
   ArticleController C_Article = Get.put(ArticleController());
   File? _image;
@@ -104,30 +104,41 @@ class _QuestionPageState extends State<QuestionPage> {
             icon: Icon(Icons.image),
           ),
           _image != null
-              ? Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                  child: Image.file(
-                    _image!,
-                    width: 200,
-                    height: 250,
-                    fit: BoxFit.cover,
-                  ),
+              ? Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 15),
+                      child: Image.file(
+                        _image!,
+                        width: 200,
+                        height: 250,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
                 )
               : Center(child: Text("اضف صوره")),
           filledButton(
               onPressed: () {
                 try {
-                  AddImages(Image: _image!);
+                  // AddImageFile().AddImages(Image: _image!);
+
                 } catch (e) {
                   print(e);
                 }
               },
-              title: "اضف المنشور")
+              title: "اضف المنشور"),
+              TextButton(
+              onPressed: () {
+                // getImages();
+              },
+              child: Text("hfhf"))
         ],
       ),
     );
   }
+  
 
   addImage() async {
     try {

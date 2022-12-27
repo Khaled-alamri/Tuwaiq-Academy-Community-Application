@@ -73,6 +73,7 @@ class SignInScreen extends StatelessWidget {
                             title: "تسجيل الدخول",
                             radius: 5.0,
                             onPressed: () {
+
                               c_signin.loginMethod();
                             }),
                         const SizedBox(
