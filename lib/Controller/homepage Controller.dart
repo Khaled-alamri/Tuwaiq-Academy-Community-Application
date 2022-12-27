@@ -1,4 +1,5 @@
 import 'package:final_project/Component/custom%20article%20card.dart';
+import 'package:final_project/Services/firebase/Auth/EmailAndPassword.dart';
 import 'package:final_project/Services/firebase/articleSystem.dart';
 import 'package:get/get.dart';
 
@@ -42,6 +43,8 @@ class HomePageController extends GetxController {
         likeCont: refData["likeCount"],
         postTitle: refData["title"],
       );
+     
+
       update();
     } catch (e) {
       print(e);

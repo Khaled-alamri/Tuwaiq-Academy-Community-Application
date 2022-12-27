@@ -30,8 +30,7 @@ class SignUpController extends GetxController {
           "phone": phone,
           "uid": Value,
           "image": image,
-          "userID":userID
-          
+          "userID": userID
         };
         fireSore.SendDataUser(idUser: Value, infoUser: user);
         Get.off(SignInScreen());

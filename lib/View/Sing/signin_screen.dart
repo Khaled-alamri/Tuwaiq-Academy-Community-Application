@@ -1,6 +1,7 @@
 import 'package:final_project/Component/CustomButton.dart';
 import 'package:final_project/Component/CustomTextField.dart';
 import 'package:final_project/Component/SingComponenr/logoWithTitle.dart';
+import 'package:final_project/Controller/Signin%20Contriller.dart';
 import 'package:final_project/Services/firebase/Auth/EmailAndPassword.dart';
 import 'package:final_project/View/Sing/Forge_Password_or_Chang.dart';
 import 'package:final_project/View/Sing/signup_screen.dart';
@@ -10,8 +11,9 @@ import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class SignInScreen extends StatelessWidget {
-  var emailController = TextEditingController();
-  var passwordController = TextEditingController();
+  SignInController c_signin = Get.put(SignInController());
+  // var emailController = TextEditingController();
+  // var passwordController = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
 
@@ -46,7 +48,7 @@ class SignInScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         CustomTextField(
-                          controller: emailController,
+                          onChanged: (Value) => c_signin.email = Value,
                           hintTextShow: "example@example.com",
                           labelTextShow: "البريد الإلكتروني",
                           validaterMasseg: 'من فضلك ادخل الايميل',
@@ -57,7 +59,7 @@ class SignInScreen extends StatelessWidget {
                           height: 20.0,
                         ),
                         CustomTextField(
-                          controller: passwordController,
+                          onChanged: (Value) => c_signin.password = Value,
                           hintTextShow: "*******",
                           labelTextShow: "كلمة المرور",
                           validaterMasseg: 'من فضلك ادخل الباسورد',
@@ -71,10 +73,8 @@ class SignInScreen extends StatelessWidget {
                             title: "تسجيل الدخول",
                             radius: 5.0,
                             onPressed: () {
-                          //  AuthFirebase().signInWithEmail(
-                          //         email: emailController.text,
-                          //         password: passwordController.text);
-                              Get.to(AppLayout());
+
+                              c_signin.loginMethod();
                             }),
                         const SizedBox(
                           height: 15.0,

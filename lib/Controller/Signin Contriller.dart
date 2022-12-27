@@ -18,6 +18,7 @@ class SignInController extends GetxController {
         isDone: (Value) {
           if (Value) {
             
+              print("aaaa");
             Get.off(AppLayout());
           }
         },
