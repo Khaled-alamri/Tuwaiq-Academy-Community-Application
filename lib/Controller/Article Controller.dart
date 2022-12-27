@@ -1,10 +1,11 @@
+import 'dart:math';
+
 import 'package:final_project/Services/firebase/articleSystem.dart';
 import 'package:get/get.dart';
-
-class ArticleController extends GetxController {
+class PostController extends GetxController {
   String authName = "";
   String authUID = "";
-  String postUID = "";
+var randomImage = Random().nextInt(10000); // Value is >= 0 and < 10.
   String title = "";
   String image = "";
   String body = "";
@@ -14,12 +15,12 @@ class ArticleController extends GetxController {
   int likeCount = 0;
   articleSystem newPost = articleSystem();
 
+
   MethodCreatePost() async {
-   // await newPost.createArticle(articlData: articlData)
+    // await newPost.createArticle(articlData: articlData)
     Map<String, dynamic> articleInfo = {
       "authName": authName,
       "authUID": authUID,
-      "postUID": postUID,
       "title": title,
       "image": image,
       "date": date,
@@ -27,5 +28,8 @@ class ArticleController extends GetxController {
       "commentCount": commentCount,
       "likeCount": likeCount
     };
+    await newPost.createPost(articlData: articleInfo,isDone: (Value) {
+      
+    },);
   }
 }

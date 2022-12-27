@@ -5,13 +5,13 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get/get.dart';
 
 class GetImage{
-  ArticleController ArticleControllerImage = Get.put(ArticleController());
+  PostController ArticleControllerImage = Get.put(PostController());
   var instance = FirebaseStorage.instance;
   AddImages({required File Image}) async {
     try {
       final file = Image;
       final ref =
-      await instance.ref().child("images/${ArticleControllerImage.postUID}.png");
+      await instance.ref().child("images/${ArticleControllerImage.randomImage}.png");
       await ref.putFile(file);
       return ArticleControllerImage.image = file.toString();
     } catch (e) {

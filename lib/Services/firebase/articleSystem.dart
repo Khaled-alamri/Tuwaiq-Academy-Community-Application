@@ -1,28 +1,21 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_project/Component/custom%20article%20card.dart';
-import 'package:final_project/Controller/homepage%20Controller.dart';
+import 'package:final_project/Controller/Article%20Controller.dart';
 import 'package:get/get.dart';
 
 class articleSystem {
-  // HomePageController c_homePage = Get.put(HomePageController());
+  //HomePageController c_homePage = Get.put(HomePageController());
+
+  PostController c_post = Get.put(PostController());
 
   var instance = FirebaseFirestore.instance;
   createPost(
-      {required Map <String,dynamic> articlData,Function(String)? isDone}) async {
-    //String title;
-    ;
-    int commentCount = 0;
-    int likeCount = 0;
-    //String date;
+      {required Map<String, dynamic> articlData,
+      Function(String)? isDone}) async {
+    var newArtile = await instance.collection("article").doc();
 
-    var newArtile=await instance.collection("article").doc().set({
-      // "authName"
-      //     "title": title,
-      // "body": body,
-      // "commentCount": commentCount,
-      // "date": date,
-      // "likeCount": likeCount
-    });
+    articlData.addAll({"postUID": newArtile.id});
+    await instance.collection("article").doc(newArtile.id).set(articlData);
   }
 
   viewAllArticle() async {
@@ -39,19 +32,5 @@ class articleSystem {
       print(error.toString());
       return null;
     }
-
-    // print(articleInfo.data());
-    // print(articleInfo.data()!["auth Name"]);
-
-    // if (articleInfo.data() != null) {
-    // CustomArticleCard(
-    //   PostOwnrName: articleInfo.data()!["auth Name"],
-    //   PostBody: articleInfo.data()!["body"],
-    //   postTitle: articleInfo.data()!["title"],
-    //   commentCont: articleInfo.data()!["commentCount"],
-    //   likeCont: articleInfo.data()!["likeCount"],
-    //   cardDate: articleInfo.data()!["date"],
-    // );
-    //}
   }
 }
