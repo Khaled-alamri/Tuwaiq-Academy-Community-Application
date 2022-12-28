@@ -15,5 +15,21 @@ class FireStore {
         instance.collection("student").doc(idUser.toString()).set(infoUser);
       }
     });
+     getDataProfile() async {
+    try {
+      List<Map<String, dynamic>> allArticle = [];
+      var refdata = await instance.collection("student").get();
+      for (var articl in refdata.docs) {
+        articl.data();
+        allArticle.add(articl.data());
+      }
+
+      return allArticle;
+    } catch (error) {
+      print(error.toString());
+      return null;
+    }
   }
 }
+  }
+
