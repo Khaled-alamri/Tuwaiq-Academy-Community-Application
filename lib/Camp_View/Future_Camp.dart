@@ -24,6 +24,7 @@ class FutureCamp extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: CustomAppBar(
+          backgroundColor: Colors.white.withOpacity(0.5) ,
             title: "معسكر JavaScrept",
             iconColor: questionsColor,
             height: 70,

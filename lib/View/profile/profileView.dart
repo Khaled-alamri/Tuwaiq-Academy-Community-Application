@@ -1,5 +1,6 @@
 import 'package:final_project/Component/Profile/Avater.dart';
 import 'package:final_project/Component/Profile/ItemOfProfile.dart';
+import 'package:final_project/Packages/package.dart';
 import 'package:final_project/View/Camp/CampPresnt.dart';
 import 'package:final_project/View/Sing/Forge_Password_or_Chang.dart';
 import 'package:final_project/View/profile/My_Info.dart';
@@ -20,11 +21,10 @@ class profile extends StatelessWidget {
       backgroundColor: Color(0xff4A3A75),
       body: ListView(
         children: [
-          Container(
-                     height: Get.height / 6,
-                     color: Color(0xff4A3A75),
+        SizedBox(height: 15,),
+          Container( 
                      child: Padding(
-                       padding: const EdgeInsets.only(left: 40, top: 30, right: 50),
+                       padding: const EdgeInsets.only(left: 40, top: 30, right: 50, bottom: 15),
                        child: Row(
                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                          children: [
@@ -57,32 +57,35 @@ class profile extends StatelessWidget {
                            width: 366,
                            decoration: BoxDecoration(
                                borderRadius: BorderRadius.circular(10),
-                               color: Color(0xffCBCBCB)),
-                           child: Column(children: [
-                             ItemProfile(
-                               name: "بيانات شخصيه",
-                               ontap: () {
-                                 Get.to(My_Info());
-                               },
-                             ),
-                             ItemProfile(
-                                 name: "منشوراتي",
+                               color: primaryColor.withOpacity(0.2),),
+                           child: Padding(
+                             padding: const EdgeInsets.all(defaultPadding - 5),
+                             child: Column(children: [
+                               ItemProfile(
+                                 name: "بيانات شخصيه",
                                  ontap: () {
-                                   Get.to(My_Post());
-                                 }),
-                             ItemProfile(
-                               name: "تحديث كلمة السر",
-                               ontap: () {
-                                 Get.to(ForgePassword());
-                               },
-                             ),
-                             ItemProfile(
-                                 name: "سياسة الاستخدام",
-                                 ontap: (() {
-                                   Get.to(TermsAndCondition());
-                                 })),
-                             ItemProfile(name: "الدعم الفني"),
-                           ]),
+                                   Get.to(My_Info());
+                                 },
+                               ),
+                               ItemProfile(
+                                   name: "منشوراتي",
+                                   ontap: () {
+                                     Get.to(My_Post());
+                                   }),
+                               ItemProfile(
+                                 name: "تحديث كلمة السر",
+                                 ontap: () {
+                                   Get.to(ForgePassword());
+                                 },
+                               ),
+                               ItemProfile(
+                                   name: "سياسة الاستخدام",
+                                   ontap: (() {
+                                     Get.to(TermsAndCondition());
+                                   })),
+                               ItemProfile(name: "الدعم الفني"),
+                             ]),
+                           ),
                          )
                        ],
                      ),

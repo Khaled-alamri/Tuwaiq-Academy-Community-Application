@@ -7,7 +7,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class CustomArticleCard extends StatelessWidget {
-   CustomArticleCard(
+  CustomArticleCard(
       {super.key,
       required this.cardDate,
       required this.commentCont,
@@ -33,9 +33,8 @@ class CustomArticleCard extends StatelessWidget {
         margin: EdgeInsetsDirectional.all(10),
         padding: EdgeInsetsDirectional.all(20),
         decoration: BoxDecoration(
-          borderRadius: BorderRadiusDirectional.circular(10),
-          color: Color(0xFF3FB7F8).withOpacity(0.2)
-        ),
+            borderRadius: BorderRadiusDirectional.circular(10),
+            color: Color(0xFF3FB7F8).withOpacity(0.2)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,13 +120,11 @@ class MyCustomArticleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height:  280,
       margin: EdgeInsetsDirectional.all(10),
-      padding: EdgeInsetsDirectional.all(20),
+      padding: EdgeInsetsDirectional.all(10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadiusDirectional.circular(10),
-        color: HexColor("#dbd9de"),
-      ),
+          borderRadius: BorderRadiusDirectional.circular(10),
+          color: Colors.white.withOpacity(0.5)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,70 +143,65 @@ class MyCustomArticleCard extends StatelessWidget {
             ],
           ),
           const SizedBox(
-            height: 15,
+            height: 5,
           ),
           contentText(postTitle: postTitle, PostBody: PostBody),
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
           Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                 Expanded(
-                   child: Row(
-                   
-                    children: [
-                     Icon(
-                      Icons.comment,
-                      color: HexColor("#117c78"),
-                    ),
-                    const SizedBox(
-                      width: 7,
-                    ),
-                    Text(
-                      // comment
-                      commentCont.toString(),
-                      style: TextStyle(color: HexColor("#117c78"), fontSize: 17),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Icon(
-                      Icons.thumb_up,
-                      color: HexColor("#117c78"),
-                    ),
-                    const SizedBox(
-                      width: 7,
-                    ),
-                    Text(
-                      //like
-                      likeCont.toString(),
-                      style: TextStyle(color: HexColor("#117c78"), fontSize: 17),
-                    ),
-                   ],),
-                 ),
                   Expanded(
                     child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [IconButton(onPressed: (){}, icon:Icon(Icons.disabled_by_default_rounded,size: 30,),color: Colors.red,),
-                                  Text(
-                      //like
-                      "حذف",
-                      style: TextStyle(color: Colors.red, fontSize: 17),
+                      children: [
+                        Icon(Icons.comment, color: primaryColor),
+                        const SizedBox(
+                          width: 7,
+                        ),
+                        Text(
+                          // comment
+                          commentCont.toString(),
+                          style: TextStyle(color: primaryColor, fontSize: 17),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Icon(Icons.thumb_up, color: primaryColor),
+                        const SizedBox(
+                          width: 7,
+                        ),
+                        Text(
+                          //like
+                          likeCont.toString(),
+                          style: TextStyle(color: primaryColor, fontSize: 17),
+                        ),
+                      ],
                     ),
-                                  ],
-                                ),
+                  ),
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.disabled_by_default_rounded,
+                            size: 30,
+                          ),
+                          color: Colors.red,
+                        ),
+                      ],
+                    ),
                   )
                 ],
               ),
             ],
           ),
-          
         ],
       ),
     );
   }
 }
-
