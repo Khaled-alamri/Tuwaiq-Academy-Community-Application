@@ -24,14 +24,15 @@ class PostController extends GetxController {
     // await newPost.createArticle(articlData: articlData)
     Map<String, dynamic> articleInfo = {
       "authName":C_Profile.firstName+" " +C_Profile.lastName,
-      "authUID": authUID,
+      "authUID": C_Profile.uid,
       "title": title,
       "image": image,
       "date": date,
       "article": article,
       "commentCount": commentCount,
       "likeCount": likeCount,
-      "body": body
+      "body": body,
+      "authImage": C_Profile.image1,
     };
     await newPost.createPost(
       articlData: articleInfo,

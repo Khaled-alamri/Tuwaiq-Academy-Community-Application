@@ -11,12 +11,12 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
 
 class profileController extends GetxController {
-  
   String email = "";
   String phone = "";
   String firstName = "";
   String lastName = "";
   String image1 = "";
+  String uid = "";
 
   AuthFirebase authFire = AuthFirebase();
   FireStore userProfile = FireStore();
@@ -27,21 +27,23 @@ class profileController extends GetxController {
       "firstName": firstName,
       "lastName": lastName,
       "image": image1,
+      "uid": uid
     };
     var curentUser = await authFire.checkUser();
     userProfile.SendDataUser(idUser: curentUser, infoUser: newDat);
     update();
   }
-profileData() async {
+
+  profileData() async {
     var curentUser = await authFire.checkUser();
     Map<String, dynamic> userdata =
         await userProfile.getDataProfile(idUser: curentUser);
     firstName = userdata["firstName"];
     image1 = userdata["image"];
     lastName = userdata["lastName"];
+    uid = userdata["uid"];
     update();
   }
-  
 
   addImagesProfile() async {
     var instance = FirebaseStorage.instance;

@@ -13,7 +13,7 @@ class CustomQuestionCard extends StatelessWidget {
       required this.PostOwnrName,
       required this.postTitle,
       required this.PostBody,
-      this.onTap
+      this.onTap, required this.authImage
       });
 
   final int commentCont;
@@ -21,6 +21,7 @@ class CustomQuestionCard extends StatelessWidget {
   final String postTitle;
   final String PostBody;
    Function()? onTap;
+   final String authImage;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,7 @@ class CustomQuestionCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                nameWithIcon(PostOwnrName: PostOwnrName),
+                nameWithIcon(PostOwnrName: PostOwnrName,authImage:authImage ),
                 const SizedBox(
                   height: 10,
                 ),
