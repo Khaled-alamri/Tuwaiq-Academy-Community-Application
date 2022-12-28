@@ -49,9 +49,8 @@ class profile extends StatelessWidget {
                        children: [
                          SizedBox(
                              height: 170,
-                             child: Avter(
-                               Img: "images/images 1.png",
-                               size: 70,
+                             child: Avter1(
+                               
                              )),
                          Container(
                            width: 366,

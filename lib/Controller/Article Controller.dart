@@ -28,7 +28,8 @@ class PostController extends GetxController {
       "date": date,
       "article": article,
       "commentCount": commentCount,
-      "likeCount": likeCount
+      "likeCount": likeCount,
+      "body":body
     };
     await newPost.createPost(
       articlData: articleInfo,

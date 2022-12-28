@@ -30,8 +30,6 @@ class My_Info extends StatelessWidget {
                     size: 50,
                   ))),
           Avter(
-            Img: "images/images 1.png",
-            size: 70,
           ),
           Padding(
             padding: EdgeInsets.only(left: 50, right: 50, top: 20),
