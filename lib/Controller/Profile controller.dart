@@ -32,28 +32,42 @@ class profileController extends GetxController {
     update();
   }
 
-  addImagesProfile() async {
+  profileData() async {
+    var curentUser = await authFire.checkUser();
+    Map<String, dynamic> userdata =
+        await userProfile.getDataProfile(idUser: curentUser);
+    firstName = userdata["firstName"];
+    image1 = userdata["image"];
+    lastName = userdata["lastName"];
+    update();
+  }
 
+  addImagesProfile() async {
     var instance = FirebaseStorage.instance;
     try {
-
       var image = await ImagePicker().pickImage(source: ImageSource.gallery);
 
       Reference ref =
           await instance.ref().child("Profile/${generateRandomString(10)}.png");
       await ref.putFile(File(image!.path));
-      await ref.getDownloadURL().then((value)async{
+      await ref.getDownloadURL().then((value) async {
         var curentUser = await authFire.checkUser();
         image1 = value;
-       userProfile.SendDataUser(idUser:curentUser,infoUser: {
-        "image":value
-       } );
+        userProfile.SendDataUser(
+            idUser: curentUser, infoUser: {"image": value});
         print(image1);
         update();
       });
     } catch (e) {
       print('Failed to pick image: $e');
     }
+  }
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    profileData();
   }
 }
 

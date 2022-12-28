@@ -15,21 +15,18 @@ class FireStore {
         instance.collection("student").doc(idUser.toString()).set(infoUser);
       }
     });
-     getDataProfile() async {
-    try {
-      List<Map<String, dynamic>> allArticle = [];
-      var refdata = await instance.collection("student").get();
-      for (var articl in refdata.docs) {
-        articl.data();
-        allArticle.add(articl.data());
-      }
+  }
 
-      return allArticle;
+  Future<Map<String, dynamic>> getDataProfile({required String idUser}) async {
+    Map<String, dynamic> h ={};
+    try {
+      List<Map<String, dynamic>> allusers = [];
+      var refdata = await instance.collection("student").doc(idUser).get();
+      Map<String, dynamic> refdataf = refdata.data() as Map<String, dynamic>;
+      return refdataf;
     } catch (error) {
       print(error.toString());
-      return null;
+      return h;
     }
   }
 }
-  }
-
