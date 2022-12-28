@@ -28,26 +28,32 @@ class profileController extends GetxController {
       "image": image1,
     };
     var curentUser = await authFire.checkUser();
-    userProfile.SendDataUser(idUser: curentUser, infoUser: newDat);
+    userProfile.SendDataUser(
+      idUser: curentUser,
+      infoUser: newDat,
+      isDone: (Value) {
+        if (Value) {
+          Get.snackbar("Updated", "Your profile has been updated");
+          Get.off(AppLayout());
+        }
+      },
+    );
     update();
   }
 
   addImagesProfile() async {
-
     var instance = FirebaseStorage.instance;
     try {
-
       var image = await ImagePicker().pickImage(source: ImageSource.gallery);
 
       Reference ref =
           await instance.ref().child("Profile/${generateRandomString(10)}.png");
       await ref.putFile(File(image!.path));
-      await ref.getDownloadURL().then((value)async{
+      await ref.getDownloadURL().then((value) async {
         var curentUser = await authFire.checkUser();
         image1 = value;
-       userProfile.SendDataUser(idUser:curentUser,infoUser: {
-        "image":value
-       } );
+        userProfile.SendDataUser(
+            idUser: curentUser, infoUser: {"image": value});
         print(image1);
         update();
       });
