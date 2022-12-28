@@ -48,6 +48,7 @@ dependencies:
   cloud_firestore: ^4.3.0
   image_picker: ^0.8.6
   get_storage: ^2.0.3
+  slide_to_act: ^2.0.1
 
 dev_dependencies:
   flutter_test:

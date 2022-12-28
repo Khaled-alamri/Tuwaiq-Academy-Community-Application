@@ -1,4 +1,4 @@
-import 'package:final_project/Component/custom%20article%20card.dart';
+import 'package:final_project/Custom/Component/custom%20article%20card.dart';
 import 'package:final_project/Services/firebase/articleSystem.dart';
 import 'package:get/get.dart';
 

@@ -3,7 +3,7 @@ import 'dart:math';
 
 import 'package:final_project/Packages/package.dart';
 import 'package:path/path.dart' as pathImages;
-import 'package:final_project/Component/Image/Image.dart';
+import 'package:final_project/Custom/Component/Image/Image.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
 FirebaseStorage instance = FirebaseStorage.instance;

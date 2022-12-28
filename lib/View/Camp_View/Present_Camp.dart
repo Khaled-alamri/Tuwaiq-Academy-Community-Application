@@ -1,8 +1,8 @@
-import '../Packages/package.dart';
+import '../../Packages/package.dart';
 
 
-class FutureCamp extends StatelessWidget {
-  const FutureCamp({super.key});
+class PresentCamp extends StatelessWidget {
+  const PresentCamp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,28 +12,29 @@ class FutureCamp extends StatelessWidget {
       width: Get.width,
       decoration: const BoxDecoration(
         gradient: LinearGradient(colors: [
-          Colors.white,
-          Color(0xFFFFEEB2),
+          flutterLiftShadow,
+          flutterRightShadow
         ]),
         image: DecorationImage(
             image: AssetImage(
-              "images/BackGround/JavaScript_Logo.png",
+              "images/AppBarIcon/Flutter_Logo-removebg-preview.png",
             ),
             opacity: 0.3),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: CustomAppBar(
-            title: "معسكر JavaScrept",
-            iconColor: questionsColor,
+            title: "معسكر Flutter",
+            iconColor: postColor,
             height: 70,
-            titleColor: questionsColor,
-            iconImage: "images/AppBarIcon/Back.png"),
+            titleColor: postColor,
+            iconImage: "images/BackGround/Flutter_Logo.png",
+            backgroundColor: Colors.white),
         body: Padding(
           padding: EdgeInsets.all(defaultPadding),
           child: ListView(
             children: [
-              //-------------------- Card one description -------------------------
+              //-------------------- Card one for description -------------------------
               Align(
                 alignment: Alignment.topCenter,
                 child: Stack(
@@ -43,14 +44,14 @@ class FutureCamp extends StatelessWidget {
                         description:
                             " معسكر تدريبي مكثف لتطوير تطبيقات الجوال والويب باستخدام إطار عمل Flutter، والذي يعتبر الإطار الأحدث والأسهل لبناء تطبيقات تعمل على عدة أنظمة، ستتعلم في هذا المعسكر على كيفية بناء واجهات التطبيق والتنقل بينها، بالإضافة إلى كيفية التعامل مع البيانات وحفظها."),
                     CardIcon(
-                      iconColor: questionsColor,
+                      iconColor: postColor,
                       iconImage: "images/CardIcon/discription.png",
                     ),
                   ],
                 ),
               ),
 
-              //-------------------- Card Tow Goals -------------------------
+              //-------------------- Card Tow for Goals -------------------------
               Align(
                 alignment: Alignment.topCenter,
                 child: Stack(
@@ -60,14 +61,14 @@ class FutureCamp extends StatelessWidget {
                         description:
                             "تطوير تطبيقات متقدمة تعمل على نظام iOS ونظام Android.ربط التطبيقات مع قواعد بيانات داخلية أو سحابية.تعلّم طرق اكتشاف ومعالجة الأخطاء البرمجية.اكتساب مهارة التعلّم من المصادر البرمجية المعتمدة.تعلّم كيفية كتابة برامج ذات أسطر برمجية نظيفة وواضحة Clean Code.تصميم واجهات التطبيقات والاعتناء بتجربة المستخدم فيها."),
                     CardIcon(
-                      iconColor: questionsColor,
+                      iconColor: postColor,
                       iconImage: "images/CardIcon/goal.png",
                     ),
                   ],
                 ),
               ),
 
-              //-------------------- Card Three Teashers -------------------------
+              //-------------------- Card Three for Teachers -------------------------
               Align(
                 alignment: Alignment.topCenter,
                 child: Stack(
@@ -75,25 +76,14 @@ class FutureCamp extends StatelessWidget {
                     CardInformation(
                         descriptionTitle: "المعسكر بمتابعة وإشراف:",
                         description: "أ.م.فهد العازمي \n أ.م. هادي "),
-                    CardIcon(
-                      iconColor: questionsColor,
-                      iconImage: "images/CardIcon/teacher.png",
-                    )
-                  ], //
+                        CardIcon(iconColor: postColor, iconImage: "images/CardIcon/teacher.png",)
+                  ],//
                 ),
-              ),
-
-              //-------------------- Card Foure for Regestration -------------------------
-              RegistrationCard(
-                descriptionRegistration:
-                    "يسعدنا انضمامكم عن طريق الضغط على الايقونة التالية",
-                iconColor: questionsColor,
-                iconImage: "images/CardIcon/Regester.png",
               ),
             ],
           ),
         ),
       ),
-    );
+    );;
   }
 }

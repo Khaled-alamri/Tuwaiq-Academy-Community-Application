@@ -1,46 +1,38 @@
 import 'package:final_project/Style/Style.dart';
 import 'package:flutter/material.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  CustomAppBar(
+class CustomAppBarWithOutPic extends StatelessWidget implements PreferredSizeWidget {
+  CustomAppBarWithOutPic(
       {super.key,
       this.height,
       this.title,
       this.titleColor,
       this.iconColor,
       this.onPressed,
-      this.iconImage,
-      required this.backgroundColor});
+      required  this.backgroundColor
+      });
   final double? height;
   String? title;
   Color? titleColor;
   Color? iconColor;
   Function()? onPressed;
-  String? iconImage;
   Color backgroundColor;
-  
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      
       toolbarHeight: height,
-      leading: IconButton(
-          onPressed: onPressed,
-          icon: ImageIcon(
-            AssetImage(iconImage!),
-            size: 30,
-            color: iconColor,
-          )),
       title: Text(
         title.toString(),
-        style: TextStyle(color: titleColor),
+        style: TextStyle(color: titleColor, fontWeight: FontWeight.bold),
       ),
       centerTitle: true,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(25), bottomLeft: Radius.circular(25)),
+            bottomRight: Radius.circular(20), bottomLeft: Radius.circular(25)),
       ),
-      backgroundColor: backgroundColor.withOpacity(0.2),
+      backgroundColor: backgroundColor,
       elevation: 0,
     );
   }

@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:final_project/Component/custom%20article%20card.dart';
+import 'package:final_project/Custom/Component/custom%20article%20card.dart';
 import 'package:final_project/Controller/homepage%20Controller.dart';
 import 'package:get/get.dart';
 

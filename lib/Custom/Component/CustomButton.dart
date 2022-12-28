@@ -1,3 +1,4 @@
+import 'package:final_project/Style/Style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -12,7 +13,7 @@ class CustomButton extends StatelessWidget {
       this.onPressed,
        required this.Colors});
   final double heigthOfButton;
-  final double widthOfButton;
+  final double? widthOfButton;
   final String NameOfButton;
   final Function()? onPressed;
   final Color Colors;
@@ -147,9 +148,10 @@ Widget filledButton({title, onPressed, radius}) {
   return Center(
     child: Container(
       width: double.infinity,
+      height: 55,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(radius ?? 50.0),
-        color: HexColor("#7660A9"),
+        borderRadius: BorderRadius.circular(5),
+        color: primaryColor.withOpacity(0.8),
       ),
       child: MaterialButton(
         onPressed: onPressed,

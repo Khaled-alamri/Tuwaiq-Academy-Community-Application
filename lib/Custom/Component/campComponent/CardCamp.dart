@@ -21,14 +21,13 @@ class CardCamp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap:onTap ,
-      
+      onTap:onTap ,    
       child: Container(
         margin: EdgeInsetsDirectional.all(10),
         padding: EdgeInsetsDirectional.all(20),
         decoration: BoxDecoration(
           borderRadius: BorderRadiusDirectional.circular(10),
-          color: HexColor("#dbd9de"),
+          color: Colors.white.withOpacity(0.5),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

@@ -56,18 +56,24 @@ class PageViewScreen extends StatelessWidget {
                     child: SizedBox(
                       width: 150,
                       height: 40,
-                      child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: primaryColor.withOpacity(0.5)),
-                          onPressed: () {
-                            //Get.off(appLayout());
-                            Get.to(() =>SignUpAndSignIn());
-                          },
-                          child: Text(
-                            "WelcomeButton".tr,
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          )),
+                      child: ConstrainedBox(
+                         constraints: BoxConstraints(
+                          maxWidth: 150,
+                          minWidth: 100
+                        ),
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: primaryColor.withOpacity(0.5)),
+                            onPressed: () {
+                              //Get.off(appLayout());
+                              Get.to(() =>SignUpAndSignIn());
+                            },
+                            child: Text(
+                              "WelcomeButton".tr,
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            )),
+                      ),
                     ),
                   )
                 : Positioned(
@@ -76,19 +82,25 @@ class PageViewScreen extends StatelessWidget {
                     child: SizedBox(
                       width: 150,
                       height: 40,
-                      child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.white.withOpacity(0.5)),
-                          onPressed: () {
-                            pageViewController.controller.nextPage(
-                                duration: Duration(microseconds: 500),
-                                curve: Curves.easeIn);
-                          },
-                          child: Text(
-                            "Next".tr,
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          )),
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: 150,
+                          minWidth: 100
+                        ),
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.white.withOpacity(0.5)),
+                            onPressed: () {
+                              pageViewController.controller.nextPage(
+                                  duration: Duration(microseconds: 500),
+                                  curve: Curves.easeIn);
+                            },
+                            child: Text(
+                              "Next".tr,
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            )),
+                      ),
                     ),
                   );
           },

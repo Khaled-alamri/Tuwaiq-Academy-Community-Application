@@ -1,5 +1,6 @@
-import 'package:final_project/Component/TitelCamp.dart';
-import 'package:final_project/Component/custom%20article%20card.dart';
+import 'package:final_project/Custom/Component/TitelCamp.dart';
+import 'package:final_project/Custom/Component/custom%20article%20card.dart';
+import 'package:final_project/Packages/package.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -11,51 +12,62 @@ class My_Post extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-     backgroundColor: HexColor("#f2eff6"),
-     appBar: PreferredSize(
-          preferredSize: Size.fromHeight(180), // Set this height
-          child: SafeArea(
-            child: ListView(
-              children: [
-              CustomTitleWithRadius(Title:  "منشوراتي",height1: 150,),
-                    ],
-                  ),
-          ),
-              ),
-
-      body: ListView(
-        scrollDirection:Axis.vertical ,
-        children: [
-                MyCustomArticleCard(
+    return Container(
+      alignment: Alignment.center,
+      height: Get.height,
+      width: Get.width,
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(colors: [liftShadow, rightShadow]),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: CustomAppBar(
+          title: "منشوراتي",
+          iconColor: primaryColor,
+          height: 70,
+          onPressed: (){
+            Get.back();
+          },
+          titleColor: primaryColor,
+          iconImage: "images/AppBarIcon/Back.png",
+          backgroundColor: primaryColor,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(defaultPadding),
+          child: ListView(
+            scrollDirection: Axis.vertical,
+            children: [
+              MyCustomArticleCard(
                   postTitle: "flutter",
                   likeCont: 15,
                   PostBody: "Hi this is the ",
                   PostOwnrName: "رهف",
                   cardDate: "12-17-2022",
                   commentCont: 4),
-                  MyCustomArticleCard(
+              MyCustomArticleCard(
                   postTitle: "test",
                   likeCont: 2,
                   PostBody: "Hi  ",
                   PostOwnrName: "test",
                   cardDate: "12-17-2022",
                   commentCont: 1),
-                  MyCustomArticleCard(
+              MyCustomArticleCard(
                   postTitle: "رهف محمد",
                   likeCont: 2,
                   PostBody: "Hi  ",
                   PostOwnrName: "رهف",
                   cardDate: "12-17-2022",
                   commentCont: 1),
-                  MyCustomArticleCard(
+              MyCustomArticleCard(
                   postTitle: "رهف محمد",
                   likeCont: 2,
                   PostBody: "Hi  ",
                   PostOwnrName: "رهف",
                   cardDate: "12-17-2022",
                   commentCont: 1),
-        ],
+            ],
+          ),
+        ),
       ),
     );
   }

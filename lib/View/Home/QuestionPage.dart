@@ -1,17 +1,5 @@
 import 'dart:io';
-import 'package:final_project/Component/CustomButton.dart';
-import 'package:final_project/Component/CustomTextField.dart';
-import 'package:final_project/Component/Image/Image.dart';
-import 'package:final_project/Component/QuestionPage/Radio.dart';
-import 'package:final_project/Component/TitelCamp.dart';
-import 'package:final_project/Services/Storage/File.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:hexcolor/hexcolor.dart';
-import 'package:image_picker/image_picker.dart';
+import '../../Packages/package.dart';
 
 class QuestionPage extends StatefulWidget {
   const QuestionPage({super.key});
@@ -25,99 +13,126 @@ class _QuestionPageState extends State<QuestionPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: HexColor("#f2eff6"),
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(160), // Set this height
-        child: SafeArea(
+    return Container(
+      alignment: Alignment.center,
+      height: Get.height,
+      width: Get.width,
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(colors: [liftShadow, rightShadow]),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: CustomAppBar(
+          backgroundColor: primaryColor,
+          iconColor: primaryColor,
+          onPressed: () {
+            Get.back();
+          },
+          title: "إضافة منشور",
+          height: 70,
+          iconImage: "images/AppBarIcon/Back.png",
+          titleColor: primaryColor,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(defaultPadding + 5),
           child: ListView(
             children: [
-              CustomTitleWithRadius(
-                Title: "اضافة منشور",
-                height1: 160,
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Column(
+                  children: [
+                    Align(
+                        alignment: Alignment.topRight,
+                        child: Text(
+                          "عنوان المنشور",
+                          style: TextStyle(fontSize: 20),
+                        )),
+                    CustomTextField2(hintTextShow: "عنوان المشور"),
+                  ],
+                ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Column(
+                  children: [
+                    Align(
+                        alignment: Alignment.topRight,
+                        child: Text(
+                          "الوصف",
+                          style: TextStyle(fontSize: 20),
+                        )),
+                    CustomTextFieldPost(
+                      labelTextShow: "وصف للموضوع المطروح",
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30),
+                child: Text(
+                  "نوع المنشور",
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  RodioB(
+                    name: "سؤال",
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  RodioB(
+                    name: "مقال",
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              IconButton(
+                onPressed: () async {
+                  addImage();
+                },
+                icon: Icon(
+                  Icons.add_photo_alternate_outlined,
+                  size: 50,
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              _image != null
+                  ? Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Image.file(
+                        _image!,
+                        width: 200,
+                        height: 250,
+                        fit: BoxFit.cover,
+                      ),
+                    )
+                  : Center(
+                      child: Text(
+                      "اضف صوره",
+                      style: TextStyle(fontSize: 18),
+                    )),
+              SizedBox(
+                height: 20,
+              ),
+              filledButton(
+                  onPressed: () {
+                    try {
+                      AddImages(Image: _image!);
+                    } catch (e) {
+                      print(e);
+                    }
+                  },
+                  title: "اضف المنشور")
             ],
           ),
         ),
-      ),
-      body: ListView(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
-            child: Column(
-              children: [
-                Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "عنوان المنشور",
-                      style: TextStyle(fontSize: 20),
-                    )),
-                CustomTextField2(hintTextShow: "عنوان المشور"),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-            child: Column(
-              children: [
-                Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "الوصف",
-                      style: TextStyle(fontSize: 20),
-                    )),
-                CustomTextFieldPost(
-                  labelTextShow: "وصف للموضوع المطروح",
-                )
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 30, top: 30),
-            child: Text(
-              "نوع المنشور",
-              style: TextStyle(fontSize: 20),
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              RodioB(
-                name: "سؤال",
-              ),
-              RodioB(
-                name: "مقال",
-              ),
-            ],
-          ),
-          IconButton(
-            onPressed: () async {
-              addImage();
-            },
-            icon: Icon(Icons.image),
-          ),
-          _image != null
-              ? Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                  child: Image.file(
-                    _image!,
-                    width: 200,
-                    height: 250,
-                    fit: BoxFit.cover,
-                  ),
-                )
-              : Center(child: Text("اضف صوره")),
-          filledButton(
-              onPressed: () {
-                try {
-                   AddImages(Image: _image!);
-                } catch (e) {
-                  print(e);
-                }
-              },
-              title: "اضف المنشور")
-        ],
       ),
     );
   }

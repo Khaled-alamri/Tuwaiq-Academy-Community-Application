@@ -1,5 +1,5 @@
-import 'package:final_project/Component/custom%20IconwithName.dart';
-import 'package:final_project/Component/custom%20contentText.dart';
+import 'package:final_project/Custom/Component/custom%20IconwithName.dart';
+import 'package:final_project/Custom/Component/custom%20contentText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
