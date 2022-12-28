@@ -1,17 +1,7 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:final_project/Localization/Languages.dart';
-import 'package:final_project/Router/Routers.dart';
-import 'package:final_project/View/Home/home_screen.dart';
-import 'package:final_project/View/OnBoarding/PageView.dart';
-import 'package:final_project/View/Sing/signin_screen.dart';
-import 'package:final_project/View/Sing/signup_and_signin_screen.dart';
-import 'package:final_project/View/Splash_Screen/SplashScreen.dart';
-import 'package:final_project/View/app_layout.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-import 'firebase_options.dart';
+
+
+import 'package:final_project/firebase_options.dart';
+import 'Packages/package.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,7 +21,10 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       //home: GetStorage().read("userID") == null ? const SignUpAndSignIn() : AppLayout(),
 
+
+
       initialRoute: RouterNames.pageView,
+
       
       getPages: getPages,
       translations: Languages(),
