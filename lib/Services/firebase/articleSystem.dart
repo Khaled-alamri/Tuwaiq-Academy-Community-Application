@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class articleSystem {
   //HomePageController c_homePage = Get.put(HomePageController());
 
-  PostController c_post = Get.put(PostController());
+  // PostController c_post = Get.put(PostController());
 
   var instance = FirebaseFirestore.instance;
   createPost(
