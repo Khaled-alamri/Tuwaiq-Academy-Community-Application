@@ -24,6 +24,9 @@ class PresentCamp extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: CustomAppBar(
+          onPressed: (){
+            Get.back();
+          },
             title: "معسكر Flutter",
             iconColor: postColor,
             height: 70,

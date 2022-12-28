@@ -12,10 +12,10 @@ class TopCard extends StatelessWidget {
       height: 200,
       decoration: BoxDecoration(
           borderRadius: BorderRadiusDirectional.circular(10),
-          color: HexColor("#dbd9de"),
+          color: Colors.white,
           image: DecorationImage(
-              image: AssetImage("images/flutter210update_Dashlaptop_wText 1.png"),
-              fit: BoxFit.cover)),
+              image: AssetImage("images/ISO_C++_Logo.svg.png"),
+              fit: BoxFit.contain)),
     );
   }
 }
