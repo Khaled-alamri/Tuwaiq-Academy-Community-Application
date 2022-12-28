@@ -21,7 +21,10 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       //home: GetStorage().read("userID") == null ? const SignUpAndSignIn() : AppLayout(),
 
-      initialRoute: RouterNames.GuestAppLayout,
+
+
+      initialRoute: RouterNames.pageView,
+
       
       getPages: getPages,
       translations: Languages(),

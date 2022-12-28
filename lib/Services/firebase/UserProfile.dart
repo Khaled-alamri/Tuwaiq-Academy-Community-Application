@@ -2,8 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FireStore {
   var instance = FirebaseFirestore.instance;
-
-
   SendDataUser(
       {required String idUser, required Map<String, dynamic> infoUser}) async {
     await instance
@@ -18,6 +16,4 @@ class FireStore {
       }
     });
   }
-
-  
 }

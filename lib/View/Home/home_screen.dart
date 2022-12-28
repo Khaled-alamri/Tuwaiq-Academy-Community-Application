@@ -52,7 +52,7 @@ class HomeScreen extends StatelessWidget {
                           likeCont: C_HomePage.articleList[index]
                               ["likeCount"],
                           PostOwnrName: C_HomePage.articleList[index]
-                              ["auth Name"],
+                              ["authName"],
                           postTitle: C_HomePage.articleList[index]["title"],
                           PostBody: C_HomePage.articleList[index]["body"]);
                     });

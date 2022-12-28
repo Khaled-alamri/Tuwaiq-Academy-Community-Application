@@ -14,7 +14,7 @@ class articleSystem {
       Function(String)? isDone}) async {
     var newArtile = await instance.collection("article").doc();
 
-    articlData.addAll({"postUID": newArtile.id});
+     articlData.addAll({"postUID": newArtile.id});
     await instance.collection("article").doc(newArtile.id).set(articlData);
   }
 
