@@ -4,6 +4,7 @@ import 'package:final_project/Component/custom%20contentText.dart';
 import 'package:final_project/Component/custom%20article%20card.dart';
 import 'package:final_project/Controller/homepage%20Controller.dart';
 import 'package:final_project/Custom/CustomAppBar.dart';
+import 'package:final_project/Custom/CustomAppBarWithOutPic.dart';
 import 'package:final_project/Packages/package.dart';
 import 'package:final_project/Services/Storage/File.dart';
 import 'package:final_project/View/Home/QuestionPage.dart';
@@ -29,16 +30,16 @@ class HomeScreen extends StatelessWidget {
             LinearGradient(colors: [Color(0xFFD9FFF3), Color(0xFFFFE1F9)]),
       ),
       child: Scaffold(
-        appBar: CustomAppBar1(
-          title: "الصفحة الرئيسية",
+        appBar: CustomAppBarWithOutPic(
+          backgroundColor: primaryColor.withOpacity(0.2),
           height: 70,
+          iconColor: primaryColor,
+          title: "الصفحة الرئيسية",
           titleColor: primaryColor,
         ),
         backgroundColor: Colors.transparent,
-        body: 
-            ListView(children: [
-          
-           GetBuilder<HomePageController>(
+        body: ListView(children: [
+          GetBuilder<HomePageController>(
               init: HomePageController(),
               builder: (_) {
                 return ListView.builder(
@@ -49,17 +50,15 @@ class HomeScreen extends StatelessWidget {
                           cardDate: C_HomePage.articleList[index]["date"],
                           commentCont: C_HomePage.articleList[index]
                               ["commentCount"],
-                          likeCont: C_HomePage.articleList[index]
-                              ["likeCount"],
+                          likeCont: C_HomePage.articleList[index]["likeCount"],
                           PostOwnrName: C_HomePage.articleList[index]
-                              ["auth Name"],
+                              ["authName"],
                           postTitle: C_HomePage.articleList[index]["title"],
                           PostBody: C_HomePage.articleList[index]["body"]);
                     });
               }),
-        ]
-        )
-        ,
+        ]),
+        floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
         floatingActionButton: FloatingActionButton(
           backgroundColor: HexColor("#117c78"),
           onPressed: () {
