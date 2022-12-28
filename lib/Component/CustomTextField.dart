@@ -32,14 +32,10 @@ class CustomTextField extends StatelessWidget {
       },
       controller: controller,
       decoration: InputDecoration(
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-            color: primaryColor
-          )
-        ),
-        focusedBorder: OutlineInputBorder(borderSide: BorderSide(
-          color: primaryColor
-        )),
+        enabledBorder:
+            OutlineInputBorder(borderSide: BorderSide(color: primaryColor)),
+        focusedBorder:
+            OutlineInputBorder(borderSide: BorderSide(color: primaryColor)),
         prefixIcon: Icon(
           IconForText,
           color: primaryColor.withOpacity(0.4),
@@ -92,7 +88,8 @@ class CustomTextFieldWithBorder extends StatelessWidget {
       },
       controller: controller,
       decoration: InputDecoration(
-        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: borderColor)),
+        enabledBorder:
+            OutlineInputBorder(borderSide: BorderSide(color: borderColor)),
         focusedBorder:
             OutlineInputBorder(borderSide: BorderSide(color: borderColor)),
         prefixIcon: Icon(
@@ -114,22 +111,21 @@ class CustomTextFieldWithBorder extends StatelessWidget {
 }
 
 class CustomTextFieldPost extends StatelessWidget {
-   CustomTextFieldPost(
-      {super.key,
-      //required this.validaterMasseg,
-      required this.labelTextShow,
-      this.IconForText,
-      this.maxLength,
-      this.Controller,
-      this.onChanged,
-      });
+  CustomTextFieldPost({
+    super.key,
+    //required this.validaterMasseg,
+    required this.labelTextShow,
+    this.IconForText,
+    this.maxLength,
+    this.Controller,
+    this.onChanged,
+  });
   //final String validaterMasseg;
   final String labelTextShow;
   final IconData? IconForText;
   final int? maxLength;
   final TextEditingController? Controller;
   Function(String)? onChanged;
-  
 
   @override
   Widget build(BuildContext context) {
@@ -141,28 +137,25 @@ class CustomTextFieldPost extends StatelessWidget {
       //   } add validator in text
       // },
       controller: Controller,
-      decoration: InputDecoration(     
-        prefixIcon: Icon(
-          IconForText,
-          color: HexColor("#7660A9"),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-            color: primaryColor,
+      decoration: InputDecoration(
+          prefixIcon: Icon(
+            IconForText,
+            color: HexColor("#7660A9"),
           ),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-            color: primaryColor,
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: primaryColor,
+            ),
           ),
-        ),
-        hintText: 
-          labelTextShow,
-          hintStyle: TextStyle(
-            color: primaryColor.withOpacity(0.5),  ),
-        filled: true,
-        fillColor: Colors.white.withOpacity(0.3)
-      ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: primaryColor,
+            ),
+          ),
+          hintText: labelTextShow,
+          hintStyle: TextStyle(color: Colors.black.withOpacity(0.5)),
+          filled: true,
+          fillColor: Colors.white.withOpacity(0.3)),
       maxLength: maxLength,
       maxLines: 5,
     );
@@ -170,15 +163,14 @@ class CustomTextFieldPost extends StatelessWidget {
 }
 
 class CustomTextField2 extends StatelessWidget {
-   CustomTextField2({
-    super.key,
-    required this.hintTextShow,
-    this.labelTextShow,
-    this.keyboardType,
-    this.IconForText,
-    this.controller,
-    this.onChanged
-  });
+  CustomTextField2(
+      {super.key,
+      required this.hintTextShow,
+      this.labelTextShow,
+      this.keyboardType,
+      this.IconForText,
+      this.controller,
+      this.onChanged});
 
   final String hintTextShow;
   final String? labelTextShow;
@@ -191,7 +183,7 @@ class CustomTextField2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       child: TextField(
-        onChanged:onChanged ,
+        onChanged: onChanged,
         keyboardType: keyboardType,
         controller: controller,
         decoration: InputDecoration(
@@ -204,18 +196,17 @@ class CustomTextField2 extends StatelessWidget {
             borderSide: BorderSide(
               color: Colors.white,
             ),
-            
           ),
-              enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-            color: primaryColor,
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: primaryColor,
+            ),
           ),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-            color: primaryColor,
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: primaryColor,
+            ),
           ),
-        ),
           filled: true,
           fillColor: Color.fromARGB(153, 255, 255, 255),
         ),
