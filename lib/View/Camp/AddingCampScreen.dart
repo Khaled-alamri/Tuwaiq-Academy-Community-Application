@@ -5,6 +5,7 @@ import 'package:final_project/Component/Image/Image.dart';
 import 'package:final_project/Component/QuestionPage/Radio.dart';
 import 'package:final_project/Component/TitelCamp.dart';
 import 'package:final_project/Controller/Article%20Controller.dart';
+import 'package:final_project/Controller/Camp%20Controller.dart';
 import 'package:final_project/Controller/GetImage.dart';
 import 'package:final_project/Services/Storage/File.dart';
 import 'package:flutter/foundation.dart';
@@ -16,15 +17,16 @@ import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:image_picker/image_picker.dart';
 
-class QuestionPage extends StatefulWidget {
-  const QuestionPage({super.key});
+class AddingCampScreen extends StatefulWidget {
+  const AddingCampScreen({super.key});
+  
 
   @override
-  State<QuestionPage> createState() => _QuestionPageState();
+  State<AddingCampScreen> createState() => _AddingCampScreen();
 }
 
-class _QuestionPageState extends State<QuestionPage> {
-  PostController C_Article = Get.put(PostController());
+class _AddingCampScreen extends State<AddingCampScreen> {
+  CampController C_Camp = Get.put(CampController());
   File? _image;
 
   @override
@@ -37,7 +39,7 @@ class _QuestionPageState extends State<QuestionPage> {
           child: ListView(
             children: [
               CustomTitleWithRadius(
-                Title: "اضافة منشور",
+                Title: "انشاء معسكر",
                 height1: 160,
               ),
             ],
@@ -53,12 +55,12 @@ class _QuestionPageState extends State<QuestionPage> {
                 Align(
                     alignment: Alignment.topRight,
                     child: Text(
-                      "عنوان المنشور",
+                      "عنوان المعسكر",
                       style: TextStyle(fontSize: 20),
                     )),
                 CustomTextField2(
-                    onChanged: (Value) => C_Article.title = Value,
-                    hintTextShow: "عنوان المشور"),
+                    onChanged: (Value) => C_Camp.title = Value,
+                    hintTextShow: "عنوان المعسكر"),
               ],
             ),
           ),
@@ -69,12 +71,12 @@ class _QuestionPageState extends State<QuestionPage> {
                 Align(
                     alignment: Alignment.topRight,
                     child: Text(
-                      "الوصف",
+                      "تفاصيل المعسكر",
                       style: TextStyle(fontSize: 20),
                     )),
                 CustomTextFieldPost(
-                  onChanged: (Value) => C_Article.body = Value,
-                  labelTextShow: "وصف للموضوع المطروح",
+                  onChanged: (Value) => C_Camp.body = Value,
+                  labelTextShow: "اذكر اهداف و تفاصيل المعسكر",
                 )
               ],
             ),
@@ -82,20 +84,9 @@ class _QuestionPageState extends State<QuestionPage> {
           Padding(
             padding: const EdgeInsets.only(right: 30, top: 30),
             child: Text(
-              "نوع المنشور",
+              " ",
               style: TextStyle(fontSize: 20),
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              RodioB(
-                name: "سؤال",
-              ),
-              RodioB(
-                name: "مقال",
-              ),
-            ],
           ),
           IconButton(
             onPressed: () async {
@@ -103,32 +94,37 @@ class _QuestionPageState extends State<QuestionPage> {
             },
             icon: Icon(Icons.image),
           ),
-          _image != null
-              ? Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 15),
-                      child: Image.file(
-                        _image!,
-                        width: 200,
-                        height: 250,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ],
-                )
-              : Center(child: Text("اضف صوره")),
+          // _image != null
+          //     ? Column(
+          //         children: [
+          //           Padding(
+          //             padding: const EdgeInsets.symmetric(
+          //                 horizontal: 30, vertical: 15),
+          //             child: Image.file(
+          //               _image!,
+          //               width: 200,
+          //               height: 250,
+          //               fit: BoxFit.cover,
+          //             ),
+          //           ),
+          //         ],
+          // //       )
+          //     : Center(child: Text("اضف صوره")),
           filledButton(
               onPressed: () {
                 try {
-                  GetImage().AddImages(Image: _image!);
-                  C_Article.MethodCreatePost();
+                 // GetImage().AddImages(Image: _image!);
+                  C_Camp.MethodCreatePost();
                 } catch (e) {
                   print(e);
                 }
               },
-              title: "اضف المنشور", ),
+              title: "اضف المعسكر"),
+          TextButton(
+              onPressed: () {
+                // getImages();
+              },
+              child: Text("اضافة"))
         ],
       ),
     );

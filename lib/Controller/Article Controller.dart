@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:final_project/Controller/Profile%20controller.dart';
 import 'package:final_project/Packages/package.dart';
 import 'package:final_project/Services/firebase/articleSystem.dart';
 import 'package:get/get.dart';
@@ -17,22 +18,33 @@ class PostController extends GetxController {
   int commentCount = 0;
   int likeCount = 0;
   articleSystem newPost = articleSystem();
+  profileController C_Profile = Get.find();
 
   MethodCreatePost() async {
     // await newPost.createArticle(articlData: articlData)
     Map<String, dynamic> articleInfo = {
-      "authName": authName,
+      "authName":C_Profile.firstName+" " +C_Profile.lastName,
       "authUID": authUID,
       "title": title,
       "image": image,
       "date": date,
       "article": article,
       "commentCount": commentCount,
-      "likeCount": likeCount
+      "likeCount": likeCount,
+      "body": body
     };
     await newPost.createPost(
       articlData: articleInfo,
       isDone: (Value) {},
     );
+  }
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    C_Profile.profileData();
+    C_Profile.firstName;
+    print(C_Profile.firstName);
   }
 }

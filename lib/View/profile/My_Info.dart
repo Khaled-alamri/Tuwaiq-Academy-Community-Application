@@ -8,8 +8,9 @@ import 'package:hexcolor/hexcolor.dart';
 
 class My_Info extends StatelessWidget {
   My_Info({super.key});
+  String GetImages = "";
 
-  profileController C_Profile = Get.put(profileController());
+ profileController C_Profile = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,10 +30,7 @@ class My_Info extends StatelessWidget {
                     AssetImage("images/ion_chevron-back-circle-outline.png"),
                     size: 50,
                   ))),
-          Avter(
-            Img: "images/images 1.png",
-            size: 70,
-          ),
+          Avter(),
           Padding(
             padding: EdgeInsets.only(left: 50, right: 50, top: 20),
             child: Column(
@@ -85,7 +83,8 @@ class My_Info extends StatelessWidget {
                   heigthOfButton: 50,
                   widthOfButton: 324,
                   onPressed: () {
-                    C_Profile.futchMyInfo();
+                    //C_Profile.futchMyInfo();
+                    C_Profile.profileData();
                   },
                 )
               ],
