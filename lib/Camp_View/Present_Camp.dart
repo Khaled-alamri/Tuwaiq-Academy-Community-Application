@@ -24,6 +24,7 @@ class PresentCamp extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: CustomAppBar(
+              backgroundColor: Colors.white.withOpacity(0.8) ,
           onPressed: (){
             Get.back();
           },

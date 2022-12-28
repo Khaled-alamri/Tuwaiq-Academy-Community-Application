@@ -1,7 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:final_project/Component/CustomButton.dart';
-import 'package:final_project/Component/CustomTextField.dart';
 import 'package:final_project/Component/campComponent/CardCamp.dart';
+import 'package:final_project/Custom/CustomAppBarWithOutPic.dart';
+import 'package:final_project/Router/Routers.dart';
+import 'package:final_project/Style/Style.dart';
 import 'package:final_project/Component/TitelCamp.dart';
 import 'package:final_project/View/Camp/AddingCampScreen.dart';
 import 'package:flutter/material.dart';
@@ -15,16 +16,29 @@ class CampPresnt extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: HexColor("#f2eff6"),
-        body: ListView(children: [
-          CardCamp(
-              DateOfCamp: "شهرين",
-              NamberOfStudent: "25",
-              Img: "images/js.png",
-              NameOfCamp: "Flutter",
-              detailsOfCamp: " معسكر جافاسكربت"),
-        ]));
+    return Container(
+      padding: EdgeInsets.all(defaultPadding -5),
+       height: Get.height,
+      width: Get.width,
+      decoration: const BoxDecoration(
+        gradient:
+            LinearGradient(colors: [Color(0xFFD9FFF3), Color(0xFFFFE1F9)]),
+      ),
+      child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: ListView(children: [
+            CardCamp(
+              onTap: (){
+                Get.toNamed(RouterNames.PresentCamp);
+              },
+              backgroundColor: flutterRightShadow.withOpacity(0.2),
+                DateOfCamp: "28-12-2022",
+                NamberOfStudent: "22",
+                Img: "images/BackGround/Flutter_Logo.png",
+                NameOfCamp: "معسكر Flutter ",
+                detailsOfCamp: "معسكر تدريبي مكثف لتطوير تطبيقات الجوال والويب باستخدام إطار عمل Flutter، والذي يعتبر الإطار الأحدث والأسهل لبناء تطبيقات تعمل على عدة أنظمة."),
+          ])),
+    );
   }
 }
 
@@ -33,23 +47,24 @@ class CampPresnt_2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: HexColor("#f2eff6"),
-        body: ListView(children: [
-          CardCamp(
-              DateOfCamp: "شهرين",
-              NamberOfStudent: "25",
-              Img: "images/java.png",
-              NameOfCamp: "Flutter",
-              detailsOfCamp: "معسكر Java"),
-              
-          CardCamp(
-              DateOfCamp: "شهرين",
-              NamberOfStudent: "25",
-              Img: "images/Flutter Logo 1.png",
-              NameOfCamp: "Flutter",
-              detailsOfCamp: "معسكر flutter"),
-        ]));
+    return Container(
+      padding: EdgeInsets.all(defaultPadding - 5),
+      child: Scaffold(
+          backgroundColor: Colors.white.withOpacity(0.3),
+          body: ListView(children: [
+            CardCamp(
+              backgroundColor: jScriptRightShadow,
+                DateOfCamp: "15-01-2022",
+                NamberOfStudent: "23",
+                Img: "images/BackGround/JavaScript_Logo.png",
+                NameOfCamp: "معسكر Java",
+                detailsOfCamp: "معسكر مكثف يقدّم تجربة فريدة من نوعها بخبرة عميقة في بناء واختبار تطبيقات الويب باستخدام لغة JavaScript",
+                onTap: (){
+                  Get.toNamed(RouterNames.FutureCamp);
+                },),
+            
+          ])),
+    );
   }
 }
 
@@ -58,48 +73,58 @@ class TitelPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: HexColor("#d4c7de"),
-          bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(110),
-            child: Column(
-              children: [
-                 CustomTitle(Title:"المعسكرات",height1: 110),
-              ],
-            ),
+    return Container(
+      padding: EdgeInsets.only(top: defaultPadding),
+      height: Get.height,
+      width: Get.width,
+      decoration: const BoxDecoration(
+        gradient:
+            LinearGradient(colors: [Color(0xFFD9FFF3), Color(0xFFFFE1F9)]),
+      ),
+      child: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: CustomAppBarWithOutPic(
+            title: "المعسكرات",
+            height: 60,
+            titleColor: primaryColor,
+          backgroundColor: primaryColor.withOpacity(0.1),
           ),
-        ),
-        body: Column(
-          children: [
-            TabBar(
-              labelColor:  Color.fromARGB(255, 255, 255, 255),
-              indicator: UnderlineTabIndicator(),
-              tabs: [
-                Tab(
-                  
-                  child: Text("الحاليه",style: TextStyle(fontSize: 28,color: Color.fromARGB(255, 184, 36, 36)),)
-                ),
-                Tab(
-                 
-                  child: Text("القادمه",style: TextStyle(fontSize: 28,color:Color.fromARGB(255, 4, 81, 123)),)
-                )
-              ],
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            Expanded(
-              child: TabBarView(
-                children: [
-                  CampPresnt(),
-                  CampPresnt_2()
+          body: Column(
+            children: [
+              TabBar(
+                unselectedLabelColor: Colors.white,
+                
+                // labelColor: primaryColor,
+                indicator: UnderlineTabIndicator(),
+                tabs: [
+                  Tab(
+                      child: Text(
+                    "الحاليه",
+                    style: TextStyle(
+                        fontSize: 25, color: primaryColor),
+                  )),
+                  Tab(
+                      child: Text(
+                    "القادمه",
+                    style: TextStyle(
+                        fontSize: 25, color: primaryColor),
+                  ))
                 ],
               ),
+              SizedBox(
+                height: 25,
+              ),
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    CampPresnt(), 
+                    CampPresnt_2()
+                    ],
+                ),
+              ),
+            ],
             ),
           ],
         ), floatingActionButton: FloatingActionButton(
@@ -114,6 +139,7 @@ class TitelPage extends StatelessWidget {
           ),
         ),
       ),
-    );;
+    );
+    ;
   }
 }
