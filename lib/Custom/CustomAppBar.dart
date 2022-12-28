@@ -9,13 +9,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.titleColor,
       this.iconColor,
       this.onPressed,
-      this.iconImage});
+      this.iconImage,  this.backgroundColor});
   final double? height;
   String? title;
   Color? titleColor;
   Color? iconColor;
   Function()? onPressed;
   String? iconImage;
+  Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(25), bottomLeft: Radius.circular(25)),
       ),
-      backgroundColor: Colors.white.withOpacity(0.3),
+      backgroundColor: backgroundColor,
       elevation: 0,
     );
   }
