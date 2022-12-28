@@ -9,8 +9,9 @@ import 'package:hexcolor/hexcolor.dart';
 
 class My_Info extends StatelessWidget {
   My_Info({super.key});
+  String GetImages = "";
 
-  profileController C_Profile = Get.put(profileController());
+ profileController C_Profile = Get.find();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -90,11 +91,13 @@ class My_Info extends StatelessWidget {
                     NameOfButton: "حفظ",
                     heigthOfButton: 55,
                     onPressed: () {
-                      C_Profile.futchMyInfo();
+                     //C_Profile.futchMyInfo();
+                    C_Profile.profileData();
                     },
                   )
                 ],
               ),
+
             ),
           ],
         ),

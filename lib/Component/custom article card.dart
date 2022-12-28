@@ -15,7 +15,7 @@ class CustomArticleCard extends StatelessWidget {
       required this.PostOwnrName,
       required this.postTitle,
       required this.PostBody,
-      this.onTap});
+      this.onTap, required this.authImage});
 
   final String cardDate;
   final int commentCont;
@@ -24,6 +24,7 @@ class CustomArticleCard extends StatelessWidget {
   final String postTitle;
   final String PostBody;
   Function()? onTap;
+  final String authImage;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,7 @@ class CustomArticleCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                nameWithIcon(PostOwnrName: PostOwnrName),
+                nameWithIcon(PostOwnrName: PostOwnrName,authImage:authImage ),
                 Spacer(),
                 Text(
                   cardDate,
@@ -116,6 +117,7 @@ class MyCustomArticleCard extends StatelessWidget {
   final String PostOwnrName;
   final String postTitle;
   final String PostBody;
+
 
   @override
   Widget build(BuildContext context) {

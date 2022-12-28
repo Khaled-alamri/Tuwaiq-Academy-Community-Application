@@ -150,6 +150,39 @@ class _QuestionPageState extends State<QuestionPage> {
             ],
           ),
         ),
+          IconButton(
+            onPressed: () async {
+              addImage();
+            },
+            icon: Icon(Icons.image),
+          ),
+          _image != null
+              ? Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 15),
+                      child: Image.file(
+                        _image!,
+                        width: 200,
+                        height: 250,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
+                )
+              : Center(child: Text("اضف صوره")),
+          filledButton(
+              onPressed: () {
+                try {
+                  GetImage().AddImages(Image: _image!);
+                  C_Article.MethodCreatePost();
+                } catch (e) {
+                  print(e);
+                }
+              },
+              title: "اضف المنشور", ),
+        ],
       ),
     );
   }
