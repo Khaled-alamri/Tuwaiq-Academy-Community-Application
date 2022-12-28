@@ -34,7 +34,7 @@ class GuestHomeScreen extends StatelessWidget {
           child: ListView(children: [
                 CustomQuestionCard(
                 onTap: (){
-                  Get.to(() => ProblemScreen());
+                  Get.toNamed(RouterNames.GusteProblemScreen);
                 },
                 PostBody: "كيف احمل برنامج xampp ",
                 PostOwnrName: "محمد عبدالرحمن",

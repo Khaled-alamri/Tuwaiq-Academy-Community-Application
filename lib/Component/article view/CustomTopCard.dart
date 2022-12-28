@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class TopCard extends StatelessWidget {
-  const TopCard({Key? key}) : super(key: key);
+   TopCard({Key? key,
+   required this.imagePQ
+   }) : super(key: key);
 
+  String imagePQ;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,7 +17,7 @@ class TopCard extends StatelessWidget {
           borderRadius: BorderRadiusDirectional.circular(10),
           color: Colors.white,
           image: DecorationImage(
-              image: AssetImage("images/ISO_C++_Logo.svg.png"),
+              image: AssetImage(imagePQ),
               fit: BoxFit.contain)),
     );
   }
