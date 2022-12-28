@@ -1,11 +1,16 @@
+import 'package:final_project/Controller/Profile%20controller.dart';
 import 'package:final_project/View/Camp/CampPresnt.dart';
 import 'package:final_project/View/Home/home_screen.dart';
 import 'package:final_project/View/article/search_field.dart';
 import 'package:final_project/View/profile/profileView.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class AppLayout extends StatefulWidget {
+  profileController C_Profile = Get.put(profileController());
+  
+
   @override
   State<AppLayout> createState() => _AppLayoutState();
 }
@@ -32,7 +37,6 @@ class _AppLayoutState extends State<AppLayout> {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: HexColor("#433b81"),
-        
         onTap: (index) {
           setState(() {
             changeBottomNav(index);

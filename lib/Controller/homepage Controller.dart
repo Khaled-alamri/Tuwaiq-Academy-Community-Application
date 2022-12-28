@@ -1,4 +1,5 @@
 import 'package:final_project/Component/custom%20article%20card.dart';
+import 'package:final_project/Controller/Profile%20controller.dart';
 import 'package:final_project/Services/firebase/Auth/EmailAndPassword.dart';
 import 'package:final_project/Services/firebase/articleSystem.dart';
 import 'package:get/get.dart';
@@ -13,6 +14,7 @@ class HomePageController extends GetxController {
 
   // CustomArticleCard articleCard = CustomArticleCard(PostBody: body,PostOwnrName: authName,);
   articleSystem article = articleSystem();
+
   List articleList = [];
 
   @override
@@ -20,7 +22,6 @@ class HomePageController extends GetxController {
     // TODO: implement onInit
     super.onInit();
     articleList = await article.viewAllArticle();
-    print(articleList);
     update();
   }
 
@@ -35,7 +36,6 @@ class HomePageController extends GetxController {
         likeCont: refData["likeCount"],
         postTitle: refData["title"],
       );
-     
 
       update();
     } catch (e) {

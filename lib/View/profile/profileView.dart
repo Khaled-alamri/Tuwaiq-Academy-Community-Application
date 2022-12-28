@@ -15,7 +15,7 @@ import 'package:hexcolor/hexcolor.dart';
 class profile extends StatelessWidget {
   profile({super.key});
 
-  profileController C_Profile = Get.put(profileController());
+  profileController C_Profile = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

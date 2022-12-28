@@ -129,11 +129,6 @@ class _QuestionPageState extends State<QuestionPage> {
                 }
               },
               title: "اضف المنشور", ),
-          TextButton(
-              onPressed: () {
-                // getImages();
-              },
-              child: Text("hfhf"))
         ],
       ),
     );
