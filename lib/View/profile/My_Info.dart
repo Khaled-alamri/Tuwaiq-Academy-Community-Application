@@ -8,6 +8,7 @@ import 'package:hexcolor/hexcolor.dart';
 
 class My_Info extends StatelessWidget {
   My_Info({super.key});
+  String GetImages = "";
 
   profileController C_Profile = Get.put(profileController());
   @override
@@ -30,6 +31,7 @@ class My_Info extends StatelessWidget {
                     size: 50,
                   ))),
           Avter(
+           
           ),
           Padding(
             padding: EdgeInsets.only(left: 50, right: 50, top: 20),
