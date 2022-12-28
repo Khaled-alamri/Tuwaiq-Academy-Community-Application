@@ -9,32 +9,33 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
-String getimage = "";
-
 class Avter extends StatelessWidget {
-  Avter({
-    super.key,
-  });
+  Avter({super.key});
+//  final Function(String)? ontap;
+  profileController C_Profile = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        getimage = profileController1().addImagesProfile();
-        print(getimage);
+        print("sdfgh"+C_Profile.image1);
+        C_Profile.addImagesProfile();
       },
       child: CircleAvatar(
         backgroundColor: Color(0xff4A3A75),
         radius: 80,
         child: ClipOval(
-          child: getimage == ""
+          child: C_Profile.image1 == ""
               ? Icon(
                   Icons.person,
                   size: 80,
                 )
-              : Image.network(getimage, width: 150,
-    height: 150,
-    fit: BoxFit.cover,),
+              : Image.network(
+                  C_Profile.image1,
+                  width: 150,
+                  height: 150,
+                  fit: BoxFit.cover,
+                ),
         ),
       ),
     );
@@ -42,9 +43,8 @@ class Avter extends StatelessWidget {
 }
 
 class Avter1 extends StatelessWidget {
+  String GetImage1 = "";
   Avter1({super.key});
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -52,46 +52,18 @@ class Avter1 extends StatelessWidget {
       backgroundColor: Color(0xff4A3A75),
       radius: 80,
       child: ClipOval(
-        child: getimage == ""
+        child: GetImage1 == ""
             ? Icon(
                 Icons.person,
                 size: 80,
               )
-            : Image.network(getimage, width: 150,
-    height: 150,
-    fit: BoxFit.cover,),
+            : Image.network(
+                GetImage1,
+                width: 150,
+                height: 150,
+                fit: BoxFit.cover,
+              ),
       ),
     );
   }
-}
-
-class profileController1 extends GetxController {
-  addImagesProfile() async {
-    String k;
-    var instance = FirebaseStorage.instance;
-    try {
-      var image = await ImagePicker().pickImage(source: ImageSource.gallery);
-
-      Reference ref =
-          await instance.ref().child("Profile/${generateRandomString(10)}.png");
-      await ref.putFile(File(image!.path));
-      await ref.getDownloadURL().then((value) {
-        getimage = value;
-        print(getimage);
-      });
-      update();
-    } catch (e) {
-      print('Failed to pick image: $e');
-    }
-  }
-}
-
-String generateRandomString(int length) {
-  final random = Random();
-  const availableChars =
-      'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
-  final randomString = List.generate(length,
-      (index) => availableChars[random.nextInt(availableChars.length)]).join();
-
-  return randomString;
 }
