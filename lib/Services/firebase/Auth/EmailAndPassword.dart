@@ -1,3 +1,4 @@
+import 'package:final_project/Packages/package.dart';
 import 'package:final_project/Router/Routers.dart';
 import 'package:final_project/View/app_layout.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -72,5 +73,12 @@ class AuthFirebase {
     } catch (e) {
       Get.snackbar("Error", "Somethin happend");
     }
+  }
+
+   signOut() async {
+    await FirebaseAuth.instance.signOut().then((value) {
+      print("signOut");
+      //Get.off(SignUpAndSignIn());
+    });
   }
 }

@@ -1,5 +1,7 @@
 import 'package:final_project/Component/Profile/Avater.dart';
 import 'package:final_project/Component/Profile/ItemOfProfile.dart';
+import 'package:final_project/Controller/signOutController.dart';
+import 'package:final_project/Services/firebase/Auth/EmailAndPassword.dart';
 import 'package:final_project/Controller/Profile%20controller.dart';
 import 'package:final_project/View/Camp/CampPresnt.dart';
 import 'package:final_project/View/Sing/Forge_Password_or_Chang.dart';
@@ -15,6 +17,8 @@ import 'package:hexcolor/hexcolor.dart';
 class profile extends StatelessWidget {
   profile({super.key});
 
+  SignOutController getout = Get.put(SignOutController());
+=======
   profileController C_Profile = Get.find();
   @override
   Widget build(BuildContext context) {
@@ -30,11 +34,17 @@ class profile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
+                
                   "${C_Profile.firstName} ${C_Profile.lastName}",
                   style: TextStyle(fontSize: 26, color: Color(0xffFFFFFF)),
                 ),
-                ImageIcon(AssetImage("images/mdi_location-exit.png"),
-                    size: 50, color: Color(0xffFFFFFF)),
+                InkWell(
+                  onTap: () {
+                    getout.signingOut();
+                  },
+                  child: ImageIcon(AssetImage("images/mdi_location-exit.png"),
+                      size: 50, color: Color(0xffFFFFFF)),
+                ),
               ],
             ),
           ),

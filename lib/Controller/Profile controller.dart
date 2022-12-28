@@ -29,7 +29,16 @@ class profileController extends GetxController {
       "image": image1,
     };
     var curentUser = await authFire.checkUser();
-    userProfile.SendDataUser(idUser: curentUser, infoUser: newDat);
+    userProfile.SendDataUser(
+      idUser: curentUser,
+      infoUser: newDat,
+      isDone: (Value) {
+        if (Value) {
+          Get.snackbar("Updated", "Your profile has been updated");
+          Get.off(AppLayout());
+        }
+      },
+    );
     update();
   }
 profileData() async {
