@@ -18,7 +18,6 @@ class Avter extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        print("sdfgh"+C_Profile.image1);
         C_Profile.addImagesProfile();
       },
       child: CircleAvatar(
@@ -43,22 +42,22 @@ class Avter extends StatelessWidget {
 }
 
 class Avter1 extends StatelessWidget {
-  String GetImage1 = "";
+  
   Avter1({super.key});
-
+profileController C_Profile = Get.find();
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
       backgroundColor: Color(0xff4A3A75),
       radius: 80,
       child: ClipOval(
-        child: GetImage1 == ""
+        child: C_Profile.image1 == ""
             ? Icon(
                 Icons.person,
                 size: 80,
               )
             : Image.network(
-                GetImage1,
+                C_Profile.image1,
                 width: 150,
                 height: 150,
                 fit: BoxFit.cover,

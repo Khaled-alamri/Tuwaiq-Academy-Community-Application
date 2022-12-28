@@ -20,7 +20,7 @@ List<GetPage<dynamic>>? getPages = [
   ),
   GetPage(
     name: RouterNames.profile,
-    page: () => const profile(),
+    page: () =>  profile(),
   ),
   GetPage(
     name: RouterNames.SignUpAndSignIn,
@@ -32,7 +32,7 @@ List<GetPage<dynamic>>? getPages = [
     GetPage(name: RouterNames.splash , page: () => SplashScreen(),),
     GetPage(name: RouterNames.appLayout , page: () => AppLayout(),),
     GetPage(name: RouterNames.CampPresnt , page: () => const CampPresnt(),),
-    GetPage(name: RouterNames.profile , page: () => const profile(),),
+    GetPage(name: RouterNames.profile , page: () =>  profile(),),
     GetPage(name: RouterNames.SignUpAndSignIn , page: () => const SignUpAndSignIn(),),
     GetPage(name: RouterNames.GuestAppLayout , page: () =>  GuestAppLayout(),),
     GetPage(name: RouterNames.FutureCamp , page: () =>  FutureCamp(),),

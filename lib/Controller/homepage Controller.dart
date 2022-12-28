@@ -27,14 +27,6 @@ class HomePageController extends GetxController {
   futchShowArticle() async {
     try {
       var refData = await article.viewAllArticle();
-
-      // authName = refData["auth Name"];
-      // title = refData["title"];
-      // body = refData["body"];
-      // commentCount = refData["commentCount"];
-      // likeCount = refData["likeCount"];
-      // date = refData["date"];
-      //authName = refData["auth Name"];
       CustomArticleCard(
         PostBody: refData["body"],
         PostOwnrName: "authName",
