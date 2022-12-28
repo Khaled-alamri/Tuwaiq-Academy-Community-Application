@@ -30,21 +30,9 @@ class profileController extends GetxController {
     update();
   }
 
-  addImagesProfile() async {
-    var instance = FirebaseStorage.instance;
-    try {
-      var image = await ImagePicker().pickImage(source: ImageSource.gallery);
-      if (image == null) return null;
-      Reference ref =
-          await instance.ref().child("Profile/${generateRandomString(10)}.png");
-      await ref.putFile(File(image.path));
-      ref
-          .getDownloadURL()
-          .then((value) => {print("here is value and images  $value")});
-    } catch (e) {
-      print('Failed to pick image: $e');
-    }
-  }
+  
+
+  
 }
 
 String generateRandomString(int length) {

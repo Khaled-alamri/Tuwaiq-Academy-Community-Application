@@ -37,7 +37,7 @@ class HomePageController extends GetxController {
       //authName = refData["auth Name"];
       CustomArticleCard(
         PostBody: refData["body"],
-        PostOwnrName: "auth Name",
+        PostOwnrName: "authName",
         cardDate: refData["date"],
         commentCont: refData["commentCount"],
         likeCont: refData["likeCount"],
