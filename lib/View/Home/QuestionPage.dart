@@ -128,7 +128,7 @@ class _QuestionPageState extends State<QuestionPage> {
                   print(e);
                 }
               },
-              title: "اضف المنشور"),
+              title: "اضف المنشور", ),
           TextButton(
               onPressed: () {
                 // getImages();

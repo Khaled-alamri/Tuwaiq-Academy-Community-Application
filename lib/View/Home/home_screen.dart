@@ -1,3 +1,4 @@
+import 'package:final_project/Component/Custom%20Question%20card.dart';
 import 'package:final_project/Component/custom%20IconwithName.dart';
 import 'package:final_project/Component/custom%20contentText.dart';
 import 'package:final_project/Component/custom%20article%20card.dart';
@@ -36,7 +37,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         body: 
             ListView(children: [
-
+          
            GetBuilder<HomePageController>(
               init: HomePageController(),
               builder: (_) {

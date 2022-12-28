@@ -13,7 +13,7 @@ class CustomTextViewPost extends StatelessWidget {
     return Container(
       height: 211,
       width: 352,
-      color: Color(0xff3FB7F8),
+      color: Color(0xFF3FB7F8),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
