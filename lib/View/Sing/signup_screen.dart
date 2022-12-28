@@ -3,6 +3,7 @@ import 'package:final_project/Component/CustomButton.dart';
 import 'package:final_project/Component/CustomTextField.dart';
 import 'package:final_project/Component/SingComponenr/logoWithTitle.dart';
 import 'package:final_project/Controller/SignUp%20Controller.dart';
+import 'package:final_project/View/Sing/TermsAndConditionsSignUp.dart';
 
 import '../../Packages/package.dart';
 
@@ -127,6 +128,7 @@ class SignUpScreen extends StatelessWidget {
                           // ),
                           // TermsAndConditions(                      
                           // ),
+                          TermsAndConditions(),
                           const SizedBox(
                             height: 30.0,
                           ),

@@ -40,6 +40,7 @@ List<GetPage<dynamic>>? getPages = [
     GetPage(name: RouterNames.ArticleView , page: () =>  ArticleView(),),
     GetPage(name: RouterNames.GustArticleView , page: () =>  GustArticleView(),),
     GetPage(name: RouterNames.GusteProblemScreen , page: () =>  GusteProblemScreen(),),
+    GetPage(name: RouterNames.TermsAndCondition , page: () =>  TermsAndCondition(),),
 ];
 
 class RouterNames {
@@ -57,5 +58,6 @@ class RouterNames {
   static String ArticleView = "/ArticleView"; 
   static String GustArticleView = "/GustArticleView"; 
   static String GusteProblemScreen = "/GusteProblemScreen"; 
+  static String TermsAndCondition = "/TermsAndCondition"; 
 
 }
