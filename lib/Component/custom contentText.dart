@@ -17,7 +17,7 @@ class contentText extends StatelessWidget {
         Text(
           postTitle,
           style: TextStyle(
-              color: Colors.black, fontSize: 28, fontWeight: FontWeight.bold),
+              color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
         ),
         const SizedBox(
           height: 10,
@@ -28,7 +28,7 @@ class contentText extends StatelessWidget {
             PostBody,
             style: TextStyle(
               color: Colors.black,
-              fontSize: 17,
+              fontSize: 15,
             ),
           ),
         ),

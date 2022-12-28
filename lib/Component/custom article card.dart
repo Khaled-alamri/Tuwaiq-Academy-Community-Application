@@ -1,5 +1,6 @@
 import 'package:final_project/Component/custom%20IconwithName.dart';
 import 'package:final_project/Component/custom%20contentText.dart';
+import 'package:final_project/Packages/package.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -25,12 +26,11 @@ class CustomArticleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height:  250,
       margin: EdgeInsetsDirectional.all(10),
       padding: EdgeInsetsDirectional.all(20),
       decoration: BoxDecoration(
         borderRadius: BorderRadiusDirectional.circular(10),
-        color: HexColor("#dbd9de"),
+        color: Color(0xFF3FB7F8).withOpacity(0.2)
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -61,7 +61,8 @@ class CustomArticleCard extends StatelessWidget {
             children: [
               Icon(
                 Icons.comment,
-                color: HexColor("#117c78"),
+                size: 20,
+                color: primaryColor,
               ),
               const SizedBox(
                 width: 7,
@@ -69,14 +70,15 @@ class CustomArticleCard extends StatelessWidget {
               Text(
                 // comment
                 commentCont.toString(),
-                style: TextStyle(color: HexColor("#117c78"), fontSize: 17),
+                style: TextStyle(color: primaryColor, fontSize: 17),
               ),
               const SizedBox(
                 width: 10,
               ),
               Icon(
                 Icons.thumb_up,
-                color: HexColor("#117c78"),
+                size: 20,
+                color: primaryColor,
               ),
               const SizedBox(
                 width: 7,
@@ -84,7 +86,7 @@ class CustomArticleCard extends StatelessWidget {
               Text(
                 //like
                 likeCont.toString(),
-                style: TextStyle(color: HexColor("#117c78"), fontSize: 17),
+                style: TextStyle(color: primaryColor, fontSize: 15),
               ),
             ],
           ),

@@ -5,30 +5,32 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class CardCamp extends StatelessWidget {
-  const CardCamp(
+   CardCamp(
       {super.key,
       required this.NameOfCamp,
       required this.DateOfCamp,
       required this.detailsOfCamp,
-      required this.NamberOfStudent, required this.Img, this.onTap});
+      required this.NamberOfStudent, required this.Img, this.onTap,
+      this.backgroundColor  = Colors.white,
+      });
   final String NameOfCamp;
   final String DateOfCamp;
   final String? detailsOfCamp;
   final String NamberOfStudent;
   final String Img;
   final Function()? onTap;
+  final Color? backgroundColor ;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap:onTap ,
-      
+      onTap:onTap ,    
       child: Container(
         margin: EdgeInsetsDirectional.all(10),
         padding: EdgeInsetsDirectional.all(20),
         decoration: BoxDecoration(
           borderRadius: BorderRadiusDirectional.circular(10),
-          color: HexColor("#dbd9de"),
+          color: backgroundColor!.withOpacity(0.5),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

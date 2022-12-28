@@ -17,9 +17,9 @@ class PresentCamp extends StatelessWidget {
         ]),
         image: DecorationImage(
             image: AssetImage(
-              "images/AppBarIcon/Flutter_Logo-removebg-preview.png",
+              "images/BackGround/Flutter_Logo.png",
             ),
-            opacity: 0.3),
+            opacity: 0.5),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -28,7 +28,7 @@ class PresentCamp extends StatelessWidget {
             iconColor: postColor,
             height: 70,
             titleColor: postColor,
-            iconImage: "images/BackGround/Flutter_Logo.png"),
+            iconImage: "images/AppBarIcon/Back.png"),
         body: Padding(
           padding: EdgeInsets.all(defaultPadding),
           child: ListView(

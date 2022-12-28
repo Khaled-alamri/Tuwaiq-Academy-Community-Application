@@ -1,3 +1,4 @@
+import 'package:final_project/Packages/package.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -143,13 +144,14 @@ class CustomButtonOfCamp extends StatelessWidget {
     );
   }
 }
-Widget filledButton({title, onPressed, radius}) {
+Widget filledButton({title, onPressed, radius,  Color backColor =  primaryColor}) {
   return Center(
     child: Container(
+      height: 55,
       width: double.infinity,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(radius ?? 50.0),
-        color: HexColor("#7660A9"),
+        borderRadius: BorderRadius.circular(5.0),
+        color: backColor.withOpacity(0.8)
       ),
       child: MaterialButton(
         onPressed: onPressed,

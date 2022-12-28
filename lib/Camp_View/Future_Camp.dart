@@ -28,7 +28,10 @@ class FutureCamp extends StatelessWidget {
             iconColor: questionsColor,
             height: 70,
             titleColor: questionsColor,
-            iconImage: "images/AppBarIcon/Back.png"),
+            iconImage: "images/AppBarIcon/Back.png",
+             onPressed: (){
+              Get.back();
+             }),
         body: Padding(
           padding: EdgeInsets.all(defaultPadding),
           child: ListView(
