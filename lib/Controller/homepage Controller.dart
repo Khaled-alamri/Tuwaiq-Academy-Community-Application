@@ -35,6 +35,7 @@ class HomePageController extends GetxController {
         commentCont: refData["commentCount"],
         likeCont: refData["likeCount"],
         postTitle: refData["title"],
+        authImage: refData["authImage"],
       );
 
       update();

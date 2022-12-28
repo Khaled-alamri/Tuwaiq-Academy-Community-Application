@@ -36,6 +36,7 @@ class GuestHomeScreen extends StatelessWidget {
                 onTap: (){
                   Get.toNamed(RouterNames.GusteProblemScreen);
                 },
+                authImage: "hhh",
                 PostBody: "كيف احمل برنامج xampp ",
                 PostOwnrName: "محمد عبدالرحمن",
                 commentCont: 23,
@@ -46,6 +47,7 @@ class GuestHomeScreen extends StatelessWidget {
               onTap: (){
                 Get.toNamed(RouterNames.GustArticleView);
               },
+              authImage: "hhh",
               PostBody: "ما هي لغة ++C",
               PostOwnrName: "نورة العبدالله",
               cardDate: "28-12-2022",

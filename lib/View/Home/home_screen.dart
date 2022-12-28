@@ -54,7 +54,9 @@ class HomeScreen extends StatelessWidget {
                           PostOwnrName: C_HomePage.articleList[index]
                               ["authName"],
                           postTitle: C_HomePage.articleList[index]["title"],
-                          PostBody: C_HomePage.articleList[index]["body"]);
+                          PostBody: C_HomePage.articleList[index]["body"],
+                          authImage: C_HomePage.articleList[index]["authImage"],
+                          );
                     });
               }),
         ]),
