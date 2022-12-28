@@ -24,8 +24,8 @@ class _ProblemScreenState extends State<ProblemScreen> {
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [
-                  Colors.brown,
-                  Color.fromARGB(255, 171, 198, 244),
+                  Color(0xFFE2D1C3),
+                  Color(0xFFFDFCFB)
                 ],
                 stops: [0.0, 1.0],
                 tileMode: TileMode.clamp),
@@ -49,7 +49,7 @@ class _ProblemScreenState extends State<ProblemScreen> {
                       ),
                     ),
                   ),
-                  TopCard(),
+                  TopCard(imagePQ: "images/ISO_C++_Logo.svg.png"),
                   Container(
                     padding: EdgeInsetsDirectional.all(15),
                     child: Column(

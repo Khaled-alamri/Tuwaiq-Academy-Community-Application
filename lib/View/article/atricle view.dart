@@ -52,7 +52,7 @@ class _ArticleViewState extends State<ArticleView> {
               padding: EdgeInsetsDirectional.only(bottom: 40),
               child: Column(
                 children: [
-                  TopCard(),
+                  TopCard(imagePQ: "images/ISO_C++_Logo.svg.png"),
                   Container(
                     padding: EdgeInsetsDirectional.all(15),
                     child: Column(

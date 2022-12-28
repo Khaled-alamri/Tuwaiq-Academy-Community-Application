@@ -3,6 +3,7 @@ import 'package:final_project/Component/CustomButton.dart';
 import 'package:final_project/Component/CustomTextField.dart';
 import 'package:final_project/Component/campComponent/CardCamp.dart';
 import 'package:final_project/Component/TitelCamp.dart';
+import 'package:final_project/View/Camp/AddingCampScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -101,6 +102,16 @@ class TitelPage extends StatelessWidget {
               ),
             ),
           ],
+        ), floatingActionButton: FloatingActionButton(
+          backgroundColor: HexColor("#117c78"),
+          onPressed: () {
+            Get.to(AddingCampScreen());
+          },
+          child: Icon(
+            Icons.add,
+            color: Colors.white,
+            size: 40,
+          ),
         ),
       ),
     );;

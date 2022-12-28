@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
 
       initialRoute: RouterNames.pageView,
 
+
       
       getPages: getPages,
       translations: Languages(),

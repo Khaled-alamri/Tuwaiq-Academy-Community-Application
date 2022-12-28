@@ -2,6 +2,9 @@
 
 import 'package:final_project/Camp_View/Future_Camp.dart';
 import 'package:final_project/Camp_View/Present_Camp.dart';
+import 'package:final_project/View/Guste/GustArticleView.dart';
+import 'package:final_project/View/Guste/GusteProblemScreen.dart';
+import 'package:final_project/View/article/atricle%20view.dart';
 
 import '../../Packages/package.dart';
 
@@ -34,6 +37,10 @@ List<GetPage<dynamic>>? getPages = [
     GetPage(name: RouterNames.GuestAppLayout , page: () =>  GuestAppLayout(),),
     GetPage(name: RouterNames.FutureCamp , page: () =>  FutureCamp(),),
     GetPage(name: RouterNames.PresentCamp , page: () =>  PresentCamp(),),
+    GetPage(name: RouterNames.ArticleView , page: () =>  ArticleView(),),
+    GetPage(name: RouterNames.GustArticleView , page: () =>  GustArticleView(),),
+    GetPage(name: RouterNames.GusteProblemScreen , page: () =>  GusteProblemScreen(),),
+    GetPage(name: RouterNames.TermsAndCondition , page: () =>  TermsAndCondition(),),
 ];
 
 class RouterNames {
@@ -48,5 +55,9 @@ class RouterNames {
   static String GuestAppLayout = "/GuestAppLayout"; 
   static String FutureCamp = "/FutureCamp"; 
   static String PresentCamp = "/PresentCamp"; 
+  static String ArticleView = "/ArticleView"; 
+  static String GustArticleView = "/GustArticleView"; 
+  static String GusteProblemScreen = "/GusteProblemScreen"; 
+  static String TermsAndCondition = "/TermsAndCondition"; 
 
 }

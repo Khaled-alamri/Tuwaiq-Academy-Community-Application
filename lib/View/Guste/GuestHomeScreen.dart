@@ -34,7 +34,7 @@ class GuestHomeScreen extends StatelessWidget {
           child: ListView(children: [
                 CustomQuestionCard(
                 onTap: (){
-                  // Get.to(() => ProblemScreen());
+                  Get.toNamed(RouterNames.GusteProblemScreen);
                 },
                 PostBody: "كيف احمل برنامج xampp ",
                 PostOwnrName: "محمد عبدالرحمن",
@@ -43,11 +43,14 @@ class GuestHomeScreen extends StatelessWidget {
               ),
              
              CustomArticleCard(
+              onTap: (){
+                Get.toNamed(RouterNames.GustArticleView);
+              },
               PostBody: "ما هي لغة ++C",
               PostOwnrName: "نورة العبدالله",
               cardDate: "28-12-2022",
               commentCont: 5,
-              likeCont: 865,
+              likeCont: 20,
               postTitle: "لغة ++C",
 
              ),

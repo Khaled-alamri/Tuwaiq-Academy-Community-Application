@@ -51,7 +51,7 @@ class _SecondScreenState extends State<SecondScreen> {
                       ),
                     ),
                   ),
-                  TopCard(),
+                  TopCard(imagePQ: "images/ISO_C++_Logo.svg.png"),
                 ],
               ),
               Align(

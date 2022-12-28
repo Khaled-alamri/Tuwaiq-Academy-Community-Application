@@ -2,6 +2,7 @@ import 'package:final_project/Component/Profile/Avater.dart';
 import 'package:final_project/Component/Profile/ItemOfProfile.dart';
 import 'package:final_project/Controller/signOutController.dart';
 import 'package:final_project/Services/firebase/Auth/EmailAndPassword.dart';
+import 'package:final_project/Controller/Profile%20controller.dart';
 import 'package:final_project/View/Camp/CampPresnt.dart';
 import 'package:final_project/View/Sing/Forge_Password_or_Chang.dart';
 import 'package:final_project/View/profile/My_Info.dart';
@@ -17,7 +18,8 @@ class profile extends StatelessWidget {
   profile({super.key});
 
   SignOutController getout = Get.put(SignOutController());
-  AuthFirebase aath = AuthFirebase();
+=======
+  profileController C_Profile = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +34,8 @@ class profile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "رهف محمد",
+                
+                  "${C_Profile.firstName} ${C_Profile.lastName}",
                   style: TextStyle(fontSize: 26, color: Color(0xffFFFFFF)),
                 ),
                 InkWell(

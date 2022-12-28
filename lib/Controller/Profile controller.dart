@@ -11,6 +11,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
 
 class profileController extends GetxController {
+  
   String email = "";
   String phone = "";
   String firstName = "";
@@ -40,6 +41,16 @@ class profileController extends GetxController {
     );
     update();
   }
+profileData() async {
+    var curentUser = await authFire.checkUser();
+    Map<String, dynamic> userdata =
+        await userProfile.getDataProfile(idUser: curentUser);
+    firstName = userdata["firstName"];
+    image1 = userdata["image"];
+    lastName = userdata["lastName"];
+    update();
+  }
+  
 
   addImagesProfile() async {
     var instance = FirebaseStorage.instance;
@@ -60,6 +71,13 @@ class profileController extends GetxController {
     } catch (e) {
       print('Failed to pick image: $e');
     }
+  }
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    profileData();
   }
 }
 
