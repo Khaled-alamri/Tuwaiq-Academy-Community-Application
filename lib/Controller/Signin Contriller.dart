@@ -19,7 +19,7 @@ class SignInController extends GetxController {
           if (Value) {
             
               print("aaaa");
-            Get.off(AppLayout());
+            Get.to(AppLayout());
           }
         },
       );

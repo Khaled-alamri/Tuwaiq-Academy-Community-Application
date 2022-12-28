@@ -1,6 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:final_project/Localization/Languages.dart';
 import 'package:final_project/Router/Routers.dart';
+import 'package:final_project/View/Home/home_screen.dart';
 import 'package:final_project/View/OnBoarding/PageView.dart';
 import 'package:final_project/View/Sing/signin_screen.dart';
 import 'package:final_project/View/Sing/signup_and_signin_screen.dart';
@@ -30,8 +31,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       //home: GetStorage().read("userID") == null ? const SignUpAndSignIn() : AppLayout(),
 
-      // initialRoute: RouterNames.appLayout,
-      home: SplashScreen(),
+      initialRoute: RouterNames.profile,
+      
       getPages: getPages,
       translations: Languages(),
       locale: const Locale('ar'),

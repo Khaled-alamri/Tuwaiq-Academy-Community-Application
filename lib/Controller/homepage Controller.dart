@@ -11,7 +11,7 @@ class HomePageController extends GetxController {
   int likeCount = 0;
   String date = "";
 
-  //CustomArticleCard articleCard = CustomArticleCard(PostBody: body,PostOwnrName: authName,);
+  // CustomArticleCard articleCard = CustomArticleCard(PostBody: body,PostOwnrName: authName,);
   articleSystem article = articleSystem();
   List articleList = [];
 
