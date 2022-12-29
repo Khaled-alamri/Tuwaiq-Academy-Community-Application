@@ -23,11 +23,8 @@ class profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff4A3A75),
+      backgroundColor: primaryColor,
       body: ListView(children: [
-        SizedBox(
-          height: 15,
-        ),
         Container(
           child: Padding(
             padding:
@@ -66,9 +63,13 @@ class profile extends StatelessWidget {
               //        Img: "images/images 1.png",
               //        size: 70,
               //      )),
-              
+
               Avter1(),
+              SizedBox(
+                height: 15,
+              ),
               Container(
+                margin: EdgeInsets.symmetric(horizontal: 25),
                 width: 366,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -78,7 +79,7 @@ class profile extends StatelessWidget {
                   padding: const EdgeInsets.all(defaultPadding - 5),
                   child: Column(children: [
                     ItemProfile(
-                      name: "بيانات شخصيه",
+                      name: "البيانات الشخصية",
                       ontap: () {
                         Get.to(My_Info());
                       },

@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:final_project/Controller/Profile%20controller.dart';
+import 'package:final_project/Style/Style.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -23,13 +24,14 @@ class Avter extends StatelessWidget {
         C_Profile.addImagesProfile();
       },
       child: CircleAvatar(
-        backgroundColor: Color(0xff4A3A75),
+        backgroundColor: primaryColor,
         radius: 80,
         child: ClipOval(
           child: C_Profile.image1 == ""
               ? Icon(
-                  Icons.person,
-                  size: 80,
+                  Icons.add_photo_alternate,
+                  size: 50,
+                  color: Colors.white,
                 )
               : Image.network(
                   C_Profile.image1,
@@ -49,21 +51,25 @@ class Avter1 extends StatelessWidget {
 profileController C_Profile = Get.find();
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      backgroundColor: Color(0xff4A3A75),
-      radius: 80,
-      child: ClipOval(
-        child: C_Profile.image1 == ""
-            ? Icon(
-                Icons.person,
-                size: 80,
-              )
-            : Image.network(
-                C_Profile.image1,
-                width: 150,
-                height: 150,
-                fit: BoxFit.cover,
-              ),
+    return Padding(
+      padding: const EdgeInsets.only(top:10.0),
+      child: CircleAvatar(
+        backgroundColor: primaryColor,
+        radius: 80,
+        child: ClipOval(
+          child: C_Profile.image1 == ""
+              ? Icon(
+                 Icons.add_photo_alternate,
+                  size: 50,
+                  color: Colors.white,
+                )
+              : Image.network(
+                  C_Profile.image1,
+                  width: 150,
+                  height: 150,
+                  fit: BoxFit.cover,
+                ),
+        ),
       ),
     );
   }

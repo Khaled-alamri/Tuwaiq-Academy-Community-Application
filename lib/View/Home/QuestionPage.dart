@@ -42,7 +42,7 @@ class _QuestionPageState extends State<QuestionPage> {
           backgroundColor: primaryColor.withOpacity(0.2),
           iconColor: primaryColor,
           height: 70,
-          iconImage: "images/Back.png",
+          iconImage: "images/AppBarIcon/Back.png",
           onPressed: () {
             Get.back();
           },
