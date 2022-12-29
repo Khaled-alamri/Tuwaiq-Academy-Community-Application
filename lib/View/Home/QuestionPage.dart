@@ -42,7 +42,7 @@ class _QuestionPageState extends State<QuestionPage> {
           backgroundColor: primaryColor.withOpacity(0.2),
           iconColor: primaryColor,
           height: 70,
-          iconImage: "images/AppBarIcon/Back.png",
+          iconImage: "images/Back.png",
           onPressed: () {
             Get.back();
           },
@@ -97,11 +97,9 @@ class _QuestionPageState extends State<QuestionPage> {
                 // mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   RodioB(
-                    name: "سؤال",
+                   
                   ),
-                  RodioB(
-                    name: "مقال",
-                  ),
+                  
                 ],
               ),
               IconButton(

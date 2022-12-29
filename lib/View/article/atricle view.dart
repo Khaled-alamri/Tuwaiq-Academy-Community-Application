@@ -52,7 +52,7 @@ class _ArticleViewState extends State<ArticleView> {
               padding: EdgeInsetsDirectional.only(bottom: 40),
               child: Column(
                 children: [
-                  TopCard(imagePQ: "images/ISO_C++_Logo.svg.png"),
+                  TopCard(imagePQ: "images/flutter210update_Dashlaptop_wText 1.png"),
                   Container(
                     padding: EdgeInsetsDirectional.all(15),
                     child: Column(

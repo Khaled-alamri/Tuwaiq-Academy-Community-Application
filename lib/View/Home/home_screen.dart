@@ -47,6 +47,9 @@ class HomeScreen extends StatelessWidget {
                   shrinkWrap: true,
                   itemBuilder: (BuildContext context, int index) {
                     return CustomArticleCard(
+                      onTap: () {
+                        Get.to(ArticleView());
+                      },
                       cardDate: C_HomePage.articleList[index]["date"],
                       commentCont: C_HomePage.articleList[index]
                           ["commentCount"],
@@ -56,7 +59,6 @@ class HomeScreen extends StatelessWidget {
                       PostBody: C_HomePage.articleList[index]["body"],
                       authImage: C_HomePage.articleList[index]["authImage"],
                     );
-                    
                   });
             }),
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
