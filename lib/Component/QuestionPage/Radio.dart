@@ -2,31 +2,39 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class RodioB extends StatelessWidget {
-  const RodioB({super.key, required this.name});
-  final String name;
+class RodioB extends StatefulWidget {
+  const RodioB({super.key});
 
+  @override
+  State<RodioB> createState() => _RodioBState();
+}
+
+class _RodioBState extends State<RodioB> {
+  String? b ;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
+       
         Radio(
-            value: "radio value",
-            groupValue: "group value",
-            fillColor: MaterialStateProperty.resolveWith<Color>(
-                (Set<MaterialState> states) {
-              if (states.contains(MaterialState.disabled)) {
-                return Colors.orange.withOpacity(.32);
-              }
-              return Colors.orange;
+            value: "مقال",
+            groupValue: b,
+            onChanged: (val) {
+              setState(() {
+                 b=val;
+              });
             }),
-            onChanged: (value) {
-              print(value); //selected value
+             Text("مقال"),
+           
+        Radio(
+            value: "سوال",
+            groupValue: b ,
+            onChanged: (val) {
+              setState(() {
+                b = val;
+              });
             }),
-        Text(
-          name,
-          style: TextStyle(fontSize: 20),
-        )
+             Text("سؤال"),
       ],
     );
   }
