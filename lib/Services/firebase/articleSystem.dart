@@ -29,7 +29,7 @@ class articleSystem {
         articl.data();
         allArticle.add(articl.data());
       }
-
+     
       return allArticle;
     } catch (error) {
       print(error.toString());

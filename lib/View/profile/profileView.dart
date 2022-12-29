@@ -67,7 +67,7 @@ class profile extends StatelessWidget {
               //        size: 70,
               //      )),
               
-              Avter(),
+              Avter1(),
               Container(
                 width: 366,
                 decoration: BoxDecoration(

@@ -18,7 +18,7 @@ import 'package:hexcolor/hexcolor.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
   HomePageController C_HomePage = Get.put(HomePageController());
-
+  @override
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,22 +42,21 @@ class HomeScreen extends StatelessWidget {
             init: HomePageController(),
             builder: (_) {
               return ListView.builder(
-                scrollDirection:Axis.vertical ,
-                
+                  scrollDirection: Axis.vertical,
                   itemCount: C_HomePage.articleList.length,
                   shrinkWrap: true,
                   itemBuilder: (BuildContext context, int index) {
                     return CustomArticleCard(
-                        cardDate: C_HomePage.articleList[index]["date"],
-                        commentCont: C_HomePage.articleList[index]
-                            ["commentCount"],
-                        likeCont: C_HomePage.articleList[index]["likeCount"],
-                        PostOwnrName: C_HomePage.articleList[index]
-                            ["authName"],
-                        postTitle: C_HomePage.articleList[index]["title"],
-                        PostBody: C_HomePage.articleList[index]["body"],
-                        authImage: C_HomePage.articleList[index]["authImage"],
-                        );
+                      cardDate: C_HomePage.articleList[index]["date"],
+                      commentCont: C_HomePage.articleList[index]
+                          ["commentCount"],
+                      likeCont: C_HomePage.articleList[index]["likeCount"],
+                      PostOwnrName: C_HomePage.articleList[index]["authName"],
+                      postTitle: C_HomePage.articleList[index]["title"],
+                      PostBody: C_HomePage.articleList[index]["body"],
+                      authImage: C_HomePage.articleList[index]["authImage"],
+                    );
+                    
                   });
             }),
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,

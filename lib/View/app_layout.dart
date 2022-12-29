@@ -10,7 +10,7 @@ import 'package:hexcolor/hexcolor.dart';
 import '../Packages/package.dart';
 
 class AppLayout extends StatefulWidget {
-  profileController C_Profile = Get.put(profileController());
+  
   
 
   @override
@@ -19,7 +19,7 @@ class AppLayout extends StatefulWidget {
 
 class _AppLayoutState extends State<AppLayout> {
   int currentIndex = 0;
-
+profileController C_Profile = Get.put(profileController());
   List<Widget> bottomScreens = [
     HomeScreen(),
     SearchField(),
