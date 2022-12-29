@@ -33,7 +33,7 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
         enabledBorder:
-            OutlineInputBorder(borderSide: BorderSide(color: primaryColor)),
+            OutlineInputBorder(borderSide: BorderSide.none),
         focusedBorder:
             OutlineInputBorder(borderSide: BorderSide(color: primaryColor)),
         prefixIcon: Icon(
@@ -44,7 +44,7 @@ class CustomTextField extends StatelessWidget {
         label: Text(
           labelTextShow!,
           style: TextStyle(
-            color: primaryColor.withOpacity(0.4),
+            color: primaryColor.withOpacity(0.7),
           ),
         ),
         filled: true,
