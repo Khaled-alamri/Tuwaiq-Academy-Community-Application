@@ -54,7 +54,7 @@ class nameWithIcon2 extends StatelessWidget {
       children: [
         CircleAvatar(
           backgroundColor: Color(0xff4A3A75),
-          radius: 80,
+          radius: 20,
           child: ClipOval(
             child: Image.network("") == ""
                 ? Icon(
@@ -63,8 +63,8 @@ class nameWithIcon2 extends StatelessWidget {
                   )
                 : Image.network(
                     "",
-                    width: 30,
-                    height: 30,
+                    width: 60,
+                    height: 60,
                     fit: BoxFit.cover,
                   ),
           ),

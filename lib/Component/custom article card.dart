@@ -133,7 +133,7 @@ class MyCustomArticleCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              nameWithIcon(PostOwnrName: PostOwnrName),
+              nameWithIcon2(PostOwnrName: PostOwnrName),
               Spacer(),
               Text(
                 cardDate,

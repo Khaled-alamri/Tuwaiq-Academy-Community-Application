@@ -66,17 +66,7 @@ class profile extends StatelessWidget {
               //        Img: "images/images 1.png",
               //        size: 70,
               //      )),
-              Align(
-                  alignment: Alignment.topRight,
-                  child: IconButton(
-                      onPressed: () {
-                        Get.back();
-                      },
-                      icon: ImageIcon(
-                        AssetImage(
-                            "images/ion_chevron-back-circle-outline.png"),
-                        size: 50,
-                      ))),
+              
               Avter(),
               Container(
                 width: 366,
