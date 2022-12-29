@@ -11,12 +11,15 @@ class articleSystem {
   var instance = FirebaseFirestore.instance;
   createPost(
       {required Map<String, dynamic> articlData,
-      Function(String)? isDone}) async {
+      Function(bool)? isDone}) async {
     var newArtile = await instance.collection("article").doc();
 
      articlData.addAll({"postUID": newArtile.id});
-    await instance.collection("article").doc(newArtile.id).set(articlData);
-  }
+    await instance.collection("article").doc(newArtile.id).set(articlData).then((value) {
+      if (newArtile.id != null) {
+        return isDone!(true);
+      }});
+    }
 
   viewAllArticle() async {
     try {
@@ -34,3 +37,4 @@ class articleSystem {
     }
   }
 }
+

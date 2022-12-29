@@ -87,7 +87,7 @@ class My_Info extends StatelessWidget {
                       )),
                   CustomTextField(
                       onChanged: (Value) => C_Profile.phone = Value,
-                      labelTextShow: ""),
+                      labelTextShow: C_Profile.phone),
                   SizedBox(
                     height: 30,
                   ),

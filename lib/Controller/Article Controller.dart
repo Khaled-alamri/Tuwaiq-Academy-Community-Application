@@ -21,7 +21,7 @@ class PostController extends GetxController {
   profileController C_Profile = Get.find();
 
   MethodCreatePost() async {
-    // await newPost.createArticle(articlData: articlData)
+    //  await newPost.createArticle(articlData: articlData)
     Map<String, dynamic> articleInfo = {
       "authName":C_Profile.firstName+" " +C_Profile.lastName,
       "authUID": C_Profile.uid,
@@ -36,7 +36,13 @@ class PostController extends GetxController {
     };
     await newPost.createPost(
       articlData: articleInfo,
-      isDone: (Value) {},
+      isDone: (Value) {
+      if (Value) {
+          Get.snackbar("Success", "Post had been added");
+          Get.off(AppLayout());
+        }
+      },
+      
     );
   }
 
