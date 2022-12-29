@@ -1,4 +1,5 @@
 import 'package:final_project/Component/Custom%20Question%20card.dart';
+import 'package:final_project/Component/CustomQuestionCardStatic.dart';
 import 'package:final_project/Component/CustomTextView.dart';
 import 'package:final_project/Component/custom%20article%20card.dart';
 import 'package:final_project/Controller/homepage%20Controller.dart';
@@ -31,31 +32,42 @@ class GuestHomeScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         body: Padding(
           padding: const EdgeInsets.all(defaultPadding - 5),
-          child: ListView(children: [
-                CustomQuestionCard(
+          child: ListView(
+            children: [
+            CustomQuestionCardStatic(
                 onTap: (){
                   Get.toNamed(RouterNames.GusteProblemScreen);
                 },
-                authImage: "hhh",
+                sImage: "images/user.png",
                 PostBody: "كيف احمل برنامج xampp ",
                 PostOwnrName: "محمد عبدالرحمن",
                 commentCont: 23,
                 postTitle: "برنامج xampp",
-              ),
+            ),
+              //   CustomQuestionCard(
+              //   onTap: (){
+              //     Get.toNamed(RouterNames.GusteProblemScreen);
+              //   },
+              //   authImage: "hhh",
+              //   PostBody: "كيف احمل برنامج xampp ",
+              //   PostOwnrName: "محمد عبدالرحمن",
+              //   commentCont: 23,
+              //   postTitle: "برنامج xampp",
+              // ),
              
-             CustomArticleCard(
-              onTap: (){
-                Get.toNamed(RouterNames.GustArticleView);
-              },
-              authImage: "hhh",
-              PostBody: "ما هي لغة ++C",
-              PostOwnrName: "نورة العبدالله",
-              cardDate: "28-12-2022",
-              commentCont: 5,
-              likeCont: 20,
-              postTitle: "لغة ++C",
+            //  CustomArticleCard(
+            //   onTap: (){
+            //     Get.toNamed(RouterNames.GustArticleView);
+            //   },
+            //   authImage: "hhh",
+            //   PostBody: "ما هي لغة ++C",
+            //   PostOwnrName: "نورة العبدالله",
+            //   cardDate: "28-12-2022",
+            //   commentCont: 5,
+            //   likeCont: 20,
+            //   postTitle: "لغة ++C",
 
-             ),
+            //  ),
             // GetBuilder<HomePageController>(
             //     init: HomePageController(),
             //     builder: (_) {
