@@ -68,8 +68,8 @@ class CampPresnt_2 extends StatelessWidget {
   }
 }
 
-class TitelPage extends StatelessWidget {
-  const TitelPage({super.key});
+class AdminTitelPage extends StatelessWidget {
+  const AdminTitelPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -126,8 +126,8 @@ class TitelPage extends StatelessWidget {
               ),
             ],
             ),
-                      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-            floatingActionButton: FloatingActionButton(
+          floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+          floatingActionButton: FloatingActionButton(
           backgroundColor: HexColor("#117c78"),
           onPressed: () {
             Get.to(AddingCampScreen());
