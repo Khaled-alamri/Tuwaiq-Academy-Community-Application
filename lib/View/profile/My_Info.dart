@@ -34,10 +34,19 @@ class My_Info extends StatelessWidget {
             title: ""),
         body: ListView(
           children: [
-            Avter(
-              Img: "images/images 1.png",
-              size: 70,
-            ),
+             Align(
+              alignment: Alignment.topRight,
+              child: IconButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  icon: ImageIcon(
+                    AssetImage("images/ion_chevron-back-circle-outline.png"),
+                    size: 50,
+                  ))),
+          Avter(
+           
+          ),
             Padding(
               padding: EdgeInsets.all(defaultPadding + 5),
               child: Column(
