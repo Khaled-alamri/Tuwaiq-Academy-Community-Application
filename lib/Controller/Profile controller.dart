@@ -51,6 +51,8 @@ class profileController extends GetxController {
     image1 = userdata["image"];
     lastName = userdata["lastName"];
     uid = userdata["uid"];
+    email = userdata["email"];
+    phone = userdata["phone"];
     update();
   }
 

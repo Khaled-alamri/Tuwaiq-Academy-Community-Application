@@ -11,7 +11,7 @@ class My_Info extends StatelessWidget {
   My_Info({super.key});
   String GetImages = "";
 
- profileController C_Profile = Get.find();
+  profileController C_Profile = Get.find();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,26 +27,23 @@ class My_Info extends StatelessWidget {
             height: 50,
             iconColor: primaryColor,
             iconImage: "images/AppBarIcon/Back.png",
-            
             onPressed: () {
               Get.back();
             },
             title: ""),
         body: ListView(
           children: [
-             Align(
-              alignment: Alignment.topRight,
-              child: IconButton(
-                  onPressed: () {
-                    Get.back();
-                  },
-                  icon: ImageIcon(
-                    AssetImage("images/ion_chevron-back-circle-outline.png"),
-                    size: 50,
-                  ))),
-          Avter(
-           
-          ),
+            Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                    onPressed: () {
+                      Get.back();
+                    },
+                    icon: ImageIcon(
+                      AssetImage("images/ion_chevron-back-circle-outline.png"),
+                      size: 50,
+                    ))),
+            Avter(),
             Padding(
               padding: EdgeInsets.all(defaultPadding + 5),
               child: Column(
@@ -57,7 +54,7 @@ class My_Info extends StatelessWidget {
                           Text("الاسم الاول", style: TextStyle(fontSize: 18))),
                   CustomTextField(
                     onChanged: (Value) => C_Profile.firstName = Value,
-                    labelTextShow: "",
+                    labelTextShow: C_Profile.firstName,
                   ),
                   SizedBox(
                     height: 30,
@@ -68,7 +65,7 @@ class My_Info extends StatelessWidget {
                           Text("الاسم الاخير", style: TextStyle(fontSize: 18))),
                   CustomTextField(
                       onChanged: (Value) => C_Profile.lastName = Value,
-                      labelTextShow: ""),
+                      labelTextShow: C_Profile.lastName),
                   SizedBox(
                     height: 30,
                   ),
@@ -78,7 +75,7 @@ class My_Info extends StatelessWidget {
                           style: TextStyle(fontSize: 18))),
                   CustomTextField(
                       onChanged: (Value) => C_Profile.email = Value,
-                      labelTextShow: ""),
+                      labelTextShow: C_Profile.email),
                   SizedBox(
                     height: 30,
                   ),
@@ -100,13 +97,12 @@ class My_Info extends StatelessWidget {
                     NameOfButton: "حفظ",
                     heigthOfButton: 55,
                     onPressed: () {
-                     //C_Profile.futchMyInfo();
-                    C_Profile.profileData();
+                      C_Profile.addImagesProfile();
+                      C_Profile.futchMyInfo();
                     },
                   )
                 ],
               ),
-
             ),
           ],
         ),
