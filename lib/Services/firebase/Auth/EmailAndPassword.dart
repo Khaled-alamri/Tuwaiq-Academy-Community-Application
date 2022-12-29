@@ -21,6 +21,8 @@ class AuthFirebase {
 
       //RouterNames.SignUpAndSignIn;
       if (user.user!.uid != null) {
+        user.user!.sendEmailVerification();
+
         isDone!(user.user!.uid);
       }
     } on FirebaseAuthException catch (e) {
@@ -51,9 +53,11 @@ class AuthFirebase {
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        print('No user found for that email.');
+        Get.snackbar("wrong", "No user found for that email.");
+        //print('No user found for that email.');
       } else if (e.code == 'wrong-password') {
-        print('Wrong password provided for that user.');
+                Get.snackbar("wrong", "Wrong password provided for that user.");
+       // print('Wrong password provided for that user.');
       }
     }
   }
@@ -75,10 +79,20 @@ class AuthFirebase {
     }
   }
 
-   signOut() async {
+  signOut() async {
     await FirebaseAuth.instance.signOut().then((value) {
       print("signOut");
       //Get.off(SignUpAndSignIn());
     });
+  }
+
+  forgetPassword({required String email, Function(bool)? isDone}) async {
+    try {
+      await instance.sendPasswordResetEmail(email: email).then((value) {
+        return isDone!(true);
+      });
+    } catch (e) {
+      Get.snackbar("Error", e.toString());
+    }
   }
 }

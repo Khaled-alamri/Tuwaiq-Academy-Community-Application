@@ -2,11 +2,16 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:final_project/Component/CustomButton.dart';
 import 'package:final_project/Component/CustomTextField.dart';
 import 'package:final_project/Packages/package.dart';
+import 'package:final_project/Services/firebase/Auth/EmailAndPassword.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ForgePassword extends StatelessWidget {
-  const ForgePassword({super.key});
+  ForgePassword({super.key});
+
+  TextEditingController fogetpassword = TextEditingController();
+  AuthFirebase auth = AuthFirebase();
 
   @override
   Widget build(BuildContext context) {
@@ -63,6 +68,7 @@ class ForgePassword extends StatelessWidget {
                     maxLines: 5,
                   ),
                   CustomTextFieldWithBorder(
+                    controller: fogetpassword,
                     hintTextShow: "example@example.com",
                     labelTextShow: "البريد الإلكتروني",
                     validaterMasseg: 'من فضلك ادخل الايميل',
@@ -77,7 +83,18 @@ class ForgePassword extends StatelessWidget {
                       NameOfButton: "ارسال",
                       heigthOfButton: 55,
                       widthOfButton: double.infinity,
-                      onPressed: () {},
+                      onPressed: () {
+                        auth.forgetPassword(
+                          email: fogetpassword.text,
+                          isDone: (Value) {
+                            if (Value) {
+                              Get.snackbar("Request send",
+                                  "Changing request had been send to your email, Please check your junk Box ");
+                              Get.off(AppLayout());
+                            }
+                          },
+                        );
+                      },
                     ),
                   ),
                 ],
