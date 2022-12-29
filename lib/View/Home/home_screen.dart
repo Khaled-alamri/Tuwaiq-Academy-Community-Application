@@ -38,28 +38,28 @@ class HomeScreen extends StatelessWidget {
           titleColor: primaryColor,
         ),
         backgroundColor: Colors.transparent,
-        body: ListView(children: [
-          GetBuilder<HomePageController>(
-              init: HomePageController(),
-              builder: (_) {
-                return ListView.builder(
-                    itemCount: C_HomePage.articleList.length,
-                    shrinkWrap: true,
-                    itemBuilder: (BuildContext context, int index) {
-                      return CustomArticleCard(
-                          cardDate: C_HomePage.articleList[index]["date"],
-                          commentCont: C_HomePage.articleList[index]
-                              ["commentCount"],
-                          likeCont: C_HomePage.articleList[index]["likeCount"],
-                          PostOwnrName: C_HomePage.articleList[index]
-                              ["authName"],
-                          postTitle: C_HomePage.articleList[index]["title"],
-                          PostBody: C_HomePage.articleList[index]["body"],
-                          authImage: C_HomePage.articleList[index]["authImage"],
-                          );
-                    });
-              }),
-        ]),
+        body: GetBuilder<HomePageController>(
+            init: HomePageController(),
+            builder: (_) {
+              return ListView.builder(
+                scrollDirection:Axis.vertical ,
+                
+                  itemCount: C_HomePage.articleList.length,
+                  shrinkWrap: true,
+                  itemBuilder: (BuildContext context, int index) {
+                    return CustomArticleCard(
+                        cardDate: C_HomePage.articleList[index]["date"],
+                        commentCont: C_HomePage.articleList[index]
+                            ["commentCount"],
+                        likeCont: C_HomePage.articleList[index]["likeCount"],
+                        PostOwnrName: C_HomePage.articleList[index]
+                            ["authName"],
+                        postTitle: C_HomePage.articleList[index]["title"],
+                        PostBody: C_HomePage.articleList[index]["body"],
+                        authImage: C_HomePage.articleList[index]["authImage"],
+                        );
+                  });
+            }),
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
         floatingActionButton: FloatingActionButton(
           backgroundColor: HexColor("#117c78"),
