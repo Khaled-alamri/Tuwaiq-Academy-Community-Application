@@ -1,4 +1,5 @@
 import 'package:final_project/Component/Custom%20Question%20card.dart';
+import 'package:final_project/Component/CustomArticleCardStatic.dart';
 import 'package:final_project/Component/CustomQuestionCardStatic.dart';
 import 'package:final_project/Component/CustomTextView.dart';
 import 'package:final_project/Component/custom%20article%20card.dart';
@@ -34,16 +35,27 @@ class GuestHomeScreen extends StatelessWidget {
           padding: const EdgeInsets.all(defaultPadding - 5),
           child: ListView(
             children: [
+              CustomArticleCardStatic(
+              onTap: (){
+                Get.toNamed(RouterNames.GustArticleView);
+              },
+              PostBody: "ما هي لغة ++C",
+              PostOwnrName: "نورة العبدالله",
+              cardDate: "28-12-2022",
+              commentCont: 5,
+              likeCont: 20,
+              postTitle: "لغة ++C",
+            ),
             CustomQuestionCardStatic(
                 onTap: (){
                   Get.toNamed(RouterNames.GusteProblemScreen);
                 },
-                sImage: "images/user.png",
                 PostBody: "كيف احمل برنامج xampp ",
                 PostOwnrName: "محمد عبدالرحمن",
                 commentCont: 23,
                 postTitle: "برنامج xampp",
             ),
+            
               //   CustomQuestionCard(
               //   onTap: (){
               //     Get.toNamed(RouterNames.GusteProblemScreen);
