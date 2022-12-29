@@ -20,13 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       //home: GetStorage().read("userID") == null ? const SignUpAndSignIn() : AppLayout(),
-
-
-
       initialRoute: RouterNames.pageView,
-
-
-      
       getPages: getPages,
       translations: Languages(),
       locale: const Locale('ar'),

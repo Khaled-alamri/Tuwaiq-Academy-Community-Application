@@ -97,7 +97,7 @@ class My_Info extends StatelessWidget {
                     NameOfButton: "حفظ",
                     heigthOfButton: 55,
                     onPressed: () {
-                      C_Profile.addImagesProfile();
+                    
                       C_Profile.futchMyInfo();
                     },
                   )

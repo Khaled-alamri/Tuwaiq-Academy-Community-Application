@@ -10,9 +10,11 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class Avter extends StatelessWidget {
+  
   Avter({super.key});
-//  final Function(String)? ontap;
   profileController C_Profile = Get.find();
+
+ 
 
   @override
   Widget build(BuildContext context) {

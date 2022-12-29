@@ -10,9 +10,6 @@ import 'package:hexcolor/hexcolor.dart';
 import '../Packages/package.dart';
 
 class AppLayout extends StatefulWidget {
-  
-  
-
   @override
   State<AppLayout> createState() => _AppLayoutState();
 }
