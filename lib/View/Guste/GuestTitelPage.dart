@@ -24,7 +24,8 @@ class CampPresnt extends StatelessWidget {
       ),
       child: Scaffold(
           backgroundColor: Colors.transparent,
-          body: ListView(children: [
+          body: ListView(
+            children: [
             CardCamp(
               onTap: (){
                 Get.toNamed(RouterNames.PresentCamp);
@@ -32,7 +33,7 @@ class CampPresnt extends StatelessWidget {
               backgroundColor: flutterRightShadow.withOpacity(0.2),
                 DateOfCamp: "28-12-2022",
                 NamberOfStudent: "22",
-                Img: "images/BackGround/Flutter_Logo.png",
+                Img: "images/Flutter Logo 1.png",
                 NameOfCamp: "معسكر Flutter ",
                 detailsOfCamp: "معسكر تدريبي مكثف لتطوير تطبيقات الجوال والويب باستخدام إطار عمل Flutter، والذي يعتبر الإطار الأحدث والأسهل لبناء تطبيقات تعمل على عدة أنظمة."),
           ])),

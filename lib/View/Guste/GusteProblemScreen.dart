@@ -45,8 +45,7 @@ class _GusteProblemScreenState extends State<GusteProblemScreen> {
             child: Stack(
               children: [
                 ListView(
-                  children: [
-                   
+                  children: [                
                     TopCard(imagePQ: "images/xampp(1).jpg"),
                     Container(
                       padding: EdgeInsetsDirectional.all(15),

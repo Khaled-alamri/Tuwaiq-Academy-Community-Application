@@ -26,6 +26,7 @@ class CardCamp extends StatelessWidget {
     return InkWell(
       onTap:onTap ,    
       child: Container(
+        height: 220,
         margin: EdgeInsetsDirectional.all(10),
         padding: EdgeInsetsDirectional.all(20),
         decoration: BoxDecoration(
@@ -73,10 +74,12 @@ class CardCamp extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            AutoSizeText(
-              detailsOfCamp!,
-              style: TextStyle(fontSize: 16),
-              maxLines: 5,
+            Expanded(
+              child: AutoSizeText(
+                detailsOfCamp!,
+                style: TextStyle(fontSize: 16),
+                maxLines: 5,
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
