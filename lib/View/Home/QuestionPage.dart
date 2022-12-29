@@ -146,11 +146,7 @@ class _QuestionPageState extends State<QuestionPage> {
                   }
                 },
                 title: "إرسال",
-              ),
-            ],
-          ),
-        ),
-          IconButton(
+              ), IconButton(
             onPressed: () async {
               addImage();
             },
@@ -182,7 +178,11 @@ class _QuestionPageState extends State<QuestionPage> {
                 }
               },
               title: "اضف المنشور", ),
-        ],
+       
+            ],
+          ),
+        ),
+         
       ),
     );
   }

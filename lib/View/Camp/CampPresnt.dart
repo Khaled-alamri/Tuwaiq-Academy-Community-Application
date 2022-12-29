@@ -125,9 +125,7 @@ class TitelPage extends StatelessWidget {
                 ),
               ),
             ],
-            ),
-          ],
-        ), floatingActionButton: FloatingActionButton(
+            ),floatingActionButton: FloatingActionButton(
           backgroundColor: HexColor("#117c78"),
           onPressed: () {
             Get.to(AddingCampScreen());
@@ -138,8 +136,10 @@ class TitelPage extends StatelessWidget {
             size: 40,
           ),
         ),
+          
+        ), 
       ),
     );
-    ;
+    
   }
 }
