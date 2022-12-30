@@ -11,6 +11,7 @@ import 'package:final_project/Packages/package.dart';
 import 'package:final_project/Services/Storage/File.dart';
 import 'package:final_project/Services/firebase/articleSystem.dart';
 import 'package:final_project/View/Home/QuestionPage.dart';
+import 'package:final_project/View/article/StudentsAtricleView.dart';
 import 'package:final_project/View/article/atricle%20view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -50,7 +51,7 @@ class HomeScreen extends StatelessWidget {
             children: [
                CustomArticleCardStatic(
                 onTap: (){
-                  Get.toNamed(RouterNames.GustArticleView);
+                  Get.to(() => StudentsAtricleView());
                 },
                 PostBody: "ما هي لغة ++C",
                 PostOwnrName: "نورة العبدالله",
