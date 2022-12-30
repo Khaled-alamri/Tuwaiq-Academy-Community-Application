@@ -1,9 +1,11 @@
 import 'package:final_project/Component/Profile/Avater.dart';
 import 'package:final_project/Component/Profile/ItemOfProfile.dart';
+import 'package:final_project/Controller/homepage%20Controller.dart';
 import 'package:final_project/Packages/package.dart';
 import 'package:final_project/Controller/signOutController.dart';
 import 'package:final_project/Services/firebase/Auth/EmailAndPassword.dart';
 import 'package:final_project/Controller/Profile%20controller.dart';
+import 'package:final_project/Services/firebase/articleSystem.dart';
 import 'package:final_project/View/Camp/CampPresnt.dart';
 import 'package:final_project/View/Sing/Forge_Password_or_Chang.dart';
 import 'package:final_project/View/profile/My_Info.dart';
@@ -20,6 +22,8 @@ class profile extends StatelessWidget {
 
   SignOutController getout = Get.put(SignOutController());
   profileController C_Profile = Get.find();
+
+  articleSystem article = articleSystem();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +70,7 @@ class profile extends StatelessWidget {
               //        Img: "images/images 1.png",
               //        size: 70,
               //      )),
-              
+
               Avter1(),
               Container(
                 width: 366,
@@ -87,6 +91,7 @@ class profile extends StatelessWidget {
                         name: "منشوراتي",
                         ontap: () {
                           Get.to(My_Post());
+                          article.viewMyArticle(idUser: "1ItdkMNGcjiTUlzUTcNM");
                         }),
                     ItemProfile(
                       name: "تحديث كلمة السر",

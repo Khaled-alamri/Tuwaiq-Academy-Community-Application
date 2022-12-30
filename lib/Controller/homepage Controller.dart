@@ -14,6 +14,7 @@ class HomePageController extends GetxController {
 
   // CustomArticleCard articleCard = CustomArticleCard(PostBody: body,PostOwnrName: authName,);
   articleSystem article = articleSystem();
+  profileController C_Profile = Get.find();
 
   List articleList = [];
 
