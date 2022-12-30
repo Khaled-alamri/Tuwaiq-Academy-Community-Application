@@ -22,12 +22,14 @@ class HomePageController extends GetxController {
     // TODO: implement onInit
     super.onInit();
     articleList = await article.viewAllArticle();
+    futchShowArticle();
     update();
   }
 
   futchShowArticle() async {
     try {
       var refData = await article.viewAllArticle();
+      //print(refData);
       CustomArticleCard(
         PostBody: refData["body"],
         PostOwnrName: "authName",
@@ -40,7 +42,7 @@ class HomePageController extends GetxController {
 
       update();
     } catch (e) {
-      print(e);
+      Get.snackbar("Wrong", "try agine");
     }
   }
 }
