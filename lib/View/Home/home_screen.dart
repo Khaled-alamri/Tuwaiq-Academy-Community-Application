@@ -1,4 +1,6 @@
 import 'package:final_project/Component/Custom%20Question%20card.dart';
+import 'package:final_project/Component/CustomArticleCardStatic.dart';
+import 'package:final_project/Component/CustomQuestionCardStatic.dart';
 import 'package:final_project/Component/custom%20IconwithName.dart';
 import 'package:final_project/Component/custom%20contentText.dart';
 import 'package:final_project/Component/custom%20article%20card.dart';
@@ -42,16 +44,43 @@ class HomeScreen extends StatelessWidget {
           titleColor: primaryColor,
         ),
         backgroundColor: Colors.transparent,
-        body: RefreshIndicator(
-          onRefresh: () async {
-            C_HomePage.onInit();
-           
-          },
-          child: GetBuilder<HomePageController>(
-              init: HomePageController(),
-              builder: (_) {
-                return Viewbody();
-              }),
+        body: Padding(
+          padding: const EdgeInsets.all(defaultPadding -5),
+          child: ListView(
+            children: [
+               CustomArticleCardStatic(
+                onTap: (){
+                  Get.toNamed(RouterNames.GustArticleView);
+                },
+                PostBody: "ما هي لغة ++C",
+                PostOwnrName: "نورة العبدالله",
+                cardDate: "28-12-2022",
+                commentCont: 5,
+                likeCont: 20,
+                postTitle: "لغة ++C",
+              ),
+              CustomQuestionCardStatic(
+                  onTap: (){
+                    Get.toNamed(RouterNames.GusteProblemScreen);
+                  },
+                  PostBody: "كيف احمل برنامج xampp ",
+                  PostOwnrName: "محمد عبدالرحمن",
+                  commentCont: 23,
+                  postTitle: "برنامج xampp",
+              ),
+              RefreshIndicator(
+                onRefresh: () async {
+                  C_HomePage.onInit();
+                 
+                },
+                child: GetBuilder<HomePageController>(
+                    init: HomePageController(),
+                    builder: (_) {
+                      return Viewbody();
+                    }),
+              ),
+            ],
+          ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
         floatingActionButton: FloatingActionButton(
