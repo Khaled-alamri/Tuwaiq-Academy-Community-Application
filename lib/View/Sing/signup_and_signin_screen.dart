@@ -1,5 +1,6 @@
 import 'package:final_project/Component/CustomButton.dart';
 import 'package:final_project/Component/SingComponenr/logoWithTitle.dart';
+import 'package:final_project/Controller/anonmenceLogin.dart';
 import 'package:final_project/Custom/CustomSlideButton.dart';
 import 'package:final_project/Packages/package.dart';
 import 'package:final_project/Router/Routers.dart';
@@ -14,7 +15,8 @@ import 'package:hexcolor/hexcolor.dart';
 import '../Guste/GuestAppLayout.dart';
 
 class SignUpAndSignIn extends StatelessWidget {
-  const SignUpAndSignIn({Key? key}) : super(key: key);
+  SignUpAndSignIn({Key? key}) : super(key: key);
+  anonmenceController C_anonmence = Get.put(anonmenceController());
 
   @override
   Widget build(BuildContext context) {
@@ -50,12 +52,11 @@ class SignUpAndSignIn extends StatelessWidget {
                       radius: 5.0,
                       onPressed: () {
                         Get.to(() => SignUpScreen());
-                        
                       }),
                   const SizedBox(
                     height: 50,
                   ),
-                         SizedBox(
+                  SizedBox(
                     width: 200,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -82,14 +83,13 @@ class SignUpAndSignIn extends StatelessWidget {
                   const SizedBox(
                     height: 40,
                   ),
-                    CustomSlideButton(
+                  CustomSlideButton(
                     slideIcon: "images/guste.png",
                     text: "مرحباً بك كضيف",
                     onSubmit: () {
-                      Get.off(GuestAppLayout());
+                      C_anonmence.anonmenceMethod();
                     },
                   )
-                  
                 ],
               ),
             ),

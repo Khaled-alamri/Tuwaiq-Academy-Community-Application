@@ -1,8 +1,10 @@
+import 'package:final_project/Controller/Profile%20controller.dart';
 import 'package:final_project/Style/Style.dart';
 import 'package:final_project/View/Camp/CampPresnt.dart';
 import 'package:final_project/View/Guste/GuestHomeScreen.dart';
 import 'package:final_project/View/Guste/GuestTitelPage.dart';
 import 'package:final_project/View/Guste/Guestprofile.dart';
+import 'package:final_project/View/Guste/Guestsearch.dart';
 import 'package:final_project/View/Home/home_screen.dart';
 import 'package:final_project/View/article/search_field.dart';
 import 'package:final_project/View/profile/profileView.dart';
@@ -17,6 +19,7 @@ class GuestAppLayout extends StatefulWidget {
 
 class _GuestAppLayout extends State<GuestAppLayout> {
   int _selectedIndex = 0;
+  //profileController C_Profile = Get.put(profileController());
 
   List<Widget> bottomNavigationBarItem = [
     GuestHomeScreen(),
@@ -36,8 +39,7 @@ class _GuestAppLayout extends State<GuestAppLayout> {
       width: Get.width,
       decoration: const BoxDecoration(
         gradient:
-            LinearGradient(
-              colors: [Color(0xFFD9FFF3), Color(0xFFFFE1F9)]),
+            LinearGradient(colors: [Color(0xFFD9FFF3), Color(0xFFFFE1F9)]),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -48,7 +50,7 @@ class _GuestAppLayout extends State<GuestAppLayout> {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           selectedItemColor: primaryColor,
-          unselectedItemColor:primaryColor.withOpacity(0.4) ,
+          unselectedItemColor: primaryColor.withOpacity(0.4),
           onTap: (index) {
             setState(() {
               _selectedIndex = index;

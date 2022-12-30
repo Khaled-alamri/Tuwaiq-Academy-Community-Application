@@ -76,7 +76,22 @@ class _AddingCampScreen extends State<AddingCampScreen> {
                   Align(
                       alignment: Alignment.topRight,
                       child: Text(
-                        "تفاصيل المعسكر",
+                        "وصف المعسكر",
+                        style: TextStyle(fontSize: 20),
+                      )),
+                  CustomTextFieldPost(
+                    onChanged: (Value) => C_Camp.body = Value,
+                    labelTextShow: "اذكر وصف المعسكر",
+                  )
+                ],
+              ),
+               SizedBox(height: 25,),
+              Column(
+                children: [
+                  Align(
+                      alignment: Alignment.topRight,
+                      child: Text(
+                     "اهداف المعسكر",
                         style: TextStyle(fontSize: 20),
                       )),
                   CustomTextFieldPost(

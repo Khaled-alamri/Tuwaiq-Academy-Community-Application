@@ -56,8 +56,8 @@ class AuthFirebase {
         Get.snackbar("wrong", "No user found for that email.");
         //print('No user found for that email.');
       } else if (e.code == 'wrong-password') {
-                Get.snackbar("wrong", "Wrong password provided for that user.");
-       // print('Wrong password provided for that user.');
+        Get.snackbar("wrong", "Wrong password provided for that user.");
+        // print('Wrong password provided for that user.');
       }
     }
   }
@@ -93,6 +93,19 @@ class AuthFirebase {
       });
     } catch (e) {
       Get.snackbar("Error", e.toString());
+    }
+  }
+
+  anonymouslyLogin({Function(bool)? isDone}) async {
+    try {
+      var auth = FirebaseAuth.instance;
+      var user = await auth.signInAnonymously().then((value) {
+        return isDone!(true);
+      });
+      print("Users Sign in ");
+      print(user.user?.uid.toString());
+    } catch (error) {
+      print(error);
     }
   }
 }
