@@ -7,6 +7,7 @@ import 'package:final_project/Custom/CustomAppBar.dart';
 import 'package:final_project/Custom/CustomAppBarWithOutPic.dart';
 import 'package:final_project/Packages/package.dart';
 import 'package:final_project/Services/Storage/File.dart';
+import 'package:final_project/Services/firebase/articleSystem.dart';
 import 'package:final_project/View/Home/QuestionPage.dart';
 import 'package:final_project/View/article/atricle%20view.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,8 @@ import 'package:hexcolor/hexcolor.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
   HomePageController C_HomePage = Get.put(HomePageController());
-  @override
+  articleSystem article = articleSystem();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,29 +40,17 @@ class HomeScreen extends StatelessWidget {
           titleColor: primaryColor,
         ),
         backgroundColor: Colors.transparent,
-        body: GetBuilder<HomePageController>(
-            init: HomePageController(),
-            builder: (_) {
-              return ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  itemCount: C_HomePage.articleList.length,
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-                    return CustomArticleCard(
-                      onTap: () {
-                        Get.to(ArticleView());
-                      },
-                      cardDate: C_HomePage.articleList[index]["date"],
-                      commentCont: C_HomePage.articleList[index]
-                          ["commentCount"],
-                      likeCont: C_HomePage.articleList[index]["likeCount"],
-                      PostOwnrName: C_HomePage.articleList[index]["authName"],
-                      postTitle: C_HomePage.articleList[index]["title"],
-                      PostBody: C_HomePage.articleList[index]["body"],
-                      authImage: C_HomePage.articleList[index]["authImage"],
-                    );
-                  });
-            }),
+        body: RefreshIndicator(
+          onRefresh: () async {
+            C_HomePage.onInit();
+           
+          },
+          child: GetBuilder<HomePageController>(
+              init: HomePageController(),
+              builder: (_) {
+                return Viewbody();
+              }),
+        ),
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
         floatingActionButton: FloatingActionButton(
           backgroundColor: HexColor("#117c78"),
@@ -75,5 +65,27 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  ListView Viewbody() {
+    return ListView.builder(
+        scrollDirection: Axis.vertical,
+        itemCount: C_HomePage.articleList.length,
+        shrinkWrap: true,
+        itemBuilder: (BuildContext context, int index) {
+          
+          return CustomArticleCard(
+            onTap: () {
+              Get.to(ArticleView());
+            },
+            cardDate: C_HomePage.articleList[index]["date"],
+            commentCont: C_HomePage.articleList[index]["commentCount"],
+            likeCont: C_HomePage.articleList[index]["likeCount"],
+            PostOwnrName: C_HomePage.articleList[index]["authName"],
+            postTitle: C_HomePage.articleList[index]["title"],
+            PostBody: C_HomePage.articleList[index]["body"],
+            authImage: C_HomePage.articleList[index]["authImage"],
+          );
+        });
   }
 }
