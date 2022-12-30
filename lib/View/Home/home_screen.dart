@@ -13,6 +13,7 @@ import 'package:final_project/Services/firebase/articleSystem.dart';
 import 'package:final_project/View/Home/QuestionPage.dart';
 import 'package:final_project/View/article/StudentsAtricleView.dart';
 import 'package:final_project/View/article/atricle%20view.dart';
+import 'package:final_project/View/article/problem_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -62,7 +63,7 @@ class HomeScreen extends StatelessWidget {
               ),
               CustomQuestionCardStatic(
                   onTap: (){
-                    Get.toNamed(RouterNames.GusteProblemScreen);
+                    Get.to(() => ProblemScreen());
                   },
                   PostBody: "كيف احمل برنامج xampp ",
                   PostOwnrName: "محمد عبدالرحمن",

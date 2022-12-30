@@ -5,6 +5,8 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+import '../../Packages/package.dart';
+
 class ProblemScreen extends StatefulWidget {
   const ProblemScreen({Key? key}) : super(key: key);
 
@@ -18,25 +20,36 @@ class _ProblemScreenState extends State<ProblemScreen> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
+        appBar: AppBar(
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                leading: IconButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  icon: Icon(
+                    Icons.arrow_circle_right_outlined,
+                    size: 40,
+                    color: questionsColor,
+                  ),
+                )),
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [
-                  Color(0xFFE2D1C3),
-                  Color(0xFFFDFCFB)
+                Colors.white,
+          Color.fromARGB(255, 255, 239, 179),
                 ],
-                stops: [0.0, 1.0],
-                tileMode: TileMode.clamp),
+                ),
           ),
+          
           child: Stack(
             children: [
               ListView(
                 children: [
-                  SizedBox(
-                    height: 30,
-                  ),
+                
                   Padding(
                     padding: const EdgeInsetsDirectional.only(
                         start: 10.0, bottom: 5),
@@ -49,7 +62,7 @@ class _ProblemScreenState extends State<ProblemScreen> {
                       ),
                     ),
                   ),
-                  TopCard(imagePQ: "images/ISO_C++_Logo.svg.png"),
+                  TopCard(imagePQ: "images/xampp(1).jpg"),
                   Container(
                     padding: EdgeInsetsDirectional.all(15),
                     child: Column(
@@ -63,7 +76,7 @@ class _ProblemScreenState extends State<ProblemScreen> {
                             Text(
                               "Dec19 - 2022",
                               style: TextStyle(
-                                color: Color.fromARGB(255, 226, 226, 226),
+                                color: Colors.black.withOpacity(0.5),
                                 fontSize: 16,
                               ),
                             ),
@@ -81,10 +94,10 @@ class _ProblemScreenState extends State<ProblemScreen> {
                       color: Colors.white,
                     ),
                     child: Text(
-                      "مشكلة تشغيل تطبيق فلاتر",
+                      "برنامج Xampp",
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 28,
+                          fontSize: 25,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -115,7 +128,7 @@ class _ProblemScreenState extends State<ProblemScreen> {
                               radius: 30,
                               backgroundColor: Colors.white,
                               backgroundImage:
-                                  AssetImage("assets/images/girl.jpg"),
+                                  AssetImage("images/images 1.png"),
                             ),
                             const SizedBox(
                               width: 10,
@@ -125,7 +138,7 @@ class _ProblemScreenState extends State<ProblemScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "سارة القوده",
+                                  "نورةالعبدالله",
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 17,
@@ -156,7 +169,7 @@ class _ProblemScreenState extends State<ProblemScreen> {
                             color: Colors.white,
                           ),
                           child: Text(
-                            "حاول تتأكد من اصدار اندرويد ممكن يكون السبب اللي جعل هذه المشكلة تظهر لك ",
+                              "نقوم بالدخول على صفحة البرنامج من خلال هذا الرابط  https://www.apachefriends.org/download.html2. نقوم باختيار الاصدار الذى نريده (يفضل الاصدار7.1.1 / PHP 7.1.1 وهو الإصدار الأخير حتى كتابة هذه السطور ) ثم الضغط على download ليبدأ البرنامج بالتحميل.3. بعد أن ينتهي البرنامج من التحميل نقوم بفتحه ليبدأ فى التثبيت نتبع الخطوات ",
                             style: TextStyle(
                                 color: Colors.black45,
                                 fontSize: 17,
@@ -175,49 +188,52 @@ class _ProblemScreenState extends State<ProblemScreen> {
           ),
         ),
         bottomSheet: Container(
+        
           padding: EdgeInsetsDirectional.all(10),
           height: 70,
-          child: Row(
-            // alignment: Alignment.bottomCenter,
-            children: [
-              Align(
-                alignment: Alignment.bottomRight,
-                child: Container(
-                  width: 340,
-                  height: 50,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      fillColor: Colors.white,
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(0)),
+          child: Expanded(
+            child: Row(
+              // alignment: Alignment.bottomCenter,
+              children: [
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container( 
+                    width: Get.width * 0.80,
+                    height: 50,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(0)),
+                        ),
+                        filled: true,
+                        hintText: "اترك رسالتك هنا",
+                        hintStyle: TextStyle(color: Colors.black.withOpacity(0.5)),
+                        focusColor: questionsColor,
+                        border: InputBorder.none,
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(
+                              color: Color.fromARGB(64, 255, 255, 255), width: 0),
+                        ),
                       ),
-                      filled: true,
-                      hintText: "اكتب رسالتك هنا",
-                      hintStyle: TextStyle(color: Colors.black),
-                      focusColor: Colors.brown,
-                      border: InputBorder.none,
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(64, 255, 255, 255), width: 0),
-                      ),
+                      style: TextStyle(height: 3.0),
                     ),
-                    style: TextStyle(height: 3.0),
                   ),
                 ),
-              ),
-              Align(
-                alignment: Alignment.bottomLeft,
-                child: IconButton(
-                  icon: Icon(
-                    Icons.send,
-                    size: 36,
-                    color: Colors.brown,
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.send,
+                      size: 36,
+                      color: questionsColor,
+                    ),
+                    onPressed: () {},
                   ),
-                  onPressed: () {},
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -238,7 +254,7 @@ class _ProblemScreenState extends State<ProblemScreen> {
           width: 10,
         ),
         Text(
-          "سارة القوده",
+          "محمد عبدالرحمن",
           style: TextStyle(
               color: Colors.black, fontSize: 17, fontWeight: FontWeight.w600),
         ),
@@ -254,11 +270,13 @@ class _ProblemScreenState extends State<ProblemScreen> {
         const SizedBox(
           height: 10,
         ),
-        Text(
-          "السلام عليكم ورحمه الله وبركاته \n مساء طيب علي الجميع \n لو سمحت عندى مشكلة في تطبيق فلاتر وبحاول احل المشكلة لكن مو عارف",
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 17,
+        Container(
+          child: Text(
+            "السلام عليكم ورحمه الله وبركاته \n كيفية تحميل برنامج Xampp ?",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 17,
+            ),
           ),
         ),
       ],
