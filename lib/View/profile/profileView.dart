@@ -16,18 +16,21 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class profile extends StatelessWidget {
   profile({super.key});
 
   SignOutController getout = Get.put(SignOutController());
   profileController C_Profile = Get.find();
+    final Uri phoneNumber = Uri.parse("500501517");
+  final Uri whatsApp = Uri.parse("https://wa.me/500501517");
 
   articleSystem article = articleSystem();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff4A3A75),
+      backgroundColor: primaryColor,
       body: ListView(children: [
         SizedBox(
           height: 15,
@@ -71,7 +74,10 @@ class profile extends StatelessWidget {
               //        size: 70,
               //      )),
 
-              Avter1(),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical:13.0),
+                child: Avter1(),
+              ),
               Container(
                 width: 366,
                 decoration: BoxDecoration(
@@ -104,7 +110,11 @@ class profile extends StatelessWidget {
                         ontap: (() {
                           Get.to(TermsAndCondition());
                         })),
-                    ItemProfile(name: "الدعم الفني"),
+                    ItemProfile(
+                      ontap: (){
+                        launchUrl(whatsApp);
+                      },
+                      name: "الدعم الفني"),
                   ]),
                 ),
               )
@@ -115,3 +125,4 @@ class profile extends StatelessWidget {
     );
   }
 }
+
