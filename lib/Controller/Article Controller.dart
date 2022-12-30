@@ -13,7 +13,7 @@ class PostController extends GetxController {
   String postUID = "";
   String image = "";
   String body = "";
-  String date = "";
+  String date = "2023/01/01";
   bool article = true;
   int commentCount = 0;
   int likeCount = 0;
