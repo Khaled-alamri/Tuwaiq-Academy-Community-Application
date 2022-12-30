@@ -11,7 +11,7 @@ import '../../Packages/package.dart';
 
 class GuestHomeScreen extends StatelessWidget {
   GuestHomeScreen({Key? key}) : super(key: key);
-  HomePageController C_HomePage = Get.put(HomePageController());
+ // HomePageController C_HomePage = Get.put(HomePageController());
 
   @override
   Widget build(BuildContext context) {
