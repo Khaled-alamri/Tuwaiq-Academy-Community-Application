@@ -50,6 +50,9 @@ dependencies:
   get_storage: ^2.0.3
   slide_to_act: ^2.0.1
 
+  like_button: ^2.0.5
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -76,6 +79,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/
+    - images/BackGround/
+    - images/AppBarIcon/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

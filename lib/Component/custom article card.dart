@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:like_button/like_button.dart';
 
 class CustomArticleCard extends StatelessWidget {
   CustomArticleCard(
@@ -65,7 +66,7 @@ class CustomArticleCard extends StatelessWidget {
               children: [
                 Icon(
                   Icons.comment,
-                  size: 20,
+                  size: 25,
                   color: primaryColor,
                 ),
                 const SizedBox(
@@ -79,19 +80,28 @@ class CustomArticleCard extends StatelessWidget {
                 const SizedBox(
                   width: 10,
                 ),
-                Icon(
-                  Icons.thumb_up,
-                  size: 20,
-                  color: primaryColor,
-                ),
+                LikeButton(
+          size: 25,
+          circleColor:
+              CircleColor(start: Color(0xff00ddff), end: Color(0xff0099cc)),
+          bubblesColor: BubblesColor(
+            dotPrimaryColor: Color(0xff33b5e5),
+            dotSecondaryColor: Color(0xff0099cc),
+          ),
+          likeBuilder: (bool isLiked) {
+            return Icon(
+              Icons.thumb_up,
+              color: isLiked ? Color.fromARGB(255, 27, 190, 35) : Colors.grey,
+              size: 25,
+            );
+          },
+          likeCount: likeCont,
+          
+        ),
                 const SizedBox(
                   width: 7,
                 ),
-                Text(
-                  //like
-                  likeCont.toString(),
-                  style: TextStyle(color: primaryColor, fontSize: 15),
-                ),
+                
               ],
             ),
           ],

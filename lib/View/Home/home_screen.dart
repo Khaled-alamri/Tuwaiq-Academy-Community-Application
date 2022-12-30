@@ -19,7 +19,9 @@ import 'package:hexcolor/hexcolor.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
   HomePageController C_HomePage = Get.put(HomePageController());
+
   articleSystem article = articleSystem();
+
 
   @override
   Widget build(BuildContext context) {
