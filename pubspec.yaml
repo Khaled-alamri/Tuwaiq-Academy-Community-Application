@@ -51,6 +51,8 @@ dependencies:
   slide_to_act: ^2.0.1
 
   like_button: ^2.0.5
+  url_launcher: ^6.1.7
+  flutter_speed_dial: ^6.2.0
 
 
 dev_dependencies:
