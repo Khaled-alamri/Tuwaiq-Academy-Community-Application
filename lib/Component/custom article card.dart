@@ -89,13 +89,16 @@ class CustomArticleCard extends StatelessWidget {
             dotSecondaryColor: Color(0xff0099cc),
           ),
           likeBuilder: (bool isLiked) {
-            return Icon(
-              Icons.thumb_up,
-              color: isLiked ? Color.fromARGB(255, 27, 190, 35) : Colors.grey,
-              size: 25,
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5.0),
+              child: Icon(
+                Icons.thumb_up,
+                color: isLiked ? primaryColor : Colors.grey,
+                size: 25,
+              ),
             );
           },
-          likeCount: likeCont,
+          likeCount: likeCont ,
           
         ),
                 const SizedBox(
