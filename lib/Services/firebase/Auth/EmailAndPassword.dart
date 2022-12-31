@@ -39,14 +39,15 @@ class AuthFirebase {
   signInWithEmail(
       {required String email,
       required String password,
-      Function(bool)? isDone}) async {
+      Function(bool login,String uid)? isDone}) async {
     try {
       var user = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
       if (user.user!.uid != null) {
         // GetStorage().write("userID", user.user!.uid);
         // print(GetStorage().toString());
-        isDone!(true);
+       
+        isDone!(true,user.user!.uid );
 
         //print(user.user!.uid);
         //Get.to(() => AppLayout());

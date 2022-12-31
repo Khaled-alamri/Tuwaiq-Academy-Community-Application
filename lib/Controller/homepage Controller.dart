@@ -43,7 +43,8 @@ class HomePageController extends GetxController {
 
       update();
     } catch (e) {
-      Get.snackbar("Wrong", "try agine");
+      print(e);
+      //Get.snackbar("Wrong", "try agine");
     }
   }
 }
