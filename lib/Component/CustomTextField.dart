@@ -11,6 +11,7 @@ class CustomTextField extends StatelessWidget {
     this.keyboardType,
     this.IconForText,
     this.controller,
+    this.obscureText = false,
   });
   final String? validaterMasseg;
   final String? hintTextShow;
@@ -19,10 +20,12 @@ class CustomTextField extends StatelessWidget {
   final IconData? IconForText;
   final TextEditingController? controller;
   Function(String)? onChanged;
+  bool obscureText ;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obscureText,
       onChanged: onChanged,
       keyboardType: keyboardType,
       validator: (String? value) {

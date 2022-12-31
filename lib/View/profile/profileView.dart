@@ -111,8 +111,8 @@ class profile extends StatelessWidget {
                           Get.to(TermsAndCondition());
                         })),
                     ItemProfile(
-                      ontap: (){
-                        launchUrl(whatsApp);
+                      ontap: () async{
+                         await launchUrl(whatsApp);
                       },
                       name: "الدعم الفني"),
                   ]),
