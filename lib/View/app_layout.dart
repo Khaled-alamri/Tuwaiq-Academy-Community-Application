@@ -1,5 +1,6 @@
 import 'package:final_project/Controller/Profile%20controller.dart';
 import 'package:final_project/View/Camp/CampPresnt.dart';
+import 'package:final_project/View/Guste/SearchPage.dart';
 import 'package:final_project/View/Home/home_screen.dart';
 import 'package:final_project/View/article/search_field.dart';
 import 'package:final_project/View/profile/profileView.dart';
@@ -19,7 +20,7 @@ class _AppLayoutState extends State<AppLayout> {
 profileController C_Profile = Get.put(profileController());
   List<Widget> bottomScreens = [
     HomeScreen(),
-    SearchField(),
+    SearchPage(),
     TitelPage(),
     profile(),
   ];

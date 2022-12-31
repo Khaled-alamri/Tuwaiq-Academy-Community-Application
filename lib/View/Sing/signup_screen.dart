@@ -112,21 +112,6 @@ class SignUpScreen extends StatelessWidget {
                             height: 30.0,
                           ),
                              
-                          // Row(
-                          //   children: [
-                          //     Checkbox(
-                          //       focusColor: primaryColor,
-                          //       activeColor: primaryColor,
-                          //       checkColor: primaryColor,
-                          //       value: isChecked,
-                          //       onChanged: (bool? value) {
-                          //         isChecked = value!;
-                          //       },
-                          //     )
-                          //   ],
-                          // ),
-                          // TermsAndConditions(                      
-                          // ),
                           TermsAndConditions(),
                           const SizedBox(
                             height: 30.0,

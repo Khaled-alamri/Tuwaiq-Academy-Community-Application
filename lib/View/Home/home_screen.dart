@@ -63,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                 onTap: () {
                   Get.to(() => StudentsAtricleView());
                 },
-                PostBody: "ما هي لغة ++C",
+                PostBody: " نبذة عن لغة ++C ",
                 PostOwnrName: "نورة العبدالله",
                 cardDate: "28-12-2022",
                 commentCont: 5,
@@ -74,7 +74,7 @@ class HomeScreen extends StatelessWidget {
                 onTap: () {
                   Get.to(() => ProblemScreen());
                 },
-                PostBody: "كيف احمل برنامج xampp ",
+                PostBody: "كيف احمل برنامج xampp ؟",
                 PostOwnrName: "محمد عبدالرحمن",
                 commentCont: 23,
                 postTitle: "برنامج xampp",

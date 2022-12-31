@@ -1,30 +1,17 @@
+import 'dart:io';
 import 'package:final_project/Component/Profile/Avater.dart';
 import 'package:final_project/Component/Profile/ItemOfProfile.dart';
-import 'package:final_project/Controller/homepage%20Controller.dart';
-import 'package:final_project/Packages/package.dart';
-import 'package:final_project/Controller/signOutController.dart';
-import 'package:final_project/Services/firebase/Auth/EmailAndPassword.dart';
 import 'package:final_project/Controller/Profile%20controller.dart';
+import 'package:final_project/Controller/signOutController.dart';
 import 'package:final_project/Services/firebase/articleSystem.dart';
-import 'package:final_project/View/Camp/CampPresnt.dart';
-import 'package:final_project/View/Sing/Forge_Password_or_Chang.dart';
-import 'package:final_project/View/profile/My_Info.dart';
-import 'package:final_project/View/profile/My_Post.dart';
-import 'package:final_project/View/profile/TermsAndCondition.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:get/get.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../Packages/package.dart';
 
 class profile extends StatelessWidget {
   profile({super.key});
 
   SignOutController getout = Get.put(SignOutController());
   profileController C_Profile = Get.find();
-    final Uri phoneNumber = Uri.parse("500501517");
-  final Uri whatsApp = Uri.parse("https://wa.me/500501517");
 
   articleSystem article = articleSystem();
   @override
@@ -67,15 +54,8 @@ class profile extends StatelessWidget {
               color: Color(0xffFFFFFF)),
           child: Column(
             children: [
-              //  SizedBox(
-              //      height: 170,
-              //      child: Avter(
-              //        Img: "images/images 1.png",
-              //        size: 70,
-              //      )),
-
               Padding(
-                padding: const EdgeInsets.symmetric(vertical:13.0),
+                padding: const EdgeInsets.symmetric(vertical: 13.0),
                 child: Avter1(),
               ),
               Container(
@@ -88,7 +68,7 @@ class profile extends StatelessWidget {
                   padding: const EdgeInsets.all(defaultPadding - 5),
                   child: Column(children: [
                     ItemProfile(
-                      name: "بيانات شخصيه",
+                      name: "البيانات الشخصية",
                       ontap: () {
                         Get.to(My_Info());
                       },
@@ -111,10 +91,10 @@ class profile extends StatelessWidget {
                           Get.to(TermsAndCondition());
                         })),
                     ItemProfile(
-                      ontap: () async{
-                         await launchUrl(whatsApp);
-                      },
-                      name: "الدعم الفني"),
+                        ontap: () {
+                          openwhatsapp();
+                        },
+                        name: "الدعم الفني"),
                   ]),
                 ),
               )
@@ -126,3 +106,23 @@ class profile extends StatelessWidget {
   }
 }
 
+openwhatsapp() async {
+  var whatsapp = "500501517";
+  var whatsappURl_android = "whatsapp://send?phone=" + whatsapp + "&text=hello";
+  var whatappURL_ios = "https://wa.me/$whatsapp?text=${Uri.parse("hello")}";
+  if (Platform.isIOS) {
+    // for iOS phone only
+    if (await canLaunch(whatappURL_ios)) {
+      await launch(whatappURL_ios, forceSafariVC: false);
+    } else {
+      Get.snackbar("الواتس اب غير متاح", "فضلاً  قم بتثبيت الواتس اب");
+    }
+  } else {
+    // android , web
+    if (await canLaunch(whatsappURl_android)) {
+      await launch(whatsappURl_android);
+    } else {
+      Get.snackbar("الواتس اب غير متاح \u26A0", " فضلاً قم بتثبيت الواتس اب");
+    }
+  }
+}

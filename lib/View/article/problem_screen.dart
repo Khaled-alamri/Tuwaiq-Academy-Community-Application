@@ -272,7 +272,7 @@ class _ProblemScreenState extends State<ProblemScreen> {
         ),
         Container(
           child: Text(
-            "السلام عليكم ورحمه الله وبركاته \n كيفية تحميل برنامج Xampp ?",
+            "السلام عليكم ورحمه الله وبركاته \n كيفية تحميل برنامج Xampp ؟",
             style: TextStyle(
               color: Colors.black,
               fontSize: 17,
