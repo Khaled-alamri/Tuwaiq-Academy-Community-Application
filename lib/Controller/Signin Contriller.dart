@@ -1,5 +1,6 @@
 import 'package:final_project/Services/firebase/Auth/EmailAndPassword.dart';
 import 'package:final_project/Services/firebase/UserProfile.dart';
+import 'package:final_project/View/Admin/AdminAppLayout.dart';
 import 'package:final_project/View/app_layout.dart';
 import 'package:get/get.dart';
 
@@ -15,9 +16,13 @@ class SignInController extends GetxController {
       authObjects.signInWithEmail(
         email: email,
         password: password,
-        isDone: (Value) {
+        isDone: (Value, uid) {
           if (Value) {
-            Get.off(AppLayout());
+            if (uid == "L24iwT3szpNrto63g5UyqsyUtNh1") {
+              Get.off(AdminAppLayout());
+            } else {
+              Get.off(AppLayout());
+            }
           }
         },
       );

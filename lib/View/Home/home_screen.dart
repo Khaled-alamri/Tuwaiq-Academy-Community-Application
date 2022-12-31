@@ -26,7 +26,6 @@ class HomeScreen extends StatelessWidget {
 
   articleSystem article = articleSystem();
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -47,11 +46,21 @@ class HomeScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
         body: Padding(
-          padding: const EdgeInsets.all(defaultPadding -5),
+          padding: const EdgeInsets.all(defaultPadding - 5),
           child: ListView(
             children: [
-               CustomArticleCardStatic(
-                onTap: (){
+              RefreshIndicator(
+                onRefresh: () async {
+                  C_HomePage.onInit();
+                },
+                child: GetBuilder<HomePageController>(
+                    init: HomePageController(),
+                    builder: (_) {
+                      return Viewbody();
+                    }),
+              ),
+              CustomArticleCardStatic(
+                onTap: () {
                   Get.to(() => StudentsAtricleView());
                 },
                 PostBody: "ما هي لغة ++C",
@@ -62,24 +71,13 @@ class HomeScreen extends StatelessWidget {
                 postTitle: "لغة ++C",
               ),
               CustomQuestionCardStatic(
-                  onTap: (){
-                    Get.to(() => ProblemScreen());
-                  },
-                  PostBody: "كيف احمل برنامج xampp ",
-                  PostOwnrName: "محمد عبدالرحمن",
-                  commentCont: 23,
-                  postTitle: "برنامج xampp",
-              ),
-              RefreshIndicator(
-                onRefresh: () async {
-                  C_HomePage.onInit();
-                 
+                onTap: () {
+                  Get.to(() => ProblemScreen());
                 },
-                child: GetBuilder<HomePageController>(
-                    init: HomePageController(),
-                    builder: (_) {
-                      return Viewbody();
-                    }),
+                PostBody: "كيف احمل برنامج xampp ",
+                PostOwnrName: "محمد عبدالرحمن",
+                commentCont: 23,
+                postTitle: "برنامج xampp",
               ),
             ],
           ),
@@ -106,7 +104,6 @@ class HomeScreen extends StatelessWidget {
         itemCount: C_HomePage.articleList.length,
         shrinkWrap: true,
         itemBuilder: (BuildContext context, int index) {
-          
           return CustomArticleCard(
             onTap: () {
               Get.to(ArticleView());
