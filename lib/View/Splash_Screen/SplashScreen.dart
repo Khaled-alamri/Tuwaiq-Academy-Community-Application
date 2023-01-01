@@ -21,7 +21,7 @@ class SplashScreen extends StatelessWidget {
                 splash: "images/Logo.png",
                 splashIconSize: 300,
                 nextScreen: PageViewScreen(),
-                splashTransition: SplashTransition.rotationTransition,
+                splashTransition: SplashTransition.fadeTransition,
                 backgroundColor: Colors.transparent,)
                 )
     );

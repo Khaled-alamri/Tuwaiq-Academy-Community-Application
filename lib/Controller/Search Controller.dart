@@ -5,8 +5,7 @@ import 'package:get/get.dart';
 class SearchController extends GetxController {
   Future getData(String collection) async {
     final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-    QuerySnapshot snapshot =
-        await firebaseFirestore.collection(collection).get();
+    QuerySnapshot snapshot = await firebaseFirestore.collection(collection).get();
     return snapshot.docs;
   }
 

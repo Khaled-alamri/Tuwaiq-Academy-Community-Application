@@ -43,7 +43,7 @@ class My_Info extends StatelessWidget {
                       child:
                           Text("الاسم الاول", style: TextStyle(fontSize: 18))),
                   CustomTextField(
-                    onChanged: (Value) => C_Profile.firstName = Value,
+                    onChanged: (Value) => C_Profile.firstName = Value  ,
                     labelTextShow: C_Profile.firstName,
                   ),
                   SizedBox(
