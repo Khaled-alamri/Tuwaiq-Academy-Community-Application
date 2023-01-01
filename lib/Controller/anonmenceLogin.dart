@@ -9,7 +9,7 @@ class anonmenceController extends GetxController {
     authObjects.anonymouslyLogin(
       isDone: (Value) {
         if (Value) {
-          Get.off(GuestAppLayout());
+          Get.offAll(GuestAppLayout());
         }
       },
     );

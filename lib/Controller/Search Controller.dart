@@ -3,19 +3,17 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 
 class SearchController extends GetxController {
-  List searchResult = [];
+  Future getData(String collection) async {
+    final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+    QuerySnapshot snapshot =
+        await firebaseFirestore.collection(collection).get();
+    return snapshot.docs;
+  }
 
-  final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-  searchFromeFirbase(String query) async {
-    var result = await FirebaseFirestore.instance
+  Future queryData({ required String queryData}) async {
+    return FirebaseFirestore.instance
         .collection("article")
-        .where(
-          "title",
-          isEqualTo: query,
-        )
+        .where('title', isGreaterThanOrEqualTo: queryData)
         .get();
-
-    searchResult = result.docs.map((e) => e.data()).toList();
-    update();
   }
 }

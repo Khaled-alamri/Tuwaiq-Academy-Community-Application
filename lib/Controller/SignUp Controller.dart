@@ -33,7 +33,7 @@ class SignUpController extends GetxController {
           "userID": userID
         };
         fireSore.SendDataUser(idUser: Value, infoUser: user);
-        Get.off(SignInScreen());
+        Get.offAll(SignInScreen());
       },
     );
   }

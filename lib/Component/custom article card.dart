@@ -30,8 +30,9 @@ class CustomArticleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      // onTap: onTap,
       child: Container(
+        height: 200,
         margin: EdgeInsetsDirectional.all(10),
         padding: EdgeInsetsDirectional.all(20),
         decoration: BoxDecoration(
@@ -54,13 +55,13 @@ class CustomArticleCard extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            // const SizedBox(
+            //   height: 15,
+            // ),
             contentText(postTitle: postTitle, PostBody: PostBody),
-            const SizedBox(
-              height: 20,
-            ),
+            // const SizedBox(
+            //   height: 20,
+            // ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -94,9 +95,10 @@ class CustomArticleCard extends StatelessWidget {
               child: Icon(
                 Icons.thumb_up,
                 color: isLiked ? primaryColor : Colors.grey,
-                size: 25,
+                size: 22,
               ),
             );
+            
           },
           likeCount: likeCont ,
           
@@ -172,7 +174,7 @@ class MyCustomArticleCard extends StatelessWidget {
                   Expanded(
                     child: Row(
                       children: [
-                        Icon(Icons.comment, color: primaryColor),
+                        Icon(Icons.comment, color: primaryColor,),
                         const SizedBox(
                           width: 7,
                         ),

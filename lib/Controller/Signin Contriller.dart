@@ -19,9 +19,9 @@ class SignInController extends GetxController {
         isDone: (Value, uid) {
           if (Value) {
             if (uid == "L24iwT3szpNrto63g5UyqsyUtNh1") {
-              Get.off(AdminAppLayout());
+              Get.offAll(AdminAppLayout());
             } else {
-              Get.off(AppLayout());
+              Get.offAll(AppLayout());
             }
           }
         },

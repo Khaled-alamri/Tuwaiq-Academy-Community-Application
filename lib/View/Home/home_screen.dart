@@ -92,6 +92,7 @@ class HomeScreen extends StatelessWidget {
             PostOwnrName: "محمد عبدالرحمن",
             commentCont: 23,
             postTitle: "برنامج xampp",
+
           ),
                   ],
                 );

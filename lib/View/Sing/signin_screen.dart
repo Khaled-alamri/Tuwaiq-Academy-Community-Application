@@ -48,6 +48,7 @@ class SignInScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         CustomTextField(
+                          obscureText: false,
                           onChanged: (Value) => c_signin.email = Value,
                           hintTextShow: "example@example.com",
                           labelTextShow: "البريد الإلكتروني",
@@ -59,6 +60,7 @@ class SignInScreen extends StatelessWidget {
                           height: 20.0,
                         ),
                         CustomTextField(
+                          obscureText: true,
                           onChanged: (Value) => c_signin.password = Value,
                           hintTextShow: "*******",
                           labelTextShow: "كلمة المرور",

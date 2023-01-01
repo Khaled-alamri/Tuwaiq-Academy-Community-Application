@@ -53,20 +53,21 @@ class ForgePassword extends StatelessWidget {
                   Align(
                       alignment: Alignment.centerRight,
                       child: AutoSizeText(
-                        " نسيت كلمة  \nالمرور..؟",
+                        " هل ترغب في تحديث  \n كلمةالمرور..؟",
                         textDirection: TextDirection.rtl,
                         style: TextStyle(
-                            fontSize: 45,
+                            fontSize: 40,
                             fontWeight: FontWeight.bold,
                             color: primaryColor),
                         maxLines: 5,
                       )),
                   AutoSizeText(
-                    "لاتشيل هم.. نأمل تزويدنا بالبريد الالكتروني المستخدم ",
+                    "لاتشيل هم.. نأمل تزويدنا بالبريد الالكتروني المستخدم \t ",
                     style: TextStyle(
                         fontSize: 20, color: Colors.black.withOpacity(0.5)),
                     maxLines: 5,
                   ),
+                  SizedBox(height: 10,),
                   CustomTextFieldWithBorder(
                     controller: fogetpassword,
                     hintTextShow: "example@example.com",

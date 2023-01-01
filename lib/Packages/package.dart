@@ -62,7 +62,25 @@ export 'package:firebase_core/firebase_core.dart';
 export 'package:flutter/material.dart';
 export 'package:get/get.dart';
 export 'package:get_storage/get_storage.dart';
-
+import 'package:final_project/Component/Profile/Avater.dart';
+import 'package:final_project/Component/Profile/ItemOfProfile.dart';
+import 'package:final_project/Controller/homepage%20Controller.dart';
+import 'package:final_project/Packages/package.dart';
+import 'package:final_project/Controller/signOutController.dart';
+import 'package:final_project/Services/firebase/Auth/EmailAndPassword.dart';
+import 'package:final_project/Controller/Profile%20controller.dart';
+import 'package:final_project/Services/firebase/articleSystem.dart';
+import 'package:final_project/View/Camp/CampPresnt.dart';
+import 'package:final_project/View/Sing/Forge_Password_or_Chang.dart';
+import 'package:final_project/View/profile/My_Info.dart';
+import 'package:final_project/View/profile/My_Post.dart';
+import 'package:final_project/View/profile/TermsAndCondition.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
+import 'package:hexcolor/hexcolor.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 
