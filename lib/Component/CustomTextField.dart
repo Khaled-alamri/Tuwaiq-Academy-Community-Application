@@ -43,7 +43,7 @@ class CustomTextField extends StatelessWidget {
           IconForText,
           color: primaryColor.withOpacity(0.4),
         ),
-        hintText: hintTextShow.toString(),
+        hintText:hintTextShow == null ? "": hintTextShow.toString(),
         label: Text(
           labelTextShow!,
           style: TextStyle(

@@ -114,26 +114,26 @@ class _AddingCampScreen extends State<AddingCampScreen> {
                 icon: Icon(Icons.add_photo_alternate_outlined, size: 40,),
               ),
               SizedBox(height: 25,),
-              // _image != null
-              //     ? Column(
-              //         children: [
-              //           Padding(
-              //             padding: const EdgeInsets.symmetric(
-              //                 horizontal: 30, vertical: 15),
-              //             child: Image.file(
-              //               _image!,
-              //               width: 200,
-              //               height: 250,
-              //               fit: BoxFit.cover,
-              //             ),
-              //           ),
-              //         ],
-              // //       )
-              //     : Center(child: Text("اضف صوره")),
+              _image != null
+                  ? Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 15),
+                          child: Image.file(
+                            _image!,
+                            width: 200,
+                            height: 250,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ],
+                    )
+                  : Center(child: Text("")),
               filledButton(
                   onPressed: () {
                     try {
-                     // GetImage().AddImages(Image: _image!);
+                    //  GetImage().AddImages(Image: _image!);
                       C_Camp.MethodCreatePost();
                     } catch (e) {
                       print(e);
@@ -144,7 +144,7 @@ class _AddingCampScreen extends State<AddingCampScreen> {
                   onPressed: () {
                     // getImages();
                   },
-                  child: Text("اضافة"))
+                  child: Text(""))
             ],
           ),
         ),

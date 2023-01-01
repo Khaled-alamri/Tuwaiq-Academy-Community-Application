@@ -15,11 +15,10 @@ class CampController extends GetxController {
   String NamberOfStudent = "25";
   String detailsOfCamp = "";
   String campGols = "";
-  String date = "2022/12/28";
+  String date = "2023/01/01";
   //bool article = true;
 
   CampSystem newCamp = CampSystem();
-
   List campList = [];
 
   @override
@@ -67,8 +66,8 @@ class CampController extends GetxController {
       campData: campInfo,
       isDone: (Value) {
         if (Value) {
-          Get.snackbar("Success", "Camp had been added");
-          Get.off(AdminAppLayout());
+          Get.snackbar(" تم اضافة المعسكر بنجاح", "\u2705");
+          Get.offAll(AdminAppLayout());
         }
       },
     );

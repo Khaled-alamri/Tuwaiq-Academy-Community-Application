@@ -38,9 +38,11 @@ class PostController extends GetxController {
       articlData: articleInfo,
       isDone: (Value) {
         if (Value) {
-          Get.snackbar("Success", "Post had been added");
+          Get.snackbar(
+            animationDuration: Duration(seconds: 2),
+            "تم إضافة المنشور \u270C", "");
           
-          Get.off(AppLayout());
+          Get.offAll(AppLayout());
           update();
         }
       },

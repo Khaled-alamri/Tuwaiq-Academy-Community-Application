@@ -126,19 +126,6 @@ class TitelPage extends StatelessWidget {
               ),
             ],
             ),
-                      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-            floatingActionButton: FloatingActionButton(
-          backgroundColor: HexColor("#117c78"),
-          onPressed: () {
-            Get.to(AddingCampScreen());
-          },
-          child: Icon(
-            Icons.add,
-            color: Colors.white,
-            size: 40,
-          ),
-        ),
-          
         ), 
       ),
     );
