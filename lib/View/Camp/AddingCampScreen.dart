@@ -66,7 +66,7 @@ class _AddingCampScreen extends State<AddingCampScreen> {
                         style: TextStyle(fontSize: 20),
                       )),
                   CustomTextField2(
-                      onChanged: (Value) => C_Camp.title = Value,
+                      onChanged: (Value) => C_Camp.NameOfCamp = Value,
                       hintTextShow: "عنوان المعسكر"),
                 ],
               ),
@@ -80,7 +80,7 @@ class _AddingCampScreen extends State<AddingCampScreen> {
                         style: TextStyle(fontSize: 20),
                       )),
                   CustomTextFieldPost(
-                    onChanged: (Value) => C_Camp.body = Value,
+                    onChanged: (Value) => C_Camp.detailsOfCamp = Value,
                     labelTextShow: "اذكر وصف المعسكر",
                   )
                 ],
@@ -95,7 +95,7 @@ class _AddingCampScreen extends State<AddingCampScreen> {
                         style: TextStyle(fontSize: 20),
                       )),
                   CustomTextFieldPost(
-                    onChanged: (Value) => C_Camp.body = Value,
+                    onChanged: (Value) => C_Camp.campGols = Value,
                     labelTextShow: "اذكر اهداف و تفاصيل المعسكر",
                   )
                 ],

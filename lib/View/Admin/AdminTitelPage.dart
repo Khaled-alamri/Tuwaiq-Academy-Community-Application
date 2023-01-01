@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:final_project/Component/campComponent/CardCamp.dart';
+import 'package:final_project/Controller/Camp%20Controller.dart';
 import 'package:final_project/Custom/CustomAppBarWithOutPic.dart';
 import 'package:final_project/Router/Routers.dart';
 import 'package:final_project/Style/Style.dart';
@@ -12,7 +13,8 @@ import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class CampPresnt extends StatelessWidget {
-  const CampPresnt({super.key});
+   CampPresnt({super.key});
+  CampController C_camp=Get.put(CampController());
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +28,27 @@ class CampPresnt extends StatelessWidget {
       ),
       child: Scaffold(
           backgroundColor: Colors.transparent,
-          body: ListView(children: [
-            CardCamp(
+          body:RefreshIndicator(
+           onRefresh: () async {
+                  C_camp.onInit();
+                },
+          child: GetBuilder<CampController>(
+              init: CampController(),
+              builder: (_) {
+                return ListView(
+                  children: [
+                    ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        itemCount: C_camp.campList.length,
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, int index) {
+                          return   CardCamp(NameOfCamp: C_camp.campList[index]["NameOfCamp"], DateOfCamp:  C_camp.campList[index]["date"], detailsOfCamp:  C_camp.campList[index]["detailsOfCamp"], NamberOfStudent:  C_camp.campList[index]["NamberOfStudent"], Img:  C_camp.campList[index]["image"]);},),
+                          
+                     
+                          
+                        
+                        
+                       CardCamp(
               onTap: (){
                 Get.toNamed(RouterNames.PresentCamp);
               },
@@ -37,7 +58,13 @@ class CampPresnt extends StatelessWidget {
                 Img: "images/BackGround/Flutter_Logo.png",
                 NameOfCamp: "معسكر Flutter ",
                 detailsOfCamp: "معسكر تدريبي مكثف لتطوير تطبيقات الجوال والويب باستخدام إطار عمل Flutter، والذي يعتبر الإطار الأحدث والأسهل لبناء تطبيقات تعمل على عدة أنظمة."),
-          ])),
+          
+                  ],
+                );
+              }),
+        ),
+          
+          ),
     );
   }
 }

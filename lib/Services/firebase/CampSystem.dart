@@ -23,4 +23,20 @@ class CampSystem {
       }
     });
   }
+
+  viewAllCamp() async {
+    try {
+      List<Map<String, dynamic>> allCamp = [];
+      var refdata = await instance.collection("Camp").get();
+      for (var Camp in refdata.docs) {
+        Camp.data();
+        allCamp.add(Camp.data());
+      }
+
+      return allCamp;
+    } catch (error) {
+      print(error.toString());
+      return null;
+    }
+  }
 }
