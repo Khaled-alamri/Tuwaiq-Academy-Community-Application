@@ -1,16 +1,14 @@
-# final_project
+# Tuwaiq Academy Community Application
 
-A new Flutter project.
+final_project in Tuwaiq Academy.
 
-## Getting Started
+## My team
+###	mansour alshuhayli
+###	Zalnasfan
+###Sarah Abdulrahman
 
-This project is a starting point for a Flutter application.
+##Project Overview:
 
-A few resources to get you started if this is your first Flutter project:
+In this project, we created an application for the Tuwaiq community through which publications can be created or a question can be asked, and other members can respond or interact with it, Awards can be obtained for your achievements in camp and added to your account, In the application, we provide a display of the existing camps, with all their details, including teachers and students. 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
