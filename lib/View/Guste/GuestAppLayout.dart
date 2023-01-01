@@ -4,7 +4,7 @@ import 'package:final_project/View/Camp/CampPresnt.dart';
 import 'package:final_project/View/Guste/GuestHomeScreen.dart';
 import 'package:final_project/View/Guste/GuestTitelPage.dart';
 import 'package:final_project/View/Guste/Guestprofile.dart';
-import 'package:final_project/View/Guste/Guestsearch.dart';
+import 'package:final_project/View/Guste/SearchPage.dart';
 import 'package:final_project/View/Home/home_screen.dart';
 import 'package:final_project/View/article/search_field.dart';
 import 'package:final_project/View/profile/profileView.dart';
@@ -23,7 +23,7 @@ class _GuestAppLayout extends State<GuestAppLayout> {
 
   List<Widget> bottomNavigationBarItem = [
     GuestHomeScreen(),
-    SearchField(),
+    SearchPage(),
     GuestTitelPage(),
     Guestprofile(),
   ];
