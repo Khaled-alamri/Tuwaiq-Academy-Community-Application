@@ -1,8 +1,10 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:final_project/Controller/Profile%20controller.dart';
 import 'package:final_project/Packages/package.dart';
 import 'package:final_project/Services/firebase/articleSystem.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get/get.dart';
 
 class PostController extends GetxController {
@@ -11,7 +13,7 @@ class PostController extends GetxController {
   var randomImage = Random().nextInt(10000);
   String title = "";
   String postUID = "";
-  String image = "";
+  String image2 = "";
   String body = "";
   String date = "2023/01/01";
   bool article = true;
@@ -26,7 +28,7 @@ class PostController extends GetxController {
       "authName": C_Profile.firstName + " " + C_Profile.lastName,
       "authUID": C_Profile.uid,
       "title": title,
-      "image": image,
+      "image": image2,
       "date": date,
       "article": article,
       "commentCount": commentCount,
@@ -47,6 +49,23 @@ class PostController extends GetxController {
         }
       },
     );
+  }
+  addImagesPost() async {
+    var instance = FirebaseStorage.instance;
+    try {
+      var image = await ImagePicker().pickImage(source: ImageSource.gallery);
+
+      Reference ref =
+          await instance.ref().child("Profile/${generateRandomString(10)}.png");
+      await ref.putFile(File(image!.path));
+      await ref.getDownloadURL().then((value) async {
+        image2 = value;
+        print(image);
+        update();
+      });
+    } catch (e) {
+      print('Failed to pick image: $e');
+    }
   }
 
   @override
