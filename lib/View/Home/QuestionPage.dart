@@ -104,7 +104,7 @@ class _QuestionPageState extends State<QuestionPage> {
               ),
               IconButton(
                 onPressed: () async {
-                  addImage();
+                  C_Article.addImagesPost();
                 },
                 icon: Icon(
                   Icons.add_photo_alternate_outlined,
@@ -137,7 +137,7 @@ class _QuestionPageState extends State<QuestionPage> {
               filledButton(
                 onPressed: () {
                   try {
-                    GetImage().AddImages(Image: _image!);
+                  
                     C_Article.MethodCreatePost();
                   } catch (e) {
                     print(e);

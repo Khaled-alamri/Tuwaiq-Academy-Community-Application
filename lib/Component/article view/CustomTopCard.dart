@@ -13,12 +13,8 @@ class TopCard extends StatelessWidget {
       margin: EdgeInsetsDirectional.all(10),
       padding: EdgeInsetsDirectional.all(20),
       height: 200,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadiusDirectional.circular(10),
-          color: Colors.white,
-          image: DecorationImage(
-              image: AssetImage(imagePQ),
-              fit: BoxFit.contain)),
+     color: Colors.white,
+              child: Image.network(imagePQ,fit:BoxFit.fill,),
     );
   }
 }

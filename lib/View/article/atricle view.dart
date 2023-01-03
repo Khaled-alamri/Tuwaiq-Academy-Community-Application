@@ -52,7 +52,9 @@ class _ArticleViewState extends State<ArticleView> {
               padding: EdgeInsetsDirectional.only(bottom: 40),
               child: Column(
                 children: [
-                  TopCard(imagePQ: "images/flutter210update_Dashlaptop_wText 1.png"),
+                  TopCard(
+                      imagePQ:
+                          "images/flutter210update_Dashlaptop_wText 1.png"),
                   Container(
                     padding: EdgeInsetsDirectional.all(15),
                     child: Column(
@@ -61,7 +63,7 @@ class _ArticleViewState extends State<ArticleView> {
                       children: [
                         Row(
                           children: [
-                            nameWithIcon(),
+                           
                             Spacer(),
                             Text(
                               "Dec19 - 2022",
@@ -194,7 +196,11 @@ class _ArticleViewState extends State<ArticleView> {
                           onPressed: () {
                             print("Send Massge");
                           },
-                          icon: Icon(Icons.send_rounded,size: 35,color: Colors.green,)),
+                          icon: Icon(
+                            Icons.send_rounded,
+                            size: 35,
+                            color: Colors.green,
+                          )),
                     ),
                     Expanded(
                       child: Padding(
@@ -216,28 +222,6 @@ class _ArticleViewState extends State<ArticleView> {
           ),
         );
       },
-    );
-  }
-
-  Widget nameWithIcon() {
-    return Row(
-      children: [
-        CircleAvatar(
-          backgroundColor: Colors.white,
-          child: Icon(
-            Icons.laptop,
-            color: Colors.black,
-          ),
-        ),
-        const SizedBox(
-          width: 10,
-        ),
-        Text(
-          "سارة القوده",
-          style: TextStyle(
-              color: Colors.black, fontSize: 17, fontWeight: FontWeight.w600),
-        ),
-      ],
     );
   }
 
@@ -270,3 +254,5 @@ class _ArticleViewState extends State<ArticleView> {
     );
   }
 }
+
+
