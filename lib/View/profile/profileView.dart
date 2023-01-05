@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:final_project/Component/Profile/Avater.dart';
 import 'package:final_project/Component/Profile/ItemOfProfile.dart';
+import 'package:final_project/Controller/Comments.dart';
 import 'package:final_project/Controller/Profile%20controller.dart';
 import 'package:final_project/Controller/signOutController.dart';
 import 'package:final_project/Services/firebase/articleSystem.dart';
@@ -100,7 +101,8 @@ class profile extends StatelessWidget {
               )
             ],
           ),
-        ))
+        )),
+        
       ]),
     );
   }
