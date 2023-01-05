@@ -96,15 +96,12 @@ class _QuestionPageState extends State<QuestionPage> {
               Row(
                 // mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  RodioB(
-                   
-                  ),
-                  
+                  RodioB(),
                 ],
               ),
               IconButton(
                 onPressed: () async {
-                  C_Article.addImagesPost();
+                  addImage(images: _image);
                 },
                 icon: Icon(
                   Icons.add_photo_alternate_outlined,
@@ -135,9 +132,9 @@ class _QuestionPageState extends State<QuestionPage> {
                 height: 15,
               ),
               filledButton(
-                onPressed: () {
+                onPressed: () async{
                   try {
-                  
+                  await C_Article.addImagesPost(Images: _image);
                     C_Article.MethodCreatePost();
                   } catch (e) {
                     print(e);
@@ -145,17 +142,14 @@ class _QuestionPageState extends State<QuestionPage> {
                 },
                 title: "إرسال",
               )
-         
-       
             ],
           ),
         ),
-         
       ),
     );
   }
 
-  addImage() async {
+  addImage({File? images}) async {
     try {
       var image = await ImagePicker().pickImage(source: ImageSource.gallery);
       setState(() {

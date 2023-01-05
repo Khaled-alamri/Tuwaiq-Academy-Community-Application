@@ -7,7 +7,6 @@ import 'package:final_project/View/profile/profileView.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
-
 import '../Packages/package.dart';
 
 class AppLayout extends StatefulWidget {

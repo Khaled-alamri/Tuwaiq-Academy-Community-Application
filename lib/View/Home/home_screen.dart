@@ -54,7 +54,6 @@ class HomeScreen extends StatelessWidget {
               init: HomePageController(),
               builder: (_) {
                 return InkWell(
-                 
                   child: ListView.builder(
                       scrollDirection: Axis.vertical,
                       itemCount: C_HomePage.articleList.length,

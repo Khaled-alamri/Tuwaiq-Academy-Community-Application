@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:final_project/Component/CustomTextField.dart';
 import 'package:final_project/Component/article%20view/CustomTopCard.dart';
 import 'package:final_project/Component/article%20view/NameWithIcon.dart';
 import 'package:final_project/Component/article%20view/Titel.dart';
 import 'package:final_project/Component/article%20view/bodyForPost.dart';
+import 'package:final_project/Controller/Comments.dart';
 import 'package:final_project/Controller/ViewPost.dart';
 import 'package:final_project/Controller/homepage%20Controller.dart';
 import 'package:flutter/material.dart';
@@ -12,17 +14,15 @@ import 'package:hexcolor/hexcolor.dart';
 
 import '../../Packages/package.dart';
 
-class ProblemScreen extends StatefulWidget {
-  const ProblemScreen({Key? key}) : super(key: key);
-  @override
-  State<ProblemScreen> createState() => _ProblemScreenState();
-}
-
-class _ProblemScreenState extends State<ProblemScreen> {
+class ProblemScreen extends StatelessWidget {
+  ProblemScreen({Key? key}) : super(key: key);
+  Comments C_Comments = Get.put(Comments());
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         appBar: AppBar(
             backgroundColor: Colors.transparent,
@@ -51,30 +51,43 @@ class _ProblemScreenState extends State<ProblemScreen> {
           child: Stack(
             children: [
               ListView(
+                scrollDirection: Axis.vertical,
                 children: [
-                  TopCard(imagePQ: Get.arguments["image"]==null ? Image.asset("images/tw.png"):Get.arguments["image"]),
+                  TopCard(
+                      imagePQ: Get.arguments["image"] == null
+                          ? Image.asset("images/tw.png")
+                          : Get.arguments["image"]),
                   Row(
                     children: [
-                      NameWithInon1(name: Get.arguments["authName"], Images:Get.arguments["authImage"] ),
-                     Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: Text(
-                      "Dec19 - 2022",
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 24, 23, 23),
-                        fontSize: 16,
-                      ),
-                    ),
-                  )
+                      NameWithInon1(
+                          name: Get.arguments["authName"],
+                          Images: Get.arguments["authImage"]),
+                      Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Text(
+                          "Dec19 - 2022",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 24, 23, 23),
+                            fontSize: 16,
+                          ),
+                        ),
+                      )
                     ],
                   ),
                   TitelInPagePost(title: Get.arguments["title"]),
                   SizedBox(
                     height: 15,
                   ),
-                  BodyInPagePost(Body: Get.arguments["body"])
-
+                  BodyInPagePost(Body: Get.arguments["body"]),
+                  // I do the comments here
+                  ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemCount: 2,
+                      shrinkWrap: true,
+                      itemBuilder: (BuildContext context, int) {
+                        return Text("s");
+                      }),
                 ],
               ),
             ],
@@ -85,95 +98,36 @@ class _ProblemScreenState extends State<ProblemScreen> {
           height: 70,
           child: Expanded(
             child: Row(
-              // alignment: Alignment.bottomCenter,
-              children: [
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: Container(
-                    width: Get.width * 0.80,
-                    height: 50,
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        fillColor: Colors.white,
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(0)),
-                        ),
-                        filled: true,
-                        hintText: "اترك رسالتك هنا",
-                        hintStyle:
-                            TextStyle(color: Colors.black.withOpacity(0.5)),
-                        focusColor: questionsColor,
-                        border: InputBorder.none,
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(64, 255, 255, 255),
-                              width: 0),
-                        ),
+                // alignment: Alignment.bottomCenter,
+                children: [
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Container(
+                        width: Get.width * 0.80,
+                        height: 50,
+                        child: CustomTextField2(
+                          hintTextShow: "mas",
+                          onChanged: (Value) => C_Comments.CommentsPost = Value,
+                        )),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.send,
+                        size: 36,
+                        color: questionsColor,
                       ),
-                      style: TextStyle(height: 3.0),
+                      onPressed: () {
+                        C_Comments.postUID = Get.arguments["postUID"];
+                         C_Comments.MethodCreateComments();
+                      },
                     ),
                   ),
-                ),
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.send,
-                      size: 36,
-                      color: questionsColor,
-                    ),
-                    onPressed: () {},
-                  ),
-                )
-              ],
-            ),
+                ]),
           ),
         ),
       ),
-    );
-  }
-
-  Widget nameWithIcon() {
-    return Row(
-      children: [
-        CircleAvatar(
-          backgroundColor: Colors.white,
-          child: Icon(
-            Icons.laptop,
-            color: Colors.black,
-          ),
-        ),
-        const SizedBox(
-          width: 10,
-        ),
-        Text(
-          "محمد عبدالرحمن",
-          style: TextStyle(
-              color: Colors.black, fontSize: 17, fontWeight: FontWeight.w600),
-        ),
-      ],
-    );
-  }
-
-  Widget contentText() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(
-          height: 10,
-        ),
-        Container(
-          child: Text(
-            "السلام عليكم ورحمه الله وبركاته \n كيفية تحميل برنامج Xampp ؟",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 17,
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
