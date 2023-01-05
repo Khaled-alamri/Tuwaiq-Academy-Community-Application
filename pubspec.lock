@@ -268,6 +268,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  full_screen_image_null_safe:
+    dependency: "direct main"
+    description:
+      name: full_screen_image_null_safe
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   get:
     dependency: "direct main"
     description:
@@ -471,6 +478,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.1.0"
+  pinch_zoom:
+    dependency: "direct main"
+    description:
+      name: pinch_zoom
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   platform:
     dependency: transitive
     description:

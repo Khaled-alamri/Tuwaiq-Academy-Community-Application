@@ -50,17 +50,15 @@ class PostController extends GetxController {
       },
     );
   }
-  addImagesPost() async {
+  addImagesPost({File? Images}) async {
     var instance = FirebaseStorage.instance;
     try {
-      var image = await ImagePicker().pickImage(source: ImageSource.gallery);
-
       Reference ref =
           await instance.ref().child("Profile/${generateRandomString(10)}.png");
-      await ref.putFile(File(image!.path));
+      await ref.putFile(File(Images!.path));
       await ref.getDownloadURL().then((value) async {
         image2 = value;
-        print(image);
+        print(Images);
         update();
       });
     } catch (e) {

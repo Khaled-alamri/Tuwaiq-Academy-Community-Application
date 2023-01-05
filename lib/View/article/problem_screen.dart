@@ -21,8 +21,10 @@ class ProblemScreen extends StatefulWidget {
 class _ProblemScreenState extends State<ProblemScreen> {
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
+    return GestureDetector(
+       onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         appBar: AppBar(
             backgroundColor: Colors.transparent,
@@ -92,29 +94,30 @@ class _ProblemScreenState extends State<ProblemScreen> {
                   child: Container(
                     width: Get.width * 0.80,
                     height: 50,
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        fillColor: Colors.white,
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(0)),
+                    child:TextFormField(
+                        
+                        decoration: InputDecoration(
+                          fillColor: Colors.white,
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(0)),
+                          ),
+                          filled: true,
+                          hintText: "اترك رسالتك هنا",
+                          hintStyle:
+                              TextStyle(color: Colors.black.withOpacity(0.5)),
+                          focusColor: questionsColor,
+                          border: InputBorder.none,
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(
+                                color: Color.fromARGB(64, 255, 255, 255),
+                                width: 0),
+                          ),
                         ),
-                        filled: true,
-                        hintText: "اترك رسالتك هنا",
-                        hintStyle:
-                            TextStyle(color: Colors.black.withOpacity(0.5)),
-                        focusColor: questionsColor,
-                        border: InputBorder.none,
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(64, 255, 255, 255),
-                              width: 0),
-                        ),
+                        style: TextStyle(height: 3.0),
                       ),
-                      style: TextStyle(height: 3.0),
                     ),
                   ),
-                ),
                 Align(
                   alignment: Alignment.bottomLeft,
                   child: IconButton(
@@ -125,9 +128,9 @@ class _ProblemScreenState extends State<ProblemScreen> {
                     ),
                     onPressed: () {},
                   ),
-                )
-              ],
-            ),
+                ),
+              ]
+                          ),
           ),
         ),
       ),
