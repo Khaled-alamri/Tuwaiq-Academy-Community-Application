@@ -37,59 +37,64 @@ class HomeScreen extends StatelessWidget {
         gradient:
             LinearGradient(colors: [Color(0xFFD9FFF3), Color(0xFFFFE1F9)]),
       ),
-      child: Scaffold(
-        appBar: CustomAppBarWithOutPic(
-          backgroundColor: primaryColor.withOpacity(0.2),
-          height: 70,
-          iconColor: primaryColor,
-          title: "الصفحة الرئيسية",
-          titleColor: primaryColor,
-        ),
-        backgroundColor: Colors.transparent,
-        body: RefreshIndicator(
-          onRefresh: () async {
-            C_HomePage.onInit();
-          },
-          child: GetBuilder<HomePageController>(
-              init: HomePageController(),
-              builder: (_) {
-                return InkWell(
-                  child: ListView.builder(
-                      scrollDirection: Axis.vertical,
-                      itemCount: C_HomePage.articleList.length,
-                      shrinkWrap: true,
-                      itemBuilder: (BuildContext context, int index) {
-                        return InkWell(
-                               onTap: () {
-                    Get.to(ProblemScreen(), arguments:C_HomePage.articleList[index]);
-                  },
-                          child: CustomArticleCard(
-                            
-                            cardDate: C_HomePage.articleList[index]["date"],
-                            commentCont: C_HomePage.articleList[index]
-                                ["commentCount"],
-                            likeCont: C_HomePage.articleList[index]["likeCount"],
-                            PostOwnrName: C_HomePage.articleList[index]
-                                ["authName"],
-                            postTitle: C_HomePage.articleList[index]["title"],
-                            PostBody: C_HomePage.articleList[index]["body"],
-                            authImage: C_HomePage.articleList[index]["authImage"],
-                          ),
-                        );
-                      }),
-                );
-              }),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: HexColor("#117c78"),
-          onPressed: () {
-            Get.to(QuestionPage());
-          },
-          child: Icon(
-            Icons.add,
-            color: Colors.white,
-            size: 40,
+      child: GestureDetector(
+        onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+        child: Scaffold(
+          appBar: CustomAppBarWithOutPic(
+            backgroundColor: primaryColor.withOpacity(0.2),
+            height: 70,
+            iconColor: primaryColor,
+            title: "الصفحة الرئيسية",
+            titleColor: primaryColor,
+          ),
+          backgroundColor: Colors.transparent,
+          body: RefreshIndicator(
+            onRefresh: () async {
+              C_HomePage.onInit();
+            },
+            child: GetBuilder<HomePageController>(
+                init: HomePageController(),
+                builder: (_) {
+                  return InkWell(
+                    child: ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        itemCount: C_HomePage.articleList.length,
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, int index) {
+                          return InkWell(
+                                 onTap: () {
+                      Get.to(ProblemScreen(), arguments:C_HomePage.articleList[index]);
+                    },
+                            child: CustomArticleCard(
+                              
+                              cardDate: C_HomePage.articleList[index]["date"],
+                              commentCont: C_HomePage.articleList[index]
+                                  ["commentCount"],
+                              likeCont: C_HomePage.articleList[index]["likeCount"],
+                              PostOwnrName: C_HomePage.articleList[index]
+                                  ["authName"],
+                              postTitle: C_HomePage.articleList[index]["title"],
+                              PostBody: C_HomePage.articleList[index]["body"],
+                              authImage: C_HomePage.articleList[index]["authImage"],
+                            ),
+                          );
+                        }),
+                  );
+                }),
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+          floatingActionButton: FloatingActionButton(
+            backgroundColor: HexColor("#117c78"),
+            onPressed: () {
+              Get.to(QuestionPage());
+            },
+            child: Icon(
+              Icons.add,
+              color: Colors.white,
+              size: 40,
+            ),
           ),
         ),
       ),

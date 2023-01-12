@@ -80,14 +80,19 @@ class ProblemScreen extends StatelessWidget {
                     height: 15,
                   ),
                   BodyInPagePost(Body: Get.arguments["body"]),
+                  Center(
+                      child: Text(
+                    "Comments",
+                    style: TextStyle(fontSize: 28),
+                  )),
                   // I do the comments here
-                  ListView.builder(
-                      scrollDirection: Axis.vertical,
-                      itemCount: 2,
-                      shrinkWrap: true,
-                      itemBuilder: (BuildContext context, int) {
-                        return Text("s");
-                      }),
+                  // ListView.builder(
+                  //     scrollDirection: Axis.vertical,
+                  //     itemCount: 2,
+                  //     shrinkWrap: true,
+                  //     itemBuilder: (BuildContext context, int) {
+                  //       return Center(child: Text("Comments",style: TextStyle(fontSize: 28),));
+                  //     }),
                 ],
               ),
             ],
@@ -106,7 +111,7 @@ class ProblemScreen extends StatelessWidget {
                         width: Get.width * 0.80,
                         height: 50,
                         child: CustomTextField2(
-                          hintTextShow: "mas",
+                          hintTextShow: "Comments",
                           onChanged: (Value) => C_Comments.CommentsPost = Value,
                         )),
                   ),
@@ -118,9 +123,10 @@ class ProblemScreen extends StatelessWidget {
                         size: 36,
                         color: questionsColor,
                       ),
-                      onPressed: () {
-                        C_Comments.postUID = Get.arguments["postUID"];
-                         C_Comments.MethodCreateComments();
+                      onPressed: () async {
+                        //   C_Comments.postUID = Get.arguments["postUID"];
+                        //  await C_Comments.MethodCreateComments();
+                        C_Comments.viewAllComments();
                       },
                     ),
                   ),

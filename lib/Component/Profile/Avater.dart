@@ -20,13 +20,13 @@ class Avter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
+    return CircleAvatar(
+      backgroundColor: Color(0xff4A3A75),
+      radius: 80,
+      child: InkWell(
+         onTap: () {
         C_Profile.addImagesProfile();
       },
-      child: CircleAvatar(
-        backgroundColor: Color(0xff4A3A75),
-        radius: 80,
         child: ClipOval(
           child: C_Profile.image1 == ""
               ? Icon(
@@ -45,9 +45,7 @@ class Avter extends StatelessWidget {
     );
   }
 }
-
 class Avter1 extends StatelessWidget {
-  
   Avter1({super.key});
 profileController C_Profile = Get.find();
   @override

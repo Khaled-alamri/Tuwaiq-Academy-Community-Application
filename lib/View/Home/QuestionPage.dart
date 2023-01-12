@@ -36,113 +36,118 @@ class _QuestionPageState extends State<QuestionPage> {
       width: Get.width,
       decoration: const BoxDecoration(
           gradient: LinearGradient(colors: [liftShadow, rightShadow])),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: CustomAppBar(
-          backgroundColor: primaryColor.withOpacity(0.2),
-          iconColor: primaryColor,
-          height: 70,
-          iconImage: "images/Back.png",
-          onPressed: () {
-            Get.back();
-          },
-          title: "اضافة منشور",
-          titleColor: primaryColor,
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(defaultPadding + 5),
-          child: ListView(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                child: Column(
+      child: GestureDetector(
+        onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: CustomAppBar(
+            backgroundColor: primaryColor.withOpacity(0.2),
+            iconColor: primaryColor,
+            height: 70,
+            iconImage: "images/Back.png",
+            onPressed: () {
+              Get.back();
+            },
+            title: "اضافة منشور",
+            titleColor: primaryColor,
+          ),
+          body: Padding(
+            padding: const EdgeInsets.all(defaultPadding + 5),
+            child: ListView(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: Column(
+                    children: [
+                      Align(
+                          alignment: Alignment.topRight,
+                          child: Text(
+                            "عنوان المنشور",
+                            style: TextStyle(fontSize: 20),
+                          )),
+                      CustomTextField2(
+                          onChanged: (Value) => C_Article.title = Value,
+                          hintTextShow: "عنوان المشور"),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Column(
+                    children: [
+                      Align(
+                          alignment: Alignment.topRight,
+                          child: Text(
+                            "الوصف",
+                            style: TextStyle(fontSize: 20),
+                          )),
+                      CustomTextFieldPost(
+                        onChanged: (Value) => C_Article.body = Value,
+                        labelTextShow: "وصف للموضوع المطروح",
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 30),
+                  child: Text(
+                    "نوع المنشور",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ),
+                Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Align(
-                        alignment: Alignment.topRight,
-                        child: Text(
-                          "عنوان المنشور",
-                          style: TextStyle(fontSize: 20),
-                        )),
-                    CustomTextField2(
-                        onChanged: (Value) => C_Article.title = Value,
-                        hintTextShow: "عنوان المشور"),
+                    RodioB(),
                   ],
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                child: Column(
-                  children: [
-                    Align(
-                        alignment: Alignment.topRight,
-                        child: Text(
-                          "الوصف",
-                          style: TextStyle(fontSize: 20),
-                        )),
-                    CustomTextFieldPost(
-                      onChanged: (Value) => C_Article.body = Value,
-                      labelTextShow: "وصف للموضوع المطروح",
-                    )
-                  ],
+                IconButton(
+                  onPressed: () async {
+                    addImage(images: _image);
+                  },
+                  icon: Icon(
+                    Icons.add_photo_alternate_outlined,
+                    size: 40,
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 30),
-                child: Text(
-                  "نوع المنشور",
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
-              Row(
-                // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  RodioB(),
-                ],
-              ),
-              IconButton(
-                onPressed: () async {
-                  addImage(images: _image);
-                },
-                icon: Icon(
-                  Icons.add_photo_alternate_outlined,
-                  size: 40,
-                ),
-              ),
-              _image != null
-                  ? Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 15),
-                          child: Image.file(
-                            _image!,
-                            width: 200,
-                            height: 250,
-                            fit: BoxFit.cover,
+                _image != null
+                    ? Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 30, vertical: 15),
+                            child: Image.file(
+                              _image!,
+                              width: 200,
+                              height: 250,
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                        ),
-                      ],
-                    )
-                  : Center(
-                      child: Text(
-                      "اضف صوره",
-                      style: TextStyle(fontSize: 20),
-                    )),
-              SizedBox(
-                height: 15,
-              ),
-              filledButton(
-                onPressed: () async{
-                  try {
-                  await C_Article.addImagesPost(Images: _image);
-                    C_Article.MethodCreatePost();
-                  } catch (e) {
-                    print(e);
-                  }
-                },
-                title: "إرسال",
-              )
-            ],
+                        ],
+                      )
+                    : Center(
+                        child: Text(
+                        "اضف صوره",
+                        style: TextStyle(fontSize: 20),
+                      )),
+                SizedBox(
+                  height: 15,
+                ),
+                filledButton(
+                  onPressed: () async{
+                    try {
+                    await C_Article.addImagesPost(Images: _image);
+                      C_Article.MethodCreatePost();
+                    } catch (e) {
+                      print(e);
+                    }
+                  },
+                  title: "إرسال",
+                )
+              ],
+            ),
           ),
         ),
       ),

@@ -18,7 +18,7 @@ class TopCard extends StatelessWidget {
           ? Image.asset("images/tw.png")
           : FullScreenWidget(
               child: PinchZoom(
-              child: Image.network(imagePQ, fit: BoxFit.fill),
+              child: Image.network(imagePQ, fit: BoxFit.cover),
               resetDuration: const Duration(milliseconds: 100),
               maxScale: 2.5,
             )),

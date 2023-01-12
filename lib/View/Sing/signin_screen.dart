@@ -19,98 +19,103 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(
-                "images/image.jpeg",
-              ),
-              fit: BoxFit.cover),
-        ),
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Directionality(
-            textDirection: TextDirection.rtl,
-            child: Form(
-              key: formKey,
-              child: Column(
-                children: [
-                  logoWithTitle(),
-                  const SizedBox(
-                    height: 15.0,
-                  ),
-                  Container(
-                    padding: EdgeInsetsDirectional.all(20),
-                    child: Column(
-                      children: [
-                        CustomTextField(
-                          obscureText: false,
-                          onChanged: (Value) => c_signin.email = Value,
-                          hintTextShow: "example@example.com",
-                          labelTextShow: "البريد الإلكتروني",
-                          validaterMasseg: 'من فضلك ادخل الايميل',
-                          keyboardType: TextInputType.emailAddress,
-                          IconForText: Icons.email,
-                        ),
-                        const SizedBox(
-                          height: 20.0,
-                        ),
-                        CustomTextField(
-                          obscureText: true,
-                          onChanged: (Value) => c_signin.password = Value,
-                          hintTextShow: "*******",
-                          labelTextShow: "كلمة المرور",
-                          validaterMasseg: 'من فضلك ادخل الباسورد',
-                          keyboardType: TextInputType.visiblePassword,
-                          IconForText: Icons.lock_outline,
-                        ),
-                        const SizedBox(
-                          height: 30.0,
-                        ),
-                        filledButton(
-                            title: "تسجيل الدخول",
-                            radius: 5.0,
-                            onPressed: () {
-
-                              c_signin.loginMethod();
-                            }),
-                        const SizedBox(
-                          height: 15.0,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            TextButton(
-                                onPressed: () {
-                                  Get.to(ForgePassword());
-                                },
-                                child: Text(
-                                  "هل نسيت كلمة المرور؟",
-                                  style: TextStyle(
-                                      color: HexColor("#7660A9"),
-                                      fontWeight: FontWeight.bold),
-                                )),
-                            TextButton(
-                                onPressed: () {
-                                  Get.to(SignUpScreen());
-                                },
-                                child: Text(
-                                  "تسجيل جديد",
-                                  style: TextStyle(
-                                      color: HexColor("#7660A9"),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 17.0),
-                                )),
-                          ],
-                        ),
-                      ],
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(
+                  "images/image.jpeg",
+                ),
+                fit: BoxFit.cover),
+          ),
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Directionality(
+              textDirection: TextDirection.rtl,
+              child: Form(
+                key: formKey,
+                child: Column(
+                  children: [
+                    logoWithTitle(),
+                    const SizedBox(
+                      height: 15.0,
                     ),
-                  ),
-                ],
+                    Container(
+                      padding: EdgeInsetsDirectional.all(20),
+                      child: Column(
+                        children: [
+                          CustomTextField(
+                            obscureText: false,
+                            onChanged: (Value) => c_signin.email = Value,
+                            hintTextShow: "example@example.com",
+                            labelTextShow: "البريد الإلكتروني",
+                            validaterMasseg: 'من فضلك ادخل الايميل',
+                            keyboardType: TextInputType.emailAddress,
+                            IconForText: Icons.email,
+                          ),
+                          const SizedBox(
+                            height: 20.0,
+                          ),
+                          CustomTextField(
+                            obscureText: true,
+                            onChanged: (Value) => c_signin.password = Value,
+                            hintTextShow: "*******",
+                            labelTextShow: "كلمة المرور",
+                            validaterMasseg: 'من فضلك ادخل الباسورد',
+                            keyboardType: TextInputType.visiblePassword,
+                            IconForText: Icons.lock_outline,
+                          ),
+                          const SizedBox(
+                            height: 30.0,
+                          ),
+                          filledButton(
+                              title: "تسجيل الدخول",
+                              radius: 5.0,
+                              onPressed: () {
+    
+                                c_signin.loginMethod();
+                              }),
+                          const SizedBox(
+                            height: 15.0,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              TextButton(
+                                  onPressed: () {
+                                    Get.to(ForgePassword());
+                                  },
+                                  child: Text(
+                                    "هل نسيت كلمة المرور؟",
+                                    style: TextStyle(
+                                        color: HexColor("#7660A9"),
+                                        fontWeight: FontWeight.bold),
+                                  )),
+                              TextButton(
+                                  onPressed: () {
+                                    Get.to(SignUpScreen());
+                                  },
+                                  child: Text(
+                                    "تسجيل جديد",
+                                    style: TextStyle(
+                                        color: HexColor("#7660A9"),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 17.0),
+                                  )),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
