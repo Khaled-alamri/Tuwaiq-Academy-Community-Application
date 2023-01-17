@@ -2,13 +2,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_project/Controller/Profile%20controller.dart';
 import 'package:final_project/Packages/package.dart';
 import 'package:final_project/Services/firebase/Comments.dart';
+import 'package:final_project/Services/firebase/articleSystem.dart';
 
-class Comments extends GetxController {
+class CommentsController extends GetxController {
   var instance = FirebaseFirestore.instance;
   String CommentsPost = "";
   String postUID = "";
   profileController C_Profile = Get.find();
-  Comment Commentpostes = Comment();
+  articleSystem Commentpostes = articleSystem();
+
+
   MethodCreateComments() async {
     Map<String, dynamic> CommentsInfo = {
       "authUID": C_Profile.uid,
@@ -26,6 +29,7 @@ class Comments extends GetxController {
               animationDuration: Duration(seconds: 2),
               "تم إضافة تعليق \u270C",
               "");
+
         }
       },
     );
@@ -45,4 +49,6 @@ class Comments extends GetxController {
       print(error.toString());
     }
   }
+
+  
 }

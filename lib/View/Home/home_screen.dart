@@ -39,8 +39,8 @@ class HomeScreen extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: () {
-        FocusManager.instance.primaryFocus?.unfocus();
-      },
+          FocusManager.instance.primaryFocus?.unfocus();
+        },
         child: Scaffold(
           appBar: CustomAppBarWithOutPic(
             backgroundColor: primaryColor.withOpacity(0.2),
@@ -64,20 +64,22 @@ class HomeScreen extends StatelessWidget {
                         shrinkWrap: true,
                         itemBuilder: (BuildContext context, int index) {
                           return InkWell(
-                                 onTap: () {
-                      Get.to(ProblemScreen(), arguments:C_HomePage.articleList[index]);
-                    },
+                            onTap: () {
+                              Get.to(ProblemScreen(),
+                                  arguments: C_HomePage.articleList[index]);
+                            },
                             child: CustomArticleCard(
-                              
                               cardDate: C_HomePage.articleList[index]["date"],
                               commentCont: C_HomePage.articleList[index]
                                   ["commentCount"],
-                              likeCont: C_HomePage.articleList[index]["likeCount"],
+                              likeCont: C_HomePage.articleList[index]
+                                  ["likeCount"],
                               PostOwnrName: C_HomePage.articleList[index]
                                   ["authName"],
                               postTitle: C_HomePage.articleList[index]["title"],
                               PostBody: C_HomePage.articleList[index]["body"],
-                              authImage: C_HomePage.articleList[index]["authImage"],
+                              authImage: C_HomePage.articleList[index]
+                                  ["authImage"],
                             ),
                           );
                         }),
@@ -110,6 +112,7 @@ class HomeScreen extends StatelessWidget {
           return CustomArticleCard(
             onTap: () {
               Get.to(ArticleView());
+              print("AAAAAAAAAA");
             },
             cardDate: C_HomePage.articleList[index]["date"],
             commentCont: C_HomePage.articleList[index]["commentCount"],

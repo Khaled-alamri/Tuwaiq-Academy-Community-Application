@@ -4,7 +4,7 @@ import 'package:final_project/Component/article%20view/CustomTopCard.dart';
 import 'package:final_project/Component/article%20view/NameWithIcon.dart';
 import 'package:final_project/Component/article%20view/Titel.dart';
 import 'package:final_project/Component/article%20view/bodyForPost.dart';
-import 'package:final_project/Controller/Comments.dart';
+import 'package:final_project/Controller/Comments%20Controller.dart';
 import 'package:final_project/Controller/ViewPost.dart';
 import 'package:final_project/Controller/homepage%20Controller.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +16,7 @@ import '../../Packages/package.dart';
 
 class ProblemScreen extends StatelessWidget {
   ProblemScreen({Key? key}) : super(key: key);
-  Comments C_Comments = Get.put(Comments());
+  CommentsController C_Comments = Get.put(CommentsController());
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -94,6 +94,37 @@ class ProblemScreen extends StatelessWidget {
                   //       return Center(child: Text("Comments",style: TextStyle(fontSize: 28),));
                   //     }),
                 ],
+                // GetBuilder<HomePageController>(
+                // init: HomePageController(),
+                // builder: (_) {
+                //   return InkWell(
+                //     child: ListView.builder(
+                //         scrollDirection: Axis.vertical,
+                //         itemCount: C_HomePage.articleList.length,
+                //         shrinkWrap: true,
+                //         itemBuilder: (BuildContext context, int index) {
+                //           return InkWell(
+                //             onTap: () {
+                //               Get.to(ProblemScreen(),
+                //                   arguments: C_HomePage.articleList[index]);
+                //             },
+                //             child: CustomArticleCard(
+                //               cardDate: C_HomePage.articleList[index]["date"],
+                //               commentCont: C_HomePage.articleList[index]
+                //                   ["commentCount"],
+                //               likeCont: C_HomePage.articleList[index]
+                //                   ["likeCount"],
+                //               PostOwnrName: C_HomePage.articleList[index]
+                //                   ["authName"],
+                //               postTitle: C_HomePage.articleList[index]["title"],
+                //               PostBody: C_HomePage.articleList[index]["body"],
+                //               authImage: C_HomePage.articleList[index]
+                //                   ["authImage"],
+                //             ),
+                //           );
+                //         }),
+                //   );
+                // }),
               ),
             ],
           ),
@@ -124,9 +155,10 @@ class ProblemScreen extends StatelessWidget {
                         color: questionsColor,
                       ),
                       onPressed: () async {
+                        C_Comments.postUID = Get.arguments["postUID"];
                         //   C_Comments.postUID = Get.arguments["postUID"];
                         //  await C_Comments.MethodCreateComments();
-                        C_Comments.viewAllComments();
+                        C_Comments.MethodCreateComments();
                       },
                     ),
                   ),
