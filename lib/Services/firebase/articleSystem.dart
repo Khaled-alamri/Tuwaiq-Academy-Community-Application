@@ -55,5 +55,33 @@ class articleSystem {
       return e;
     }
   }
+
+  addComments(
+      {required Map<String, dynamic> commentsData,
+      Function(bool)? isDone}) async {
+    var newComments = await instance.collection("Comments").doc();
+     commentsData.addAll({"commentsData_UID": newComments.id});
+    await instance.collection("Comments").doc(newComments.id).set(commentsData) .then((value) {
+      if (newComments.id != null) {
+        return isDone!(true);
+      }
+    });
+  }
   
+  viewAllComments(String postID)async{
+
+    try {
+      List<Map<String, dynamic>> allComments = [];
+      var refdata = await instance.collection("Comments").where("postUID",isEqualTo:postID ).get();
+      for (var comment in refdata.docs) {
+        comment.data();
+        allComments.add(comment.data());
+      }
+
+      return allComments;
+    } catch (error) {
+      print(error.toString());
+      return null;
+    }
+  }
 }

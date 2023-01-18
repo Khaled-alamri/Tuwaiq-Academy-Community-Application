@@ -20,7 +20,8 @@ class _AdminAppLayoutState extends State<AdminAppLayout> {
   int currentIndex = 0;
   profileController C_Profile = Get.put(profileController());
   List<Widget> bottomScreens = [
-    AdminHomeScreen(),
+    //AdminHomeScreen(),
+    HomeScreen(),
     SearchPage(),
     AdminTitelPage(),
     profile(),
