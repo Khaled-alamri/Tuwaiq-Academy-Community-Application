@@ -8,6 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../Packages/package.dart';
+import 'Camp/CampPresnt.dart';
+import 'Guste/SearchPage.dart';
+import 'Home/home_screen.dart';
+import 'profile/profileView.dart';
 
 class AppLayout extends StatefulWidget {
   @override
@@ -16,7 +20,7 @@ class AppLayout extends StatefulWidget {
 
 class _AppLayoutState extends State<AppLayout> {
   int currentIndex = 0;
-profileController C_Profile = Get.put(profileController());
+  profileController C_Profile = Get.put(profileController());
   List<Widget> bottomScreens = [
     HomeScreen(),
     SearchPage(),
@@ -30,14 +34,13 @@ profileController C_Profile = Get.put(profileController());
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
-       height: Get.height,
+      height: Get.height,
       width: Get.width,
       decoration: const BoxDecoration(
-        gradient:
-            LinearGradient(
-              colors: [Color(0xFFD9FFF3), Color(0xFFFFE1F9)]),
+        gradient: LinearGradient(
+          colors: [Color(0xFFD9FFF3), Color(0xFFFFE1F9)],
+        ),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -47,10 +50,10 @@ profileController C_Profile = Get.put(profileController());
           showSelectedLabels: false,
           showUnselectedLabels: false,
           selectedItemColor: HexColor("#433b81"),
-       
+
           type: BottomNavigationBarType.fixed,
           elevation: 0,
-          unselectedItemColor:primaryColor.withOpacity(0.4) ,
+          unselectedItemColor: primaryColor.withOpacity(0.4),
           onTap: (index) {
             setState(() {
               changeBottomNav(index);
@@ -59,31 +62,19 @@ profileController C_Profile = Get.put(profileController());
           currentIndex: currentIndex,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                size: 30,
-              ),
+              icon: Icon(Icons.home, size: 30),
               label: "Home",
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.search_sharp,
-                size: 30,
-              ),
+              icon: Icon(Icons.search_sharp, size: 30),
               label: "Search",
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.house,
-                size: 30,
-              ),
+              icon: Icon(Icons.house, size: 30),
               label: "University",
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-                size: 30,
-              ),
+              icon: Icon(Icons.person, size: 30),
               label: "Profile",
             ),
           ],
